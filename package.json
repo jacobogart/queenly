@@ -1,0 +1,20 @@
+{
+  "name": "queenly",
+  "version": "1.0.0",
+  "description": "A dynamic search engine to connect fans and local drag queens",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobogart/queenly.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobogart/queenly/issues"
+  },
+  "homepage": "https://github.com/jacobogart/queenly#readme"
+}
