@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "start": "react-scripts start",
     "dev": "react-scripts start",
-    "lint": "eslint --fix \"./src/**.{js,html}\""
+    "lint": "eslint --fix \"src/**/*.{js,html}\""
   },
   "repository": {
     "type": "git",
@@ -26,10 +27,6 @@
     "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.16.4",
     "react-scripts": "^2.1.8"
   },
