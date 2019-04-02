@@ -9,7 +9,7 @@
   Tiffany: 
     - I would like to gain confidence using React to create a modular and dynamic app!
   Kevin: 
-    - 
+    - I would like to become a lot more comfortable with the foundations of React as well as working with a large team.
 
 2: What do we want to achieve as a team? 
   - We plan on creating an app that will save the user time and energy! By creating a tool that organizes Drag Queen Parties all in one search tool.
@@ -38,7 +38,9 @@
     - Organize logic
     - Attention to detail
   Kevin:
-    - 
+    - Understanding React and how it handles state/props
+    - Design and UI
+    - Enjoy design
 
 5: How we can use our strengths to overcome obstacles:
   - As a team I know we can tackle this project head on and power through the primary functionality of our app.
@@ -70,7 +72,7 @@
   Tiffany:
     - Get comfortable with React and Sass
   Kevin:
-    - 
+    - Get comfortable with React, Sass, Github
 
 9: Workflow Expectations (Git workflow/Tools/Code Review/Reviewing Pull Requests/Debugging and Problem-solving Techniques):
   - We will be doing a lot of work in unison, whether that be at school or remotely
