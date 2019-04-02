@@ -17,6 +17,6 @@ export default function search(searchQuery) {
   matchingShows.forEach(match => results.push(match));
   matchingQueens.forEach(match => results.push(match));
 
-  console.log(results)
+  return results;
 }
 

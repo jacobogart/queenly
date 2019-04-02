@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-import search from '../helpers.js';
+// import search from '../helpers.js';
 import "../css/SearchBar.css";
 
 class SearchBar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       searchQuery: ''
     }
   }
 
   handleChange = (e) => {
-    search(e.target.value);
     this.setState({
       searchQuery: e.target.value
-    });
+    }, this.props.updateResults(this.state.searchQuery));
   }
 
   render() {
