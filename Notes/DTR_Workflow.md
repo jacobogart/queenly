@@ -4,7 +4,8 @@
     - I need to reinforce my knowledge of local storage using React!
     - I'm interested in keeping things modular and dynamic!
   Jacob: 
-    - 
+    - I would like to solidify my knowldge of Recact and state/props by creating a dynamic and user-friendly search tool.
+    - I would like a high-qaulity finished project that could not only be added to my portforlio, but is also worth maintaining and expanding for actual public deployment.
   Tiffany: 
     - 
   Kevin: 
@@ -12,6 +13,7 @@
 
 2: What do we want to achieve as a team? 
   - We plan on creating an app that will save the user time and energy! By creating a tool that organizes Drag Queen Parties all in one search tool.
+  -We plan on acheiving this by fully utilizing GitHub issues and Slack communication, as well as intentional work-time, both paired and separate. 
 
 3: How will we know that we're successful?):
   - Our definition of succes is:
@@ -27,7 +29,9 @@
       - Little bit of everything.
       - I'm flexible and ready to learn new things.
   Jacob:
-    - 
+    - Extensive knowledge with the dataset and source material.
+    - Strong grasp of data-manipulation and prototypes.
+    - Clear vision of indended use and design of final product.
   Tiffany:
     - 
   Kevin:
@@ -58,7 +62,8 @@
     - I would really like to get better at React Testing
     - Become fluent in Sass
   Jacob: 
-    - 
+    - Get comfortable with React and Sass, both in overall structure and granular sytax.
+    - Push myself as far us overall UI/UX design and design details.
   Tiffany:
     - 
   Kevin:
@@ -70,7 +75,7 @@
   - When we face an issue we will discuss as a group, otherwise reach out to our peers in the comminity, at school and mentors.
 
 11: Expectations for giving and receiving feedback:
-  - We will be KIND and helpful
+  - We will be KIND and helpful.
   - While also making sure that once the issue is resolved that all parties understand what, why, and how to overcome to the obstacle.
 
 12: Project management tools we will use:
