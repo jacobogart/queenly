@@ -1,4 +1,5 @@
-const bars = [
+const data = {
+  bars: [
   {
     "address": "3356 N Halsted St, Chicago, IL 60657",
     "facebook": "https://www.facebook.com/RoscoesTavern",
@@ -510,9 +511,9 @@ const bars = [
     "twitter": "https://twitter.com/meetinghousechi",
     "website": "http://www.meetinghousetavern.com/"
   }
-];
+],
 
-const queens = [
+queens: [
   {
     "bio":
       "Larger than life. Dumber than hell. ⭐️RPDR viewings at @roscoestavern [YouTube] ⭐️Host of @dragmatinee ⭐️Resident at @hardcandyky @d.i.x._milwaukee",
@@ -1171,9 +1172,7 @@ const queens = [
     "shows": ["Sunday Social"],
     "twitter": "https://twitter.com/chamillafoxx?lang=en"
   }
-];
+]
+}
 
-module.exports = {
-  bars,
-  queens,
-};
+export default data;
