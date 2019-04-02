@@ -7,7 +7,7 @@
     - I would like to solidify my knowldge of Recact and state/props by creating a dynamic and user-friendly search tool.
     - I would like a high-qaulity finished project that could not only be added to my portforlio, but is also worth maintaining and expanding for actual public deployment.
   Tiffany: 
-    - 
+    - I would like to gain confidence using React to create a modular and dynamic app!
   Kevin: 
     - 
 
@@ -33,7 +33,10 @@
     - Strong grasp of data-manipulation and prototypes.
     - Clear vision of indended use and design of final product.
   Tiffany:
-    - 
+    - Design and UI
+    - Data manipulation
+    - Organize logic
+    - Attention to detail
   Kevin:
     - 
 
@@ -65,7 +68,7 @@
     - Get comfortable with React and Sass, both in overall structure and granular sytax.
     - Push myself as far us overall UI/UX design and design details.
   Tiffany:
-    - 
+    - Get comfortable with React and Sass
   Kevin:
     - 
 
