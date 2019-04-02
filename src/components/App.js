@@ -1,6 +1,7 @@
 import React from "react";
 import SplashPage from "./SplashPage";
 import search from '../helpers.js'
+// * CSS imports
 import "../css/App.css";
 
 class App extends React.Component {
