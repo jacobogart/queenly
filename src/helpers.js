@@ -1,4 +1,4 @@
-// name export functions here that don't || shouldn't belong in a component. 
+// name export functions here that don't || shouldn't belong in a component.
 
 // example:
 // export function rando(arr) {
