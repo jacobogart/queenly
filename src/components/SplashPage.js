@@ -2,11 +2,12 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import "../css/SplashPage.css";
 
-const SplashPage = () => {
+const SplashPage = (props) => {
   return (
     <section className="SplashPage">
       <h1>Queenly</h1>
-      <SearchBar />
+      <SearchBar 
+        updateResults={props.updateResults}/>
     </section>
   );
 };
