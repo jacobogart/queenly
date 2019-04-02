@@ -1,5 +1,3 @@
-// import bars from '../jacobogart.js';
-// import queens from '../jacobogart.js';
 import data from './jacobogart.js';
 
 const {queens, bars} = data;
