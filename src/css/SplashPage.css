@@ -1,0 +1,9 @@
+.SplashPage {
+  font-family: "Lobster";
+  font-size: 86px;
+  border: 1px solid orange;
+}
+
+.SplashPage h1 {
+  margin: 1rem;
+}
