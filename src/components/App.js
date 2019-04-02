@@ -1,11 +1,14 @@
 import React from "react";
-
+import SplashPage from "./SplashPage";
+import "../css/App.css";
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <p>Hello</p>
-      </div>
+      <section className="App">
+        <article className="header">
+          <SplashPage />
+        </article>
+      </section>
     );
   }
 }
