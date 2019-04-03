@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Queen_Main from './Queen_Main.js';
 // * CSS imports
 import '../css/Main_Info.css';
 

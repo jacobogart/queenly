@@ -1,15 +1,18 @@
 import React from "react";
-import SplashPage from "./SplashPage";
+import NavBar from "./NavBar";
 import search from "../helpers.js";
+import SplashPage from "./SplashPage";
+import Card from './Card';
 // * CSS imports
 import "../css/App.css";
-import NavBar from "./NavBar";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      searchResults: []
+      searchResults: [],
+      showCard: false,
+      currentResult: null
     };
   }
 
@@ -18,12 +21,23 @@ class App extends React.Component {
       {
         searchResults: search(query)
       },
-      console.log(this.state.searchResults)
+      // ? console.log(this.state.searchResults)
     );
+  };
+  selectResult = target => {
+    // console.log("id", target);
+    this.setState({
+      showCard: true,
+      currentResult: target   
+    });
   };
 
   render() {
-    console.log(this.state);
+    let card = null;
+    this.state.showCard
+     ? card = <Card firstResult={this.state.currentResult} />
+     : card = null;
+    // ? console.log(this.state);
     return (
       <div>
         <header className="navBar">
@@ -32,10 +46,11 @@ class App extends React.Component {
         <section className="App">
           <article className="mainContent">
             <SplashPage 
-              updateResults={this.updateResults}
+              methods={[this.updateResults, this.selectResult]}
               searchResults={this.state.searchResults} 
             />
           </article>
+          {card}
         </section>
         <div className="appBackground" />
       </div>

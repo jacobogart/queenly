@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Sub_Info from './Sub_Info.js';
 // * CSS imports
 import '../css/Sub_Info.css';
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Show_Main from './Show_Main.js';
 // * CSS imports
 import '../css/Main_Info.css';
 
