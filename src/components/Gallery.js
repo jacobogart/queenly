@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Gallery from './Gallery.js';
 import Thumbnail from './Thumbnail.js';
 // * CSS imports
 import '../css/Gallery.css';
