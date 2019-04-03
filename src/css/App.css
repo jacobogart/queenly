@@ -1,17 +1,42 @@
 .App {
-  border: 1px solid blue;
+  /* border: 1px solid blue;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  bottom: 0;
+  height: 70%;
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  width: 500px;
+  z-index: 1;
 }
 
-.header {
-  display: flex;
+.appBackground {
+  height: 100vh;
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  width: 100vw;
+  /* background: url("https://images.unsplash.com/photo-1512073490563-2fde3bf833ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"); */
+  background: url("https://images.unsplash.com/photo-1552297777-dacae7d2b894?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-position: center 25%;
+  filter: brightness(0.5) sepia(30%) hue-rotate(270deg);
+  z-index: 0;
+}
+.mainContent {
   align-items: center;
+  border: 1px solid red;
+  display: flex;
+  height: 300px;
   justify-content: center;
   text-align: center;
-  border: 1px solid red;
   width: 500px;
-  height: 300px;
+}
+
+.navBar {
+  background-color: rgb(32, 39, 39);
 }

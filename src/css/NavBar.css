@@ -1,0 +1,20 @@
+.NavBar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 95%;
+}
+
+i {
+  color: lightgrey;
+}
+
+/* .fa-bars:hover {
+  color: white;
+} */
+
+i:hover {
+  color: white;
+}
