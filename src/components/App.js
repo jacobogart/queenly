@@ -24,18 +24,18 @@ class App extends React.Component {
       // ? console.log(this.state.searchResults)
     );
   };
-  selectResult = target => {
+  selectResult = resultName => {
     // console.log("id", target);
     this.setState({
       showCard: true,
-      currentResult: target   
+      currentResult: resultName   
     });
   };
 
   render() {
     let card = null;
     this.state.showCard
-     ? card = <Card firstResult={this.state.currentResult} />
+     ? card = <Card result={this.state.currentResult} />
      : card = null;
     // ? console.log(this.state);
     return (

@@ -39,7 +39,6 @@ class SearchBar extends Component {
             .map(result => {
               return <SearchSuggestion
                 name={result.name}
-                code={result.id}
                 method={this.props.methods[1]}
                 key={result.id}
               />

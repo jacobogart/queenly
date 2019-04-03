@@ -4,15 +4,10 @@ import "../css/SearchSuggestion.css";
 class SearchSuggestion extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      code: this.props.code,
-      currentResult: null
-    }
   }
 
-  setResult = e => {
-    console.log('test', this.state.code)
-    this.props.method(this.state.code)
+  setResult = () => {
+    this.props.method(this.props.name)
   }
 
   render() {

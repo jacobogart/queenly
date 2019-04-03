@@ -21,7 +21,7 @@ export default class Card extends Component {
     return (
       <section className="Card">
         <h1>Test</h1>
-        <h2>{this.props.firstResult}</h2>
+        <h2>{this.props.result}</h2>
       </section>
     )
   }
