@@ -8,7 +8,7 @@ export default function search(searchQuery) {
 
   let matchingBars = bars.filter(bar => bar.name.toLowerCase().includes(query));
   let shows = bars.flatMap(bar => bar.shows);
-  let matchingShows = shows.filter(show => show.title.toLowerCase().includes(query));
+  let matchingShows = shows.filter(show => show.name.toLowerCase().includes(query));
   let matchingQueens = queens.filter(queen => queen.name.toLowerCase().includes(query));
 
   matchingBars.forEach(match => results.push(match));

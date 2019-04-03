@@ -23,6 +23,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <header className="navBar">
@@ -30,7 +31,10 @@ class App extends React.Component {
         </header>
         <section className="App">
           <article className="mainContent">
-            <SplashPage updateResults={this.updateResults} />
+            <SplashPage 
+              updateResults={this.updateResults}
+              searchResults={this.state.searchResults} 
+            />
           </article>
         </section>
         <div className="appBackground" />

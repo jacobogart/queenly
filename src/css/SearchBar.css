@@ -1,30 +1,34 @@
 .searchBarContainer {
   border: 1px solid red;
   display: flex;
-  height: 40px;
+  /* height: 40px; */
   margin: 0 auto;
   padding: 0.5rem;
   width: 275px;
+  flex-direction: column;
 }
 
 .SearchBar {
   border-radius: 25px 25px 25px 25px;
   /* border: 1px solid #000; */
   display: inline-flex;
-  flex: 1 1 400px;
+  flex: 1 1;
   overflow: hidden;
   position: relative;
+  height: 40px;
 }
 
 .searchIcon {
   padding: 0.2rem;
   font-size: 16px;
+  height: 40px
 }
 
 .searchTerm {
   border: 1px solid white;
   border-radius: 25px 0px 0px 25px;
   flex: 1;
+  height: 40px;
   font-size: 16px;
   padding: 0.2rem 0.2rem 0.2rem 1rem;
 }
@@ -50,6 +54,12 @@
   background: #538ac5;
   border-radius: 0;
   border: 0;
+  height: 40px;
   color: white;
   padding: 0.5rem;
+}
+
+.searchHolder {
+  background: white;
+  margin-top: 0;
 }

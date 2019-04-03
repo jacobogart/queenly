@@ -18,7 +18,7 @@ const data = {
       "imageURL": "https://kikipaedia.com/resources/images/bars/chi/events/roscoesdragrace.jpg",
       "reoccuring": true,
       "startTime": 2300,
-      "title": "Roscoe's Drag Race"
+      "name": "Roscoe's Drag Race"
     }, {
       "category": "viewing party",
       "dayOfWeek": "Thursday",
@@ -28,7 +28,7 @@ const data = {
       "notes": "Doors open at 5PM. Seating begins at 6PM. New episode begins at 8PM. No Cover!",
       "reoccuring": true,
       "startTime": 2000,
-      "title": "Roscoe’s RPDR S11 Viewing Party"
+      "name": "Roscoe’s RPDR S11 Viewing Party"
     }, {
       "category": "drag show",
       "dayOfWeek": "Sunday",
@@ -41,7 +41,7 @@ const data = {
       "notes": "Bringing Generations X, Y, & Z together to celebrate their shared love of the music from the mid 1990’s through the early 2000’s with DJ Ron!",
       "reoccuring": true,
       "startTime": 2100,
-      "title": "XYZ"
+      "name": "XYZ"
     }],
     "twitter": "https://twitter.com/Roscoestavern",
     "website": "https://roscoes.com/"
@@ -66,7 +66,7 @@ const data = {
       "notes": "3 Year Anniversary! Join us for a Small Tribute to the Memories we've made Throughout the Years",
       "reoccuring": true,
       "startTime": 2200,
-      "title": "Squad Goals"
+      "name": "Squad Goals"
     }, {
       "category": "competition",
       "dayOfWeek": "Wednesday",
@@ -77,7 +77,7 @@ const data = {
       },
       "reoccuring": false,
       "startTime": 2200,
-      "title": "SLAY: Afterbirth"
+      "name": "SLAY: Afterbirth"
     }, {
       "category": "drag show",
       "dayOfWeek": "Saturday",
@@ -92,7 +92,7 @@ const data = {
       },
       "reoccuring": true,
       "startTime": 2230,
-      "title": "Drag Matinee"
+      "name": "Drag Matinee"
     }, {
       "category": "drag show",
       "dayOfWeek": "Monday",
@@ -105,7 +105,7 @@ const data = {
       "notes": "THE HALF-TIME SHOW: Surprises, Reveals, and OMG Moments! Bring the Drama and Snatch the Gig!",
       "reoccuring": true,
       "startTime": 2230,
-      "title": "Plot Twist"
+      "name": "Plot Twist"
     }, {
       "category": "competition",
       "dayOfWeek": "Monday",
@@ -115,7 +115,7 @@ const data = {
       "notes": "A 3 Round Competition for Drag Queens, Bio Queens, Kings, and Straight Up Aliens",
       "reoccuring": true,
       "startTime": 2200,
-      "title": "Crash Landing"
+      "name": "Crash Landing"
     }],
     "twitter": "https://twitter.com/BerlinNightclub",
     "website": "https://berlinchicago.com/"
@@ -137,7 +137,7 @@ const data = {
       "id": 1201,
       "reoccuring": true,
       "startTime": 2000,
-      "title": "Chicago's RuPaul's Drag Race Season 11 Viewing Party"
+      "name": "Chicago's RuPaul's Drag Race Season 11 Viewing Party"
     }, {
       "category": "competition",
       "dayOfWeek": "Thursday",
@@ -146,7 +146,7 @@ const data = {
       "id": 1202,
       "reoccuring": true,
       "startTime": 2200,
-      "title": "Shantay You Stay!"
+      "name": "Shantay You Stay!"
     }, {
       "category": "competition",
       "dayOfWeek": "Tuesday",
@@ -156,7 +156,7 @@ const data = {
       "notes": "You are the judge for who wins (well, Dixie says she's the winner, but we'll see about that) so join us to cheer on your faves.",
       "reoccuring": true,
       "startTime": 2130,
-      "title": "Dixie Wins A Talent Show"
+      "name": "Dixie Wins A Talent Show"
     }],
     "twitter": "https://twitter.com/sidetrackbar",
     "website": "https://www.sidetrackchicago.com/"
@@ -180,7 +180,7 @@ const data = {
       "notes": "Starting at 8:30pm we will be playing /“Mary Poppins Returns/” and afterwards the SingAlong event will begin! Also, at the don’t miss our new Disney themed Drag Show!",
       "reoccuring": false,
       "startTime": 2000,
-      "title": "SingAlong! “Mary Poppins Returns” Viewing Party!"
+      "name": "SingAlong! “Mary Poppins Returns” Viewing Party!"
     }, {
       "category": "dance party",
       "dayOfWeek": "Friday",
@@ -189,7 +189,7 @@ const data = {
       "id": 1302,
       "reoccuring": true,
       "startTime": 2300,
-      "title": "Friday's with Kenzie Coulee"
+      "name": "Friday's with Kenzie Coulee"
     }, {
       "category": "dance party",
       "dayOfWeek": "Thursday",
@@ -198,7 +198,7 @@ const data = {
       "id": 1303,
       "reoccuring": true,
       "startTime": 2200,
-      "title": "Frat Night"
+      "name": "Frat Night"
     }],
     "twitter": "https://twitter.com/scarletchicago",
     "website": "https://www.scarletchicago.com/"
@@ -221,7 +221,7 @@ const data = {
       "notes": "Monday nights get an upgrade with a show unlike any you’ve seen before!",
       "reoccuring": true,
       "startTime": 2300,
-      "title": "Ruffy’s Lipstick & Mascara"
+      "name": "Ruffy’s Lipstick & Mascara"
     }, {
       "category": "drag show",
       "dayOfWeek": "Wednesday",
@@ -231,7 +231,7 @@ const data = {
       "notes": "With weekly guest performers!",
       "reoccuring": true,
       "startTime": 2300,
-      "title": "Honeys on Halsted"
+      "name": "Honeys on Halsted"
     }, {
       "category": "drag show",
       "dayOfWeek": ["Friday", "Saturday"],
@@ -241,7 +241,7 @@ const data = {
       "notes": "With weekly guest performers!",
       "reoccuring": true,
       "startTime": 2115,
-      "title": "Beauties & Beaus",
+      "name": "Beauties & Beaus",
       "website": "http://beautiesandbeaus.com/"
     }],
     "twitter": "https://twitter.com/HydrateChicago",
@@ -265,7 +265,7 @@ const data = {
       "notes": "Guests are asked to make a $15 donation to play all night (10 games, three chances to win each game).",
       "reoccuring": true,
       "startTime": 2000,
-      "title": "Charity HamBingo Mary’s",
+      "name": "Charity HamBingo Mary’s",
       "website": "https://www.hamburgermarys.com/chicago/events/event/charity-hambingo-marys/"
     }, {
       "category": "competition",
@@ -276,7 +276,7 @@ const data = {
       "notes": "We start off with 6-8 contestants who compete for the chance to come back the next week. The bi-weekly winner gets a booking at one of Mary’s “Dining with the Divas” shows ",
       "reoccuring": true,
       "startTime": 2000,
-      "title": "Let’s Make a DIVA!",
+      "name": "Let’s Make a DIVA!",
       "website": "https://www.hamburgermarys.com/chicago/events/event/lets-make-a-diva-2/"
     }, {
       "category": "viewing party",
@@ -286,7 +286,7 @@ const data = {
       "id": 1503,
       "reoccuring": true,
       "startTime": 2000,
-      "title": "Drag Race at Mary's"
+      "name": "Drag Race at Mary's"
     }, {
       "category": "bingo",
       "dayOfWeek": "Sunday",
@@ -296,7 +296,7 @@ const data = {
       "notes": "Guests are asked to make a $15 donation to play all night (10 games, three chances to win each game).",
       "reoccuring": true,
       "startTime": 1900,
-      "title": "Charity HamBingo Mary’s",
+      "name": "Charity HamBingo Mary’s",
       "website": "https://www.hamburgermarys.com/chicago/events/event/charity-hambingo-marys/"
     }, {
       "category": "drag show",
@@ -306,7 +306,7 @@ const data = {
       "notes": "Seating will begin about a half hour before showtime.  Shows run about an hour.",
       "reoccuring": true,
       "startTime": [1930, 2130],
-      "title": "Dining With the Divas! (Friday)",
+      "name": "Dining With the Divas! (Friday)",
       "website": "https://www.hamburgermarys.com/chicago/events/event/dining-with-the-divas-2/"
     }, {
       "category": "drag show",
@@ -316,7 +316,7 @@ const data = {
       "notes": "Seating will begin about a half hour before showtime.  Shows run about an hour.",
       "reoccuring": true,
       "startTime": [1930, 2130],
-      "title": "Dining With the Divas! (Saturday)",
+      "name": "Dining With the Divas! (Saturday)",
       "website": "https://www.hamburgermarys.com/chicago/events/event/dining-with-divas/"
     }, {
       "category": "drag show",
@@ -326,7 +326,7 @@ const data = {
       "notes": "Seating begins at 10:15am for the first show and 12:15pm for the second show.",
       "reoccuring": true,
       "startTime": [1100, 1300],
-      "title": "Divas Brunch",
+      "name": "Divas Brunch",
       "website": "https://www.hamburgermarys.com/chicago/events/event/divas-brunch-with-bottomless-mimosas/"
     }],
     "twitter": "https://twitter.com/MarysChicago?lang=en",
@@ -349,7 +349,7 @@ const data = {
       "notes": "Kit Kat's nightly shows run every 20 minutes starting at 6.30pm through midnight.",
       "reoccuring": true,
       "startTime": 1830,
-      "title": "Kit Kat's Nightly Show"
+      "name": "Kit Kat's Nightly Show"
     }],
     "twitter": "https://twitter.com/kitkatlounge?lang=en",
     "website": "http://www.kitkatchicago.com/"
@@ -371,7 +371,7 @@ const data = {
       "id": 1701,
       "reoccuring": true,
       "startTime": 1900,
-      "title": "Sing-Sational Sunday!"
+      "name": "Sing-Sational Sunday!"
     }, {
       "category": "bingo",
       "dayOfWeek": "Monday",
@@ -380,7 +380,7 @@ const data = {
       "id": 1702,
       "reoccuring": true,
       "startTime": 2100,
-      "title": "Double 'D' Bingo"
+      "name": "Double 'D' Bingo"
     }, {
       "category": "drag show",
       "dayOfWeek": "Tuesday",
@@ -390,7 +390,7 @@ const data = {
       "notes": "Special guests weekly",
       "reoccuring": true,
       "startTime": 2330,
-      "title": "Twisted Tuesdays"
+      "name": "Twisted Tuesdays"
     }, {
       "category": "drag show",
       "dayOfWeek": "Thursday",
@@ -400,7 +400,7 @@ const data = {
       "notes": "1st Week Of The Month: 80’s. 2nd Week Of The Month: 90’s. 3rd Week Of The Month: Early 2000’s. 4th Week Of the Month: Body Beautiful.",
       "reoccuring": true,
       "startTime": 2200,
-      "title": "Throwback Thursdays"
+      "name": "Throwback Thursdays"
     }, {
       "category": "drag show",
       "dayOfWeek": "Friday",
@@ -409,7 +409,7 @@ const data = {
       "id": 1705,
       "reoccuring": true,
       "startTime": 2300,
-      "title": "Veronica's POP OFF!"
+      "name": "Veronica's POP OFF!"
     }, {
       "category": "competition",
       "dayOfWeek": "Satruday",
@@ -418,7 +418,7 @@ const data = {
       "id": 1706,
       "reoccuring": true,
       "startTime": 2230,
-      "title": "#POPular"
+      "name": "#POPular"
     }],
     "twitter": "https://twitter.com/CharliesBarChi",
     "website": "http://www.charlieschicago.com/"
@@ -441,7 +441,7 @@ const data = {
       "notes": "$5 at the door",
       "reoccuring": true,
       "startTime": 2200,
-      "title": "Killer Babes"
+      "name": "Killer Babes"
     }],
     "twitter": "https://twitter.com/replaylakeview?lang=en",
     "website": "http://www.replaylakeview.com/"
@@ -463,7 +463,7 @@ const data = {
       "id": 1901,
       "reoccuring": true,
       "startTime": 2200,
-      "title": "Queen!"
+      "name": "Queen!"
     }],
     "twitter": "https://twitter.com/smartbar",
     "website": "https://smartbarchicago.com/"
@@ -485,7 +485,7 @@ const data = {
       "notes": "This 10 week competition is about to take you on the ride of your life featuring: guest judges, weekly challenges, prizes, lip sync for your life battles and audience chosen eliminations.",
       "reoccuring": true,
       "startTime": 2200,
-      "title": "TENS"
+      "name": "TENS"
     }],
     "twitter": "https://twitter.com/Splash_Chicago",
     "website": "https://splash-chicago.com/"
@@ -506,7 +506,7 @@ const data = {
       "id": 2101,
       "reoccuring": true,
       "startTime": 1400,
-      "title": "Sunday Social"
+      "name": "Sunday Social"
     }],
     "twitter": "https://twitter.com/meetinghousechi",
     "website": "http://www.meetinghousetavern.com/"
