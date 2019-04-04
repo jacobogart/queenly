@@ -1,0 +1,10 @@
+/* Testing Purposes */
+.Gallery {
+}
+/* ================ */
+.Gallery {
+  background-color: #635083;
+  padding: 25px;
+  border-radius: 20px;
+  border: 10px inset #2e56578a;
+}

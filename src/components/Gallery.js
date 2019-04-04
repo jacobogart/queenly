@@ -14,7 +14,7 @@ export default class Gallery extends Component {
   render() {
     return (
       <section className="Gallery">
-    
+        <p>Gallery</p>
       </section>
     )
   }
