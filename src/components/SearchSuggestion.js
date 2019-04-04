@@ -3,17 +3,15 @@ import "../css/SearchSuggestion.css";
 
 class SearchSuggestion extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
-  setResult = () => {
-    this.props.selectResult(this.props.name)
-  }
+  setResult = e => {
+    this.props.selectResult(this.props.name);
+  };
 
   render() {
-    return (
-        <p onClick={this.setResult}>{this.props.name}</p>
-    );
+    return <p onClick={e => this.setResult(e)}>{this.props.name}</p>;
   }
 }
 
