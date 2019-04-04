@@ -10,9 +10,11 @@ export default class Queen_Main extends Component {
   }
 
   render() {
+    let { name } = this.props.cardData;
+
     return (
       <main className="Queen-Main">
-
+        <p>Queen {name}</p>
       </main>
     )
   }
