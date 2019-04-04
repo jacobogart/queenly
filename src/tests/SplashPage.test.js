@@ -1,4 +1,4 @@
-qqimport React from 'react';
+import React from 'react';
 import SplashPage from '../components/SplashPage';
 import { shallow } from 'enzyme';
 
