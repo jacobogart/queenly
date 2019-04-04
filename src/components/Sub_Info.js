@@ -8,12 +8,24 @@ export default class Sub_Info extends Component {
     this.state = {
     }
   }
-
+  
   render() {
+    console.log(this.props.cardData.imageURL);
+    let asset;
+    if(this.props.cardType === "Bar") {
+      asset = this.props.cardData.map;
+    } else {
+      asset = `<img src=${this.props.cardData.imageURL} alt=${this.props.cardData.name}/>`;
+    }
+
+    function createMarkup() {
+      return { __html: asset};
+    }
+
     return (
       <article className="Sub-Info">
-        <p>Sub_Info</p>
+        <div dangerouslySetInnerHTML={createMarkup()} />
       </article>
-    )
+    );
   }
 }

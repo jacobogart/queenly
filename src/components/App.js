@@ -15,33 +15,50 @@ class App extends React.Component {
       searchResults: [],
       showCard: false,
       currentResult: null,
-      showResults: false
+      showResults: false,
+      showSplash: true,
+      cardComponent: null
+
     };
   }
 
+  componentDidMount() {
+    fetch(
+      "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
+    )
+      .then(response => response.json())
+      .then(data => this.setState({ bars: data.bars }))
+      .catch(err => console.log(err));
+    fetch(
+      "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens"
+    )
+      .then(response => response.json())
+      .then(data => this.setState({ queens: data.queens }))
+      .catch(err => console.log(err));
+  }
+
   updateResults = query => {
-    this.setState(
-      {
-        searchResults: search(query)
-      },
-    );
+    this.setState({
+      searchResults: search(query, this.state.bars, this.state.queens)
+    });
   };
 
   selectResult = resultName => {
-    this.toggleCard();
+    if (this.state.showSplash) {
+      this.toggleCard();
+    }
     this.setState({
-      currentResult: resultName   
+      currentResult: resultName,
+      showSplash: false,
+      cardData: search(resultName, this.state.bars, this.state.queens)[0]
     });
   };
 
   toggleCard = () => {
-    let toggleSwitch = 
-      this.state.showCard ? false : true;
-    console.log("Switch", toggleSwitch)
     this.setState({
-      showCard: toggleSwitch
-    })
-  }
+      showCard: !this.state.showCard
+    });
+  };
 
   toggleResults = () => {
     this.setState({
@@ -50,30 +67,38 @@ class App extends React.Component {
   }
 
   render() {
-    let card;
     let searchResults;
-
-    let cardComponent = 
-      <Card result={this.state.currentResult}
-        toggle={this.toggleCard} />
-
+    
     let searchResultsPage = 
       <SearchResults 
         searchResults={this.state.searchResults} 
       />
 
-    this.state.showCard
-      ? card = cardComponent
-      : card = null;
-
     this.state.showResults
       ? searchResults = searchResultsPage
       : searchResults = null;
 
+    let card = null;
+    let cardComponent = (
+      <Card
+        cardData={this.state.cardData}
+        toggle={this.toggleCard}
+        bars={this.state.bars}
+        queens={this.state.queens}
+      />
+    );
+    
+    this.state.showCard ? (card = cardComponent) : (card = null);
+
     return (
       <div>
         <header className="navBar">
-          <NavBar />
+          <NavBar
+            searchBarDisplay={this.state.showCard}
+            updateResults={this.updateResults}
+            selectResult={this.selectResult}
+            searchResults={this.state.searchResults}
+          />
         </header>
         <section className="App">
           <article className="mainContent">

@@ -1,8 +1,4 @@
-import data from './jacobogart.js';
-
-const {queens, bars} = data;
-
-export default function search(searchQuery) {
+export default function search(searchQuery, bars, queens) {
   const results = [];
   let query = searchQuery.toLowerCase();
 

@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import SearchSuggestion from './SearchSuggestion';
+import SearchSuggestion from "./SearchSuggestion";
 import "../css/SearchBar.css";
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: ''
-    }
+      searchQuery: ""
+    };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.props.updateResults(e.target.value);
     this.setState({
       searchQuery: e.target.value
     });
-  }
+  };
 
   findResults = (e) => {
     e.preventDefault();
