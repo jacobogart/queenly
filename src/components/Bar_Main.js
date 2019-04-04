@@ -10,10 +10,11 @@ export default class Bar_Main extends Component {
   }
 
   render() {
+    let { name } = this.props.cardData
     return (
       <main className="Bar-Main">
-
+        <p>Bar {name}</p>
       </main>
-    )
+    );
   }
 }
