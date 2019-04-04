@@ -17,7 +17,7 @@ export default class Card extends Component {
     this.state = {
       showCard: false,
       cardType: ["Bar", "Show", "Queen"],
-      cardData: search(props.result)[0]
+      cardData: search(props.result, props.bars, props.queens)[0]
     };
   }
 
@@ -41,8 +41,8 @@ export default class Card extends Component {
           <button className="toggle-close" 
             onClick={this.props.toggle}>X</button>
           {mainInfo}
-          <Sub_Info />
-          <Gallery />
+          <Sub_Info cardData={cardData} />
+          <Gallery cardData={cardData} />
       </section>
     )
   }
