@@ -1,23 +1,24 @@
 import React, { Component } from "react";
-import SearchSuggestion from './SearchSuggestion';
+import SearchSuggestion from "./SearchSuggestion";
 import "../css/SearchBar.css";
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: ''
-    }
+      searchQuery: ""
+    };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.props.updateResults(e.target.value);
     this.setState({
       searchQuery: e.target.value
     });
-  }
+  };
 
   render() {
+    console.log(this.props);
     return (
       <section className="searchBarContainer">
         <form className="SearchBar">
@@ -31,19 +32,20 @@ class SearchBar extends Component {
             <i className="fas fa-search searchIcon" />
           </button>
         </form>
-        <div 
-          className="searchHolder" 
-          style={{ display: this.state.searchQuery ? 'block' : 'none' }}>
-          {this.props.searchResults.slice(0, 5)
-            .map(result => {
-              return <SearchSuggestion
+        <div
+          className="searchHolder"
+          style={{ display: this.state.searchQuery ? "block" : "none" }}
+        >
+          {this.props.searchResults.slice(0, 5).map(result => {
+            return (
+              <SearchSuggestion
                 name={result.name}
                 selectResult={this.props.selectResult}
                 key={result.id}
               />
-            })
-            }
-        </div>  
+            );
+          })}
+        </div>
       </section>
     );
   }
