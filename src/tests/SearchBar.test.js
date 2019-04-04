@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar.js';
+import SearchBar from '../components/SearchBar';
 import { shallow } from 'enzyme';
 
 const mockUpdateResults = jest.fn();
@@ -38,17 +38,16 @@ describe('SearchBar', () => {
   });
 
   it('should update searchQuery on change', () => {
-    expect(wrapper.state('searchQuery').toEqual(''));
+    wrapper.find('.searchTerm').simulate('change');
 
-    wrapper.instance().handleChange( {target: {value: 'Sasha'} );
+    expect(mockUpdateResults).toBeCalled();
+    // expect(wrapper.state('searchQuery').toEqual(''));
 
-    expect(wrapper.state('searchQuery').toEqual('Sasha'))
+    // wrapper.instance().handleChange( {target: {value: 'Sasha'} } );
+
+    // expect(wrapper.state('searchQuery').toEqual('Sasha'))
   });
 });
-
-
-
-
 
 
 

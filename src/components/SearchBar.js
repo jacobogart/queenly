@@ -17,10 +17,15 @@ class SearchBar extends Component {
     });
   }
 
+  findResults = (e) => {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <section className="searchBarContainer">
-        <form className="SearchBar">
+        <form onSubmit={this.findResults}
+              className="SearchBar">
           <input
             onKeyUp={this.handleChange}
             type="search"
