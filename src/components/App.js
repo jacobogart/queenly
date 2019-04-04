@@ -46,7 +46,6 @@ class App extends React.Component {
     let cardComponent = 
       <Card result={this.state.currentResult}
         toggle={this.toggleCard} />
-        
     this.state.showCard
      ? card = cardComponent
      : card = null;
