@@ -17,10 +17,15 @@ class SearchBar extends Component {
     });
   };
 
+  findResults = (e) => {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <section className="searchBarContainer">
-        <form className="SearchBar">
+        <form onSubmit={this.findResults}
+              className="SearchBar">
           <input
             onKeyUp={this.handleChange}
             type="search"
@@ -31,20 +36,18 @@ class SearchBar extends Component {
             <i className="fas fa-search searchIcon" />
           </button>
         </form>
-        <div
-          className="searchHolder"
-          style={{ display: this.state.searchQuery ? "block" : "none" }}
-        >
-          {this.props.searchResults.slice(0, 5).map(result => {
-            return (
+        <div 
+          className="searchHolder" 
+          style={{ display: this.state.searchQuery ? 'block' : 'none' }}>
+          {this.props.searchResults.slice(0, 5)
+            .map(result => 
               <SearchSuggestion
                 name={result.name}
                 selectResult={this.props.selectResult}
                 key={result.id}
               />
-            );
-          })}
-        </div>
+            )}
+        </div>  
       </section>
     );
   }

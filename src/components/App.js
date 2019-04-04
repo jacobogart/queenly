@@ -2,7 +2,9 @@ import React from "react";
 import NavBar from "./NavBar";
 import search from "../helpers.js";
 import SplashPage from "./SplashPage";
-import Card from "./Card";
+import Card from './Card';
+import SearchResults from './SearchResults'
+
 // * CSS imports
 import "../css/App.css";
 
@@ -85,8 +87,12 @@ class App extends React.Component {
               selectResult={this.selectResult}
               searchResults={this.state.searchResults}
             />
+            <SearchResults 
+              searchResults={this.state.searchResults} 
+            />
+            {card}
           </article>
-          {card}
+          
         </section>
         <div className="appBackground" />
       </div>
