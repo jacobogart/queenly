@@ -40,14 +40,13 @@ class SearchBar extends Component {
           className="searchHolder" 
           style={{ display: this.state.searchQuery ? 'block' : 'none' }}>
           {this.props.searchResults.slice(0, 5)
-            .map(result => {
-              return <SearchSuggestion
+            .map(result => 
+              <SearchSuggestion
                 name={result.name}
                 selectResult={this.props.selectResult}
                 key={result.id}
               />
-            })
-            }
+            )}
         </div>  
       </section>
     );
