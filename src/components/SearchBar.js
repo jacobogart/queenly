@@ -19,6 +19,7 @@ class SearchBar extends Component {
 
   findResults = (e) => {
     e.preventDefault();
+    this.props.toggleResults();
   }
 
   render() {

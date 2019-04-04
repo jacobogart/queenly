@@ -15,8 +15,10 @@ class App extends React.Component {
       searchResults: [],
       showCard: false,
       currentResult: null,
+      showResults: false,
       showSplash: true,
       cardComponent: null
+
     };
   }
 
@@ -40,8 +42,8 @@ class App extends React.Component {
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   };
+
   selectResult = resultName => {
-    console.log(resultName);
     if (this.state.showSplash) {
       this.toggleCard();
     }
@@ -53,13 +55,29 @@ class App extends React.Component {
   };
 
   toggleCard = () => {
-    // let toggleSwitch = this.state.showCard ? false : true;
     this.setState({
       showCard: !this.state.showCard
     });
   };
 
+  toggleResults = () => {
+    this.setState({
+      showResults: !this.showResults
+    })
+  }
+
   render() {
+    let searchResults;
+    
+    let searchResultsPage = 
+      <SearchResults 
+        searchResults={this.state.searchResults} 
+      />
+
+    this.state.showResults
+      ? searchResults = searchResultsPage
+      : searchResults = null;
+
     let card = null;
     let cardComponent = (
       <Card
@@ -69,7 +87,9 @@ class App extends React.Component {
         queens={this.state.queens}
       />
     );
+    
     this.state.showCard ? (card = cardComponent) : (card = null);
+
     return (
       <div>
         <header className="navBar">
@@ -83,14 +103,13 @@ class App extends React.Component {
         <section className="App">
           <article className="mainContent">
             <SplashPage
+              toggleResults={this.toggleResults}
               updateResults={this.updateResults}
               selectResult={this.selectResult}
               searchResults={this.state.searchResults}
             />
-            <SearchResults 
-              searchResults={this.state.searchResults} 
-            />
             {card}
+            {searchResults}
           </article>
           
         </section>

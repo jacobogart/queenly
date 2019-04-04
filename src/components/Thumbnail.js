@@ -14,7 +14,9 @@ export default class Thumbnail extends Component {
   render() {
     return (
       <figure className="Thumbnail">
-        <img src={this.props.imgURL}/>
+        <img 
+          className="ThumbnailImg"
+          src={this.props.imgURL}/>
         <figcaption>{this.props.name}</figcaption> 
       </figure>
     )
