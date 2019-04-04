@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import search from "../helpers.js";
 import SplashPage from "./SplashPage";
-import Card from './Card';
+import Card from "./Card";
 // * CSS imports
 import "../css/App.css";
 
@@ -17,22 +17,24 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars")
+    fetch(
+      "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
+    )
       .then(response => response.json())
       .then(data => this.setState({ bars: data.bars }))
       .catch(err => console.log(err));
-    fetch("https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens")
+    fetch(
+      "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens"
+    )
       .then(response => response.json())
       .then(data => this.setState({ queens: data.queens }))
       .catch(err => console.log(err));
-  };
+  }
 
   updateResults = query => {
-    this.setState(
-      {
-        searchResults: search(query, this.state.bars, this.state.queens)
-      }
-    );
+    this.setState({
+      searchResults: search(query, this.state.bars, this.state.queens)
+    });
   };
   selectResult = resultName => {
     this.toggleCard();
@@ -63,7 +65,12 @@ class App extends React.Component {
     return (
       <div>
         <header className="navBar">
-          <NavBar />
+          <NavBar
+            searchBarDisplay={this.state.showCard}
+            updateResults={this.updateResults}
+            selectResult={this.selectResult}
+            searchResults={this.state.searchResults}
+          />
         </header>
         <section className="App">
           <article className="mainContent">
