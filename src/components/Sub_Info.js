@@ -12,7 +12,7 @@ export default class Sub_Info extends Component {
   render() {
     return (
       <article className="Sub-Info">
-        <p>Sub_Info</p>
+        <img src="" alt=""/>
       </article>
     )
   }
