@@ -6,4 +6,6 @@
 
 .SplashPage h1 {
   margin: 1rem;
+  color: lightgrey;
+  text-shadow: #5d477f 2px 2px 3px;
 }
