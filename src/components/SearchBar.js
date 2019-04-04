@@ -18,7 +18,6 @@ class SearchBar extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <section className="searchBarContainer">
         <form className="SearchBar">

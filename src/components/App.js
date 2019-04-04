@@ -12,7 +12,9 @@ class App extends React.Component {
     this.state = {
       searchResults: [],
       showCard: false,
-      currentResult: null
+      currentResult: null,
+      showSplash: true,
+      cardComponent: null
     };
   }
 
@@ -37,17 +39,21 @@ class App extends React.Component {
     });
   };
   selectResult = resultName => {
-    this.toggleCard();
+    console.log(resultName);
+    if (this.state.showSplash) {
+      this.toggleCard();
+    }
     this.setState({
-      currentResult: resultName
+      currentResult: resultName,
+      showSplash: false,
+      cardData: search(resultName, this.state.bars, this.state.queens)[0]
     });
   };
 
   toggleCard = () => {
-    let toggleSwitch = this.state.showCard ? false : true;
-    console.log("Switch", toggleSwitch);
+    // let toggleSwitch = this.state.showCard ? false : true;
     this.setState({
-      showCard: toggleSwitch
+      showCard: !this.state.showCard
     });
   };
 
@@ -55,7 +61,7 @@ class App extends React.Component {
     let card = null;
     let cardComponent = (
       <Card
-        result={this.state.currentResult}
+        cardData={this.state.cardData}
         toggle={this.toggleCard}
         bars={this.state.bars}
         queens={this.state.queens}

@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import search from "../helpers.js";
 
 // * Component imports
-import Show_Main from './Show_Main.js';
-import Queen_Main from './Queen_Main.js';
-import Bar_Main from './Bar_Main.js';
-import Sub_Info from './Sub_Info.js';
-import Gallery from './Gallery.js';
+import Show_Main from "./Show_Main.js";
+import Queen_Main from "./Queen_Main.js";
+import Bar_Main from "./Bar_Main.js";
+import Sub_Info from "./Sub_Info.js";
+import Gallery from "./Gallery.js";
 // * CSS imports
-import '../css/Card.css';
+import "../css/Card.css";
 
 export default class Card extends Component {
   constructor(props) {
@@ -16,17 +16,14 @@ export default class Card extends Component {
 
     this.state = {
       showCard: false,
-      cardType: ["Bar", "Show", "Queen"],
-      cardData: search(props.result, props.bars, props.queens)[0]
+      cardType: ["Bar", "Show", "Queen"]
     };
   }
 
-  
-
   render() {
-    const cardData = this.state.cardData
+    const cardData = this.props.cardData;
     const { id } = cardData;
-    let mainInfo; 
+    let mainInfo;
 
     if (id < 1000) {
       mainInfo = <Queen_Main cardData={cardData} />;
@@ -38,12 +35,13 @@ export default class Card extends Component {
 
     return (
       <section className="Card">
-          <button className="toggle-close" 
-            onClick={this.props.toggle}>X</button>
-          {mainInfo}
-          <Sub_Info cardData={cardData} />
-          <Gallery cardData={cardData} />
+        <button className="toggle-close" onClick={this.props.toggle}>
+          X
+        </button>
+        {mainInfo}
+        <Sub_Info cardData={cardData} />
+        <Gallery cardData={cardData} />
       </section>
-    )
+    );
   }
 }

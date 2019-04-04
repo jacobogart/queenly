@@ -4,7 +4,6 @@ import "../css/SearchSuggestion.css";
 class SearchSuggestion extends Component {
   constructor(props) {
     super(props);
-    // this.setResult = this.setResult.bind(this);
   }
 
   setResult = e => {
