@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import search from "../helpers.js";
 import SplashPage from "./SplashPage";
-import Card from './Card';
+import Card from "./Card";
 // * CSS imports
 import "../css/App.css";
 
@@ -12,40 +12,48 @@ class App extends React.Component {
     this.state = {
       searchResults: [],
       showCard: false,
-      currentResult: null
+      currentResult: null,
+      showSplash: true,
+      cardComponent: null
     };
   }
 
   componentDidMount() {
-    fetch("https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars")
+    fetch(
+      "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
+    )
       .then(response => response.json())
       .then(data => this.setState({ bars: data.bars }))
       .catch(err => console.log(err));
-    fetch("https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens")
+    fetch(
+      "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens"
+    )
       .then(response => response.json())
       .then(data => this.setState({ queens: data.queens }))
       .catch(err => console.log(err));
-  };
+  }
 
   updateResults = query => {
-    this.setState(
-      {
-        searchResults: search(query, this.state.bars, this.state.queens)
-      }
-    );
+    this.setState({
+      searchResults: search(query, this.state.bars, this.state.queens)
+    });
   };
   selectResult = resultName => {
-    this.toggleCard();
+    console.log(resultName);
+    if (this.state.showSplash) {
+      this.toggleCard();
+    }
     this.setState({
-      currentResult: resultName
+      currentResult: resultName,
+      showSplash: false,
+      cardData: search(resultName, this.state.bars, this.state.queens)[0]
     });
   };
 
   toggleCard = () => {
-    let toggleSwitch = this.state.showCard ? false : true;
-    console.log("Switch", toggleSwitch);
+    // let toggleSwitch = this.state.showCard ? false : true;
     this.setState({
-      showCard: toggleSwitch
+      showCard: !this.state.showCard
     });
   };
 
@@ -53,7 +61,7 @@ class App extends React.Component {
     let card = null;
     let cardComponent = (
       <Card
-        result={this.state.currentResult}
+        cardData={this.state.cardData}
         toggle={this.toggleCard}
         bars={this.state.bars}
         queens={this.state.queens}
@@ -63,7 +71,12 @@ class App extends React.Component {
     return (
       <div>
         <header className="navBar">
-          <NavBar />
+          <NavBar
+            searchBarDisplay={this.state.showCard}
+            updateResults={this.updateResults}
+            selectResult={this.selectResult}
+            searchResults={this.state.searchResults}
+          />
         </header>
         <section className="App">
           <article className="mainContent">
