@@ -1,5 +1,6 @@
 p {
   font-family: sans-serif;
   font-size: 20px;
-  color: black 
+  color: black;
+  text-align: left; 
 }

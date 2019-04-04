@@ -11,7 +11,7 @@ class SearchBar extends Component {
   }
 
   handleChange = (e) => {
-    this.props.methods[0](e.target.value);
+    this.props.updateResults(e.target.value);
     this.setState({
       searchQuery: e.target.value
     });
@@ -39,7 +39,7 @@ class SearchBar extends Component {
             .map(result => {
               return <SearchSuggestion
                 name={result.name}
-                method={this.props.methods[1]}
+                selectResult={this.props.selectResult}
                 key={result.id}
               />
             })

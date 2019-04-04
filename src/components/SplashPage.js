@@ -7,7 +7,8 @@ const SplashPage = (props) => {
     <section className="SplashPage">
       <h1>Queenly</h1>
       <SearchBar
-        methods={props.methods}
+        updateResults={props.updateResults}
+        selectResult={props.selectResult}
         searchResults={props.searchResults}
       />
     </section>
