@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpashPage should render correctly. 1`] = `
+<section
+  className="SplashPage"
+>
+  <h1>
+    Queenly
+  </h1>
+  <SearchBar />
+</section>
+`;
