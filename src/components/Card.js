@@ -21,8 +21,6 @@ export default class Card extends Component {
     };
   }
 
-  
-
   render() {
     const cardData = this.state.cardData
     const { id } = cardData;
