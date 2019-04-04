@@ -45,9 +45,10 @@ class App extends React.Component {
         </header>
         <section className="App">
           <article className="mainContent">
-            <SplashPage 
-              methods={[this.updateResults, this.selectResult]}
-              searchResults={this.state.searchResults} 
+            <SplashPage
+              updateResults={this.updateResults}
+              selectResult={this.selectResult}
+              searchResults={this.state.searchResults}
             />
           </article>
           {card}
