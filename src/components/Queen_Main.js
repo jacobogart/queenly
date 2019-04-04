@@ -13,9 +13,9 @@ export default class Queen_Main extends Component {
     let { name } = this.props.cardData;
 
     return (
-      <main className="Queen-Main">
+      <main className="Queen-Main Main_Info">
         <p>Queen {name}</p>
       </main>
-    )
+    );
   }
 }

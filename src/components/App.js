@@ -26,16 +26,28 @@ class App extends React.Component {
   };
   selectResult = resultName => {
     // console.log("id", target);
+    this.toggleCard();
     this.setState({
-      showCard: true,
       currentResult: resultName   
     });
   };
 
+  toggleCard = () => {
+    let toggleSwitch = 
+      this.state.showCard ? false : true;
+    console.log("Switch", toggleSwitch)
+    this.setState({
+      showCard: toggleSwitch
+    })
+  }
+
   render() {
     let card = null;
+    let cardComponent = 
+      <Card result={this.state.currentResult}
+        toggle={this.toggleCard} />
     this.state.showCard
-     ? card = <Card result={this.state.currentResult} />
+     ? card = cardComponent
      : card = null;
     // ? console.log(this.state);
     return (

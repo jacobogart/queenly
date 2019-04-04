@@ -1,0 +1,11 @@
+/* Testing Purposes */
+.Main_Info {
+  /* border: solid lime 3px; */
+}
+/* ================ */
+.Main_Info {
+  background-color: #2e5658;
+  border-radius: 20px 0 0 20px;
+  padding: 25px;
+  box-shadow: #202828 3px 3px 2px;
+}

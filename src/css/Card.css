@@ -1,3 +1,51 @@
+/* Testing Purpose */
 .Card {
-  background-color: skyblue;
+  /* border: yellow solid 5px; */
+}
+/* ==============  */
+.Card {
+  background-color: #202828;
+  box-shadow: #2e5657 5px 5px 5px;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 10;
+  top: -110px;
+  left: -30%;
+  height: 80%;
+  width: 150%;
+  padding: 25px;
+  display: grid;
+  grid-template-areas: "Main Sub" "Gall Gall";
+  grid-row-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+.toggle-close {
+  position: absolute;
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+  font-size: 25px;
+  right: 40px;
+  top: 40px;
+  background-color: lightgrey;
+  color: #202828;
+  border: 2px inset #2028289c;
+}
+
+.Card p {
+  color: lightgrey;
+}
+
+.Main_Info {
+  grid-area: Main;
+}
+
+.Sub_Info {
+  grid-area: Sub;
+}
+
+.Gallery {
+  grid-area: Gall;
 }
