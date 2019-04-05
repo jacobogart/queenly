@@ -1,3 +1,4 @@
+/* font size is reaching in and modifying search results */
 .SplashPage {
   font-family: "Lobster";
   font-size: 86px;
@@ -8,4 +9,10 @@
   margin: 1rem;
   color: lightgrey;
   text-shadow: #5d477f 2px 2px 3px;
+}
+
+.SplashPage .searchHolder {
+  margin: -8px 38px 0 43px;
+  padding: 1px 5px;
+  width: 483px;
 }
