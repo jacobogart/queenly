@@ -1,19 +1,39 @@
 .NavBar {
   align-items: center;
   display: flex;
+  height: 50px;
   justify-content: space-between;
   margin: 0 auto;
   padding: 0.5rem;
   width: 95%;
+  border: 1px solid blue;
+  overflow: hidden;
+}
+
+.NavBar .searchBarContainer {
+  border: 1px solid orange;
+  background-color: pink;
+  display: flex;
+  z-index: 9;
+  height: 500%;
+  margin-top: 210px;
+}
+
+.NavBar .searchHolder {
+  position: absolute;
+  z-index: 10;
+  width: 533px;
+  margin-top: 40px;
+  overflow: auto;
+}
+
+.searchHolder {
+  width: 500px;
 }
 
 i {
   color: lightgrey;
 }
-
-/* .fa-bars:hover {
-  color: white;
-} */
 
 i:hover {
   color: white;

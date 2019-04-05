@@ -11,7 +11,11 @@ class SearchSuggestion extends Component {
   };
 
   render() {
-    return <p onClick={e => this.setResult(e)}>{this.props.name}</p>;
+    return (
+      <div className="SuggestionsContainer">
+        <p onClick={e => this.setResult(e)}>{this.props.name}</p>
+      </div>
+    );
   }
 }
 
