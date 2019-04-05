@@ -19,7 +19,7 @@ export default class Bar_Main extends Component {
       <main className="Bar-Main Main_Info">
         <article className="Content">
           <h2>{ name }</h2>
-          <img className="bar-img" src={ imageURL } alt="image of bar" />
+          <img className="bar-img" src={ imageURL } alt={"Image of " + { name }} />
           <p>
             <img className="social-icon phone-icon" src={phoneIcon} />
             {phone}
