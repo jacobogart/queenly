@@ -1,12 +1,8 @@
 .searchBarContainer {
-  border: 1px solid red;
-  /* display: flex; */
-  /* position: fixed; */
   margin: 0 auto;
   padding: 0.5rem;
   width: 600px;
   z-index: 1;
-  /* flex-direction: column; */
 }
 
 .SearchBar {

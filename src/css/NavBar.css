@@ -6,13 +6,10 @@
   margin: 0 auto;
   padding: 0.5rem;
   width: 95%;
-  border: 1px solid blue;
   overflow: hidden;
 }
 
 .NavBar .searchBarContainer {
-  border: 1px solid orange;
-  background-color: pink;
   display: flex;
   z-index: 9;
   height: 500%;
