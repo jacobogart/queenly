@@ -9,3 +9,8 @@
   padding: 25px;
   box-shadow: #202828 3px 3px 2px;
 }
+.Sub-Info img {
+  border-radius: 50%;
+  border: 5px ridge white;
+  margin-top: 40px;
+}

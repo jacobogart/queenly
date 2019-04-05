@@ -14,6 +14,11 @@ export default class Sub_Info extends Component {
     let asset;
     if(this.props.cardType === "Bar") {
       asset = this.props.cardData.map;
+    } else if (this.props.cardType === "Queen") {
+      asset = `<img className="queen-img" 
+        src=${this.props.cardData.imageURL} alt=${
+        this.props.cardData.name
+      }/>`;
     } else {
       asset = `<img src=${this.props.cardData.imageURL} alt=${this.props.cardData.name}/>`;
     }
