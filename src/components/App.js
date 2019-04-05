@@ -2,8 +2,8 @@ import React from "react";
 import NavBar from "./NavBar";
 import search from "../helpers.js";
 import SplashPage from "./SplashPage";
-import Card from './Card';
-import SearchResults from './SearchResults'
+import Card from "./Card";
+import SearchResults from "./SearchResults";
 
 // * CSS imports
 import "../css/App.css";
@@ -17,8 +17,8 @@ class App extends React.Component {
       currentResult: null,
       showResults: false,
       showSplash: true,
-      cardComponent: null
-
+      cardComponent: null,
+      showSuggestions: false
     };
   }
 
@@ -39,6 +39,7 @@ class App extends React.Component {
 
   updateResults = query => {
     this.setState({
+      showSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   };
@@ -47,10 +48,12 @@ class App extends React.Component {
     if (this.state.showSplash) {
       this.toggleCard();
     }
+
     this.setState({
       currentResult: resultName,
       showSplash: false,
-      cardData: search(resultName, this.state.bars, this.state.queens)[0]
+      cardData: search(resultName, this.state.bars, this.state.queens)[0],
+      showSuggestions: false
     });
   };
 
@@ -63,20 +66,19 @@ class App extends React.Component {
   toggleResults = () => {
     this.setState({
       showResults: !this.showResults
-    })
-  }
+    });
+  };
 
   render() {
     let searchResults;
-    
-    let searchResultsPage = 
-      <SearchResults 
-        searchResults={this.state.searchResults} 
-      />
+
+    let searchResultsPage = (
+      <SearchResults searchResults={this.state.searchResults} />
+    );
 
     this.state.showResults
-      ? searchResults = searchResultsPage
-      : searchResults = null;
+      ? (searchResults = searchResultsPage)
+      : (searchResults = null);
 
     let card = null;
     let cardComponent = (
@@ -87,7 +89,7 @@ class App extends React.Component {
         queens={this.state.queens}
       />
     );
-    
+
     this.state.showCard ? (card = cardComponent) : (card = null);
 
     return (
@@ -98,6 +100,7 @@ class App extends React.Component {
             updateResults={this.updateResults}
             selectResult={this.selectResult}
             searchResults={this.state.searchResults}
+            showSuggestions={this.state.showSuggestions}
           />
         </header>
         <section className="App">
@@ -107,11 +110,11 @@ class App extends React.Component {
               updateResults={this.updateResults}
               selectResult={this.selectResult}
               searchResults={this.state.searchResults}
+              showSuggestions={this.state.showSuggestions}
             />
             {card}
             {searchResults}
           </article>
-          
         </section>
         <div className="appBackground" />
       </div>

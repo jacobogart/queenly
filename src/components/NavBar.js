@@ -18,6 +18,7 @@ class NavBar extends React.Component {
             updateResults={this.props.updateResults}
             selectResult={this.props.selectResult}
             searchResults={this.props.searchResults}
+            showSuggestions={this.props.showSuggestions}
           />
           <Favorites />
         </nav>

@@ -11,6 +11,7 @@ const SplashPage = props => {
         updateResults={props.updateResults}
         selectResult={props.selectResult}
         searchResults={props.searchResults}
+        showSuggestions={props.showSuggestions}
       />
     </section>
   );
