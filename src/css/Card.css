@@ -9,7 +9,7 @@
   border-radius: 20px;
   position: absolute;
   z-index: 10;
-  top: -110px;
+  top: -130px;
   left: -30%;
   height: 80%;
   width: 150%;
@@ -18,7 +18,7 @@
   grid-template-areas: "Main Sub" "Gall Gall";
   grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 450px 1fr;
 }
 
 .toggle-close {
@@ -44,6 +44,15 @@
 
 .Sub_Info {
   grid-area: Sub;
+}
+
+iframe {
+  border: 0;
+  position: relative;
+  top: 50px;
+  border-radius: 20px;
+  background-color: lightgrey;
+  padding: 10px;
 }
 
 .Gallery {

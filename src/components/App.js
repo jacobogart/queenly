@@ -19,6 +19,8 @@ class App extends React.Component {
       showSplash: true,
       cardComponent: null,
       showSuggestions: false
+      bars: [{shows: []}],
+      queens: []
     };
   }
 

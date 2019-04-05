@@ -16,7 +16,19 @@ export default class Card extends Component {
 
     this.state = {
       showCard: false,
-      cardType: ["Bar", "Show", "Queen"]
+      cardType: ["Bar", "Show", "Queen"],
+      icons: {
+        webIcon:
+          "http://peopleforpeople.org/wp-content/uploads/2018/07/internet-icon-54267.png",
+        phoneIcon:
+          "https://freeiconshop.com/wp-content/uploads/edd/phone-flat.png",
+        instaIcon:
+          "https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=300",
+        facebookIcon:
+          "http://www.templetonconstruction.co.nz/wp-content/uploads/2016/03/facebook-icon-preview-1.png",
+        twitterIcon:
+          "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/social-twitter-icon.png"
+      }
     };
   }
 
@@ -26,14 +38,29 @@ export default class Card extends Component {
     let mainInfo, cardType; 
 
     if (id < 1000) {
-      mainInfo = <Queen_Main cardData={cardData} />;
+      mainInfo = 
+        <Queen_Main cardData={cardData}
+        icons={this.state.icons} />;
       cardType = "Queen"
+      console.log("MainInf", mainInfo)
+      console.log("props", this.props)
+      console.log("cardData", cardData)
     } else if (id.toString().slice(2) > 0) {
-      mainInfo = <Show_Main cardData={cardData} />;
+      mainInfo = 
+        <Show_Main cardData={cardData} 
+        icons={this.state.icons} />;
       cardType = "Show"
+      console.log("MainInf", mainInfo);
+      console.log("props", this.props);
+      console.log("cardData", cardData);
     } else {
-      mainInfo = <Bar_Main cardData={cardData} />;
+      mainInfo = 
+        <Bar_Main cardData={cardData}
+        icons={this.state.icons} />;
       cardType = "Bar"
+      console.log("MainInf", mainInfo);
+      console.log("props", this.props);
+      console.log("cardData", cardData);
     }
 
     return (
