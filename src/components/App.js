@@ -48,7 +48,7 @@ class App extends React.Component {
   }
 
   selectResult = resultName => {
-    if (this.state.showSplash) {
+    if (this.state.showSplash || this.state.showResults) {
       this.toggleCard();
     }
 
@@ -102,7 +102,9 @@ class App extends React.Component {
         toggleSplash={this.toggleSplash}
         searchResults={this.state.searchResults}
         toggleResults={this.toggleResults}
+        selectResult={this.selectResult}
       />
+    );
 
     let splashPageComponent =
       <SplashPage
