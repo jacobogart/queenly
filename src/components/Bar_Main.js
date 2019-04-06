@@ -20,25 +20,25 @@ export default class Bar_Main extends Component {
         <article className="Content">
           <h2>{ name }</h2>
           <img className="bar-img" src={ imageURL } alt={"Image of " + { name }} />
-          <p>
-            <img className="social-icon phone-icon" src={phoneIcon} />
-            {phone}
+          <p className="phone">
+            { phoneIcon }
+            { phone }
           </p>
           <h4>Notes:</h4>
           <p className="notes">{ notes }</p>
         </article>
         <aside className="social-links">
           <a href={ website }>
-            <img className="social-icon web-icon" src={ webIcon } />
+            { webIcon }
           </a>
           <a href={ instagram }>
-            <img className="social-icon insta-icon" src={ instaIcon } />
+            { instaIcon }
           </a>
           <a href={ facebook }>
-            <img className="social-icon fb-icon" src={ facebookIcon } />
+            { facebookIcon }
           </a>
           <a href={ twitter }>
-            <img className="social-icon twitter-icon" src={ twitterIcon } />
+            { twitterIcon }
           </a>
         </aside>
       </main>

@@ -18,16 +18,12 @@ export default class Card extends Component {
       showCard: false,
       cardType: ["Bar", "Show", "Queen"],
       icons: {
-        webIcon:
-          "http://peopleforpeople.org/wp-content/uploads/2018/07/internet-icon-54267.png",
-        phoneIcon:
-          "https://freeiconshop.com/wp-content/uploads/edd/phone-flat.png",
-        instaIcon:
-          "https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=300",
-        facebookIcon:
-          "http://www.templetonconstruction.co.nz/wp-content/uploads/2016/03/facebook-icon-preview-1.png",
-        twitterIcon:
-          "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/social-twitter-icon.png"
+        webIcon: <i className="fas fa-globe" />,
+        phoneIcon: <i className="fas fa-phone-square" />,
+        instaIcon: <i className="fab fa-instagram" />,
+        facebookIcon: <i className="fab fa-facebook-square" />,
+        twitterIcon: <i className="fab fa-twitter-square" />,
+        close: <i className="fas fa-times-circle" />
       }
     };
   }
@@ -66,7 +62,7 @@ export default class Card extends Component {
     return (
       <section className="Card">
           <button className="toggle-close" 
-            onClick={this.props.toggleSplash}>X</button>
+            onClick={this.props.toggleSplash}>{this.state.icons.close}</button>
           {mainInfo}
           <Sub_Info 
             cardData={cardData}

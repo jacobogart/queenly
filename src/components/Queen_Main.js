@@ -24,13 +24,13 @@ export default class Queen_Main extends Component {
         </article>
         <aside className="queen-links social-links">
           <a href={instagram}>
-            <img className="social-icon insta-icon" src={instaIcon} />
+            {instaIcon}
           </a>
           <a href={facebook}>
-            <img className="social-icon fb-icon" src={facebookIcon} />
+            {facebookIcon}
           </a>
           <a href={twitter}>
-            <img className="social-icon twitter-icon" src={twitterIcon} />
+            {twitterIcon}
           </a>
         </aside>
       </main>
