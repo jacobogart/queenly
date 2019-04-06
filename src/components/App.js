@@ -13,12 +13,12 @@ class App extends React.Component {
     super();
     this.state = {
       searchResults: [],
-      showCard: false,
       currentResult: null,
+      showCard: false,
       showResults: false,
       showSplash: true,
       cardComponent: null,
-      showSuggestions: false
+      showSuggestions: false,
       bars: [{shows: []}],
       queens: []
     };
@@ -31,6 +31,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => this.setState({ bars: data.bars }))
       .catch(err => console.log(err));
+
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens"
     )
@@ -44,7 +45,7 @@ class App extends React.Component {
       showSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
-  };
+  }
 
   selectResult = resultName => {
     if (this.state.showSplash) {
@@ -57,42 +58,66 @@ class App extends React.Component {
       cardData: search(resultName, this.state.bars, this.state.queens)[0],
       showSuggestions: false
     });
-  };
+  }
 
   toggleCard = () => {
     this.setState({
-      showCard: !this.state.showCard
+      showCard: true,
+      showResults: false,
+      showSplash: false
     });
-  };
+  }
 
   toggleResults = () => {
     this.setState({
-      showResults: !this.showResults
+      showCard: false,
+      showResults: true,
+      showSplash: false
     });
-  };
+  }
+
+  toggleSplash = () => {
+    this.setState({
+      showCard: false,
+      showResults: false,
+      showSplash: true
+    });
+  }
 
   render() {
-    let searchResults;
+    let card;
 
-    let searchResultsPage = (
-      <SearchResults searchResults={this.state.searchResults} />
-    );
-
-    this.state.showResults
-      ? (searchResults = searchResultsPage)
-      : (searchResults = null);
-
-    let card = null;
-    let cardComponent = (
+    let cardComponent = 
       <Card
         cardData={this.state.cardData}
-        toggle={this.toggleCard}
+        toggleCard={this.toggleCard}
+        toggleSplash={this.toggleSplash}
         bars={this.state.bars}
         queens={this.state.queens}
       />
-    );
 
-    this.state.showCard ? (card = cardComponent) : (card = null);
+    let searchResultsComponent = 
+      <SearchResults 
+        searchResults={this.state.searchResults}
+        toggleResults={this.toggleResults}
+      />
+
+    let splashPageComponent =
+      <SplashPage
+        toggleResults={this.toggleResults}
+        updateResults={this.updateResults}
+        selectResult={this.selectResult}
+        searchResults={this.state.searchResults}
+        showSuggestions={this.state.showSuggestions}
+      />
+
+    if (this.state.showSplash) {
+      card = splashPageComponent
+    } else if (this.state.showResults) {
+      card = searchResultsComponent
+    } else {
+      card = cardComponent
+    }
 
     return (
       <div>
@@ -107,15 +132,7 @@ class App extends React.Component {
         </header>
         <section className="App">
           <article className="mainContent">
-            <SplashPage
-              toggleResults={this.toggleResults}
-              updateResults={this.updateResults}
-              selectResult={this.selectResult}
-              searchResults={this.state.searchResults}
-              showSuggestions={this.state.showSuggestions}
-            />
             {card}
-            {searchResults}
           </article>
         </section>
         <div className="appBackground" />

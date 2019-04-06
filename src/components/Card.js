@@ -66,7 +66,7 @@ export default class Card extends Component {
     return (
       <section className="Card">
           <button className="toggle-close" 
-            onClick={this.props.toggle}>X</button>
+            onClick={this.props.toggleSplash}>X</button>
           {mainInfo}
           <Sub_Info 
             cardData={cardData}
