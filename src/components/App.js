@@ -72,7 +72,8 @@ class App extends React.Component {
     this.setState({
       showCard: false,
       showResults: true,
-      showSplash: false
+      showSplash: false,
+      showSuggestions: false
     });
   }
 
@@ -98,6 +99,7 @@ class App extends React.Component {
 
     let searchResultsComponent = 
       <SearchResults 
+        toggleSplash={this.toggleSplash}
         searchResults={this.state.searchResults}
         toggleResults={this.toggleResults}
       />
