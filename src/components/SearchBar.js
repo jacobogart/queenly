@@ -23,6 +23,8 @@ class SearchBar extends Component {
   };
 
   render() {
+    let searchSuggestion
+
     return (
       <section className="searchBarContainer">
         <form onSubmit={this.findResults} className="SearchBar">

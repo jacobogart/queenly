@@ -10,9 +10,5 @@
   width: 150%;
   padding: 25px;
   display: flex;
-}
-
-.ThumbnailImg {
-  width: 100px;
-  border-radius: 50%;
+  flex-wrap: wrap;
 }

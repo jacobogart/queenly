@@ -72,7 +72,8 @@ class App extends React.Component {
     this.setState({
       showCard: false,
       showResults: true,
-      showSplash: false
+      showSplash: false,
+      showSuggestions: false
     });
   }
 
@@ -96,8 +97,9 @@ class App extends React.Component {
         queens={this.state.queens}
       />
 
-    let searchResultsComponent = (
-      <SearchResults
+    let searchResultsComponent = 
+      <SearchResults 
+        toggleSplash={this.toggleSplash}
         searchResults={this.state.searchResults}
         toggleResults={this.toggleResults}
         selectResult={this.selectResult}
@@ -125,6 +127,8 @@ class App extends React.Component {
       <div>
         <header className="navBar">
           <NavBar
+            showSplash={this.state.showSplash}
+            toggleResults={this.toggleResults}
             searchBarDisplay={this.state.showCard}
             updateResults={this.updateResults}
             selectResult={this.selectResult}
