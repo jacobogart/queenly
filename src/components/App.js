@@ -13,8 +13,8 @@ class App extends React.Component {
     super();
     this.state = {
       searchResults: [],
-      showCard: false,
       currentResult: null,
+      showCard: false,
       showResults: false,
       showSplash: true,
       cardComponent: null
@@ -41,7 +41,7 @@ class App extends React.Component {
     this.setState({
       searchResults: search(query, this.state.bars, this.state.queens)
     });
-  };
+  }
 
   selectResult = resultName => {
     if (this.state.showSplash) {
@@ -52,43 +52,77 @@ class App extends React.Component {
       showSplash: false,
       cardData: search(resultName, this.state.bars, this.state.queens)[0]
     });
-  };
+  }
 
   toggleCard = () => {
     this.setState({
-      showCard: !this.state.showCard
+      showCard: true,
+      showResults: false,
+      showSplash: false
     });
-  };
+  }
 
   toggleResults = () => {
     this.setState({
-      showResults: !this.showResults
-    })
+      showCard: false,
+      showResults: true,
+      showSplash: false
+    });
+  }
+
+  toggleSplash = () => {
+    this.setState({
+      showCard: false,
+      showResults: false,
+      showSplash: true
+    });
   }
 
   render() {
-    let searchResults;
-    
-    let searchResultsPage = 
-      <SearchResults 
-        searchResults={this.state.searchResults} 
-      />
+    let card;
 
-    this.state.showResults
-      ? searchResults = searchResultsPage
-      : searchResults = null;
-
-    let card = null;
-    let cardComponent = (
+    let cardComponent = 
       <Card
         cardData={this.state.cardData}
-        toggle={this.toggleCard}
+        toggleCard={this.toggleCard}
+        toggleSplash={this.toggleSplash}
         bars={this.state.bars}
         queens={this.state.queens}
       />
-    );
+
+    let searchResultsComponent = 
+      <SearchResults 
+        searchResults={this.state.searchResults}
+        toggleResults={this.toggleResults}
+      />
+
+    let splashPageComponent =
+      <SplashPage
+        toggleSplash={this.toggleResults}
+        updateResults={this.updateResults}
+        selectResult={this.selectResult}
+        searchResults={this.state.searchResults}
+      />
+
+    if (this.state.showSplash) {
+      card = splashPageComponent
+    } else if (this.state.showResults) {
+      card = searchResultsComponent
+    } else {
+      card = cardComponent
+    }
+
+    // this.state.showResults
+    //   ? searchResults = searchResultsPage
+    //   : searchResults = null;
     
-    this.state.showCard ? (card = cardComponent) : (card = null);
+    // this.state.showCard 
+    //   ? card = cardComponent
+    //   : card = null;
+
+    // this.state.showResults
+    //   ? splashPage = splashPageComponent
+    //   : splashPage = null;
 
     return (
       <div>
@@ -102,14 +136,7 @@ class App extends React.Component {
         </header>
         <section className="App">
           <article className="mainContent">
-            <SplashPage
-              toggleResults={this.toggleResults}
-              updateResults={this.updateResults}
-              selectResult={this.selectResult}
-              searchResults={this.state.searchResults}
-            />
             {card}
-            {searchResults}
           </article>
           
         </section>
