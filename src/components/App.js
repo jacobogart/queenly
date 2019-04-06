@@ -125,6 +125,8 @@ class App extends React.Component {
       <div>
         <header className="navBar">
           <NavBar
+            showSplash={this.state.showSplash}
+            toggleResults={this.toggleResults}
             searchBarDisplay={this.state.showCard}
             updateResults={this.updateResults}
             selectResult={this.selectResult}
