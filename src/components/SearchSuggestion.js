@@ -6,14 +6,14 @@ class SearchSuggestion extends Component {
     super(props);
   }
 
-  setResult = e => {
+  setResult = () => {
     this.props.selectResult(this.props.name);
   };
 
   render() {
     return (
       <div className="SuggestionsContainer">
-        <p onClick={e => this.setResult(e)}>{this.props.name}</p>
+        <p onClick={this.setResult}>{this.props.name}</p>
       </div>
     );
   }

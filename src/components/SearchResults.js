@@ -9,16 +9,18 @@ export default class SearchResults extends Component {
   }
 
   render() {
-    return(
+    return (
       <section className="searchResults">
         <h1>Search Results</h1>
-        {this.props.searchResults.map(result => 
-          <Thumbnail 
+        {this.props.searchResults.map(result => (
+          <Thumbnail
             imgURL={result.imageURL}
+            selectResult={this.props.selectResult}
             name={result.name}
-          /> )}
+          />
+        ))}
       </section>
-      )
+    );
 
   }
 }
