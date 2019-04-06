@@ -2,8 +2,8 @@ import React from "react";
 import NavBar from "./NavBar";
 import search from "../helpers.js";
 import SplashPage from "./SplashPage";
-import Card from './Card';
-import SearchResults from './SearchResults'
+import Card from "./Card";
+import SearchResults from "./SearchResults";
 
 // * CSS imports
 import "../css/App.css";
@@ -17,8 +17,10 @@ class App extends React.Component {
       showCard: false,
       showResults: false,
       showSplash: true,
-      cardComponent: null
-
+      cardComponent: null,
+      showSuggestions: false,
+      bars: [{shows: []}],
+      queens: []
     };
   }
 
@@ -29,6 +31,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => this.setState({ bars: data.bars }))
       .catch(err => console.log(err));
+
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens"
     )
@@ -39,6 +42,7 @@ class App extends React.Component {
 
   updateResults = query => {
     this.setState({
+      showSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   }
@@ -47,10 +51,12 @@ class App extends React.Component {
     if (this.state.showSplash) {
       this.toggleCard();
     }
+
     this.setState({
       currentResult: resultName,
       showSplash: false,
-      cardData: search(resultName, this.state.bars, this.state.queens)[0]
+      cardData: search(resultName, this.state.bars, this.state.queens)[0],
+      showSuggestions: false
     });
   }
 
@@ -98,10 +104,11 @@ class App extends React.Component {
 
     let splashPageComponent =
       <SplashPage
-        toggleSplash={this.toggleResults}
+        toggleResults={this.toggleResults}
         updateResults={this.updateResults}
         selectResult={this.selectResult}
         searchResults={this.state.searchResults}
+        showSuggestions={this.state.showSuggestions}
       />
 
     if (this.state.showSplash) {
@@ -112,18 +119,6 @@ class App extends React.Component {
       card = cardComponent
     }
 
-    // this.state.showResults
-    //   ? searchResults = searchResultsPage
-    //   : searchResults = null;
-    
-    // this.state.showCard 
-    //   ? card = cardComponent
-    //   : card = null;
-
-    // this.state.showResults
-    //   ? splashPage = splashPageComponent
-    //   : splashPage = null;
-
     return (
       <div>
         <header className="navBar">
@@ -132,13 +127,13 @@ class App extends React.Component {
             updateResults={this.updateResults}
             selectResult={this.selectResult}
             searchResults={this.state.searchResults}
+            showSuggestions={this.state.showSuggestions}
           />
         </header>
         <section className="App">
           <article className="mainContent">
             {card}
           </article>
-          
         </section>
         <div className="appBackground" />
       </div>
