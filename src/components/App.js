@@ -104,7 +104,6 @@ class App extends React.Component {
         toggleResults={this.toggleResults}
         selectResult={this.selectResult}
       />
-    );
 
     let splashPageComponent =
       <SplashPage

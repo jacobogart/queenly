@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import search from "../helpers.js";
 
 // * Component imports
 import Show_Main from "./Show_Main.js";
