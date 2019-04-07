@@ -13,8 +13,8 @@ class App extends React.Component {
     super();
     this.state = {
       searchResults: [],
-      showCard: false,
       currentResult: null,
+      showCard: false,
       showResults: false,
       showSplash: true,
       cardComponent: null,
@@ -24,6 +24,7 @@ class App extends React.Component {
     };
   }
 
+  //on mount collect data from remote servers
   componentDidMount() {
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
@@ -31,6 +32,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => this.setState({ bars: data.bars }))
       .catch(err => console.log(err));
+
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/queens"
     )
@@ -39,15 +41,20 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
+  //does App need to know if the suggestions bar is open or closed?
+  //can we confine that to the search bar and simply pass the data we need
+  //as props into the searchBar component?
   updateResults = query => {
     this.setState({
       showSuggestions: true,
+      //we have a component called SearchResults and a property on Apps state
+      //with the same name.
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   };
 
   selectResult = resultName => {
-    if (this.state.showSplash) {
+    if (this.state.showSplash || this.state.showResults) {
       this.toggleCard();
     }
 
@@ -61,43 +68,90 @@ class App extends React.Component {
 
   toggleCard = () => {
     this.setState({
-      showCard: !this.state.showCard
+      showCard: true,
+      showResults: false,
+      showSplash: false
     });
   };
 
-  toggleResults = () => {
+  // toggleResults = () => {
+  //   this.setState({
+  //     showCard: false,
+  //     showResults: true,
+  //     showSplash: false,
+  //     showSuggestions: false
+  //   });
+  // };
+
+  // -> SplashPage || SearchResults =X
+  // -> SplashPage -> SearchBar -> form onSubmit{this.findResults} -> findResults
+  displayAllSearchResults = () => {
     this.setState({
-      showResults: !this.showResults
+      showCard: false,
+      showResults: true,
+      showSplash: false,
+      showSuggestions: false
+    });
+  };
+
+  toggleSplash = () => {
+    this.setState({
+      showCard: false,
+      showResults: false,
+      showSplash: true
     });
   };
 
   render() {
-    let searchResults;
+    let card;
 
-    let searchResultsPage = (
-      <SearchResults searchResults={this.state.searchResults} />
-    );
-
-    this.state.showResults
-      ? (searchResults = searchResultsPage)
-      : (searchResults = null);
-
-    let card = null;
     let cardComponent = (
       <Card
         cardData={this.state.cardData}
-        toggle={this.toggleCard}
+        toggleCard={this.toggleCard}
+        toggleSplash={this.toggleSplash}
         bars={this.state.bars}
         queens={this.state.queens}
       />
     );
 
-    this.state.showCard ? (card = cardComponent) : (card = null);
+    let searchResultsComponent = (
+      <SearchResults
+        toggleSplash={this.toggleSplash}
+        searchResults={this.state.searchResults}
+        // there is no displayAllSearchResults || toggleResults used in this component
+        // displayAllSearchResults={this.displayAllSearchResults}
+        selectResult={this.selectResult}
+      />
+    );
+
+    let splashPageComponent = (
+      <SplashPage
+        displayAllSearchResults={this.displayAllSearchResults}
+        updateResults={this.updateResults}
+        selectResult={this.selectResult}
+        searchResults={this.state.searchResults}
+        showSuggestions={this.state.showSuggestions}
+      />
+    );
+
+    //this conditional is displaying what displays in the main content area of the
+    if (this.state.showSplash) {
+      card = splashPageComponent;
+    } else if (this.state.showResults) {
+      card = searchResultsComponent;
+    } else {
+      card = cardComponent;
+    }
 
     return (
       <div>
         <header className="navBar">
           <NavBar
+            //this can be passed down
+            showSplash={this.state.showSplash}
+            //
+            displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCard}
             updateResults={this.updateResults}
             selectResult={this.selectResult}
@@ -106,17 +160,7 @@ class App extends React.Component {
           />
         </header>
         <section className="App">
-          <article className="mainContent">
-            <SplashPage
-              toggleResults={this.toggleResults}
-              updateResults={this.updateResults}
-              selectResult={this.selectResult}
-              searchResults={this.state.searchResults}
-              showSuggestions={this.state.showSuggestions}
-            />
-            {card}
-            {searchResults}
-          </article>
+          <article className="mainContent">{card}</article>
         </section>
         <div className="appBackground" />
       </div>

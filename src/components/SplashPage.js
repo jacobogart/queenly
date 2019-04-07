@@ -7,7 +7,7 @@ const SplashPage = props => {
     <section className="SplashPage">
       <h1>Queenly</h1>
       <SearchBar
-        toggleResults={props.toggleResults}
+        displayAllSearchResults={props.displayAllSearchResults}
         updateResults={props.updateResults}
         selectResult={props.selectResult}
         searchResults={props.searchResults}

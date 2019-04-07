@@ -19,19 +19,21 @@ class SearchBar extends Component {
 
   findResults = e => {
     e.preventDefault();
-    this.props.toggleResults();
+    this.props.displayAllSearchResults();
   };
 
   render() {
     return (
       <section className="searchBarContainer">
         <form onSubmit={this.findResults} className="SearchBar">
+          {/* We cant click the submit button, we can only click the search results */}
           <input
             onKeyUp={this.handleChange}
             type="search"
             placeholder="Search..."
             className="searchTerm"
           />
+          {/* button isnt used currently */}
           <button type="submit" className="searchButton">
             <i className="fas fa-search searchIcon" />
           </button>

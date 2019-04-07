@@ -9,12 +9,12 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const navBarWithSearch = this.props.searchBarDisplay;
-    if (navBarWithSearch) {
+    if (!this.props.showSplash) {
       return (
         <nav className="NavBar">
           <Hamburger />
           <SearchBar
+            displayAllSearchResults={this.props.displayAllSearchResults}
             updateResults={this.props.updateResults}
             selectResult={this.props.selectResult}
             searchResults={this.props.searchResults}

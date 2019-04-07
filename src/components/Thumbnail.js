@@ -11,9 +11,16 @@ export default class Thumbnail extends Component {
     }
   }
 
+  setResult = () => {
+    this.props.selectResult(this.props.name);
+  };
+
   render() {
     return (
-      <figure className="Thumbnail">
+      <figure 
+        className="Thumbnail"
+        onClick={this.setResult}
+      >
         <img 
           className="ThumbnailImg"
           src={this.props.imgURL}/>
