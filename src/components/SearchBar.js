@@ -26,14 +26,13 @@ class SearchBar extends Component {
     return (
       <section className="searchBarContainer">
         <form onSubmit={this.findResults} className="SearchBar">
-          {/* We cant click the submit button, we can only click the search results */}
           <input
             onKeyUp={this.handleChange}
             type="search"
             placeholder="Search..."
             className="searchTerm"
           />
-          {/* button isnt used currently */}
+
           <button type="submit" className="searchButton">
             <i className="fas fa-search searchIcon" />
           </button>
