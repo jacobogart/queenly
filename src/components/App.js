@@ -93,7 +93,7 @@ class App extends React.Component {
         displaySplashPage={this.displaySplashPage}
         bars={this.state.bars}
         queens={this.state.queens}
-        selectResult={this.selectResult}
+        selectSearchResult={this.selectSearchResult}
       />
     );
     let searchResultsComponent = (

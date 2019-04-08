@@ -30,7 +30,7 @@ export default class Gallery extends Component {
         {galleryData.map(result =>
         <Thumbnail
             imgURL={result.imageURL}
-            selectResult={this.props.selectResult}
+            selectSearchResult={this.props.selectSearchResult}
             name={result.name}
             key={result.id} 
           />

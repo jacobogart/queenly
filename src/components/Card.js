@@ -71,7 +71,7 @@ export default class Card extends Component {
           <Gallery 
             cardData={cardData}
             cardType={cardType}
-            selectResult={this.props.selectResult}
+            selectSearchResult={this.props.selectSearchResult}
             bars={this.props.bars}
             queens={this.props.queens}
           />
