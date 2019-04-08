@@ -44,7 +44,8 @@ class App extends React.Component {
       displaySearchSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
-  };
+  }
+
 
   selectSearchResult = resultName => {
     if (this.state.showSplashPage || this.state.showAllResultsPage) {
@@ -57,7 +58,7 @@ class App extends React.Component {
       cardData: search(resultName, this.state.bars, this.state.queens)[0],
       displaySearchSuggestions: false
     });
-  };
+  }
 
   displayCard = () => {
     this.setState({
@@ -65,7 +66,7 @@ class App extends React.Component {
       showAllResultsPage: false,
       showSplashPage: false
     });
-  };
+  }
 
   displayAllSearchResults = () => {
     this.setState({
@@ -94,7 +95,6 @@ class App extends React.Component {
         bars={this.state.bars}
         queens={this.state.queens}
       />
-    );
 
     let searchResultsComponent = (
       <SearchResults
