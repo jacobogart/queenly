@@ -18,13 +18,11 @@ class App extends React.Component {
       displaySearchSuggestions: false,
       searchResults: [],
       currentResult: null,
-      // cardComponent: null,
       bars: [{ shows: [] }],
       queens: []
     };
   }
 
-  //on mount collect data from remote servers
   componentDidMount() {
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
@@ -41,9 +39,6 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
-  //does App need to know if the suggestions bar is open or closed?
-  //confine that to the search bar and pass the data needed
-  //as props into the searchBar component?
   updateSearchResults = query => {
     this.setState({
       displaySearchSuggestions: true,
@@ -64,7 +59,6 @@ class App extends React.Component {
     });
   };
 
-  //formerly toggleCard()
   displayCard = () => {
     this.setState({
       showCardPage: true,
@@ -73,9 +67,6 @@ class App extends React.Component {
     });
   };
 
-  // -> SplashPage || SearchResults =X
-  // -> SplashPage || NavBar -> SearchBar -> form onSubmit{this.findResults} -> findResults
-  // formerly toggleResults()
   displayAllSearchResults = () => {
     this.setState({
       showCardPage: false,
@@ -85,11 +76,9 @@ class App extends React.Component {
     });
   };
 
-  //formerly toggleSplash()
   displaySplashPage = () => {
     this.setState({
       showCardPage: false,
-      //no apparent difference having this true || false
       showAllResultsPage: true,
       showSplashPage: true
     });
@@ -101,8 +90,6 @@ class App extends React.Component {
     let cardComponent = (
       <Card
         cardData={this.state.cardData}
-        // not used in the component currently
-        // displayCard={this.displayCard}
         displaySplashPage={this.displaySplashPage}
         bars={this.state.bars}
         queens={this.state.queens}
@@ -113,8 +100,6 @@ class App extends React.Component {
       <SearchResults
         displaySplashPage={this.displaySplashPage}
         searchResults={this.state.searchResults}
-        // there is no displayAllSearchResults || toggleResults used in this component
-        // displayAllSearchResults={this.displayAllSearchResults}
         selectSearchResult={this.selectSearchResult}
       />
     );
@@ -129,7 +114,6 @@ class App extends React.Component {
       />
     );
 
-    //this conditional is displaying what displays in the main content area of the
     if (this.state.showSplashPage) {
       card = splashPageComponent;
     } else if (this.state.showAllResultsPage) {
@@ -142,7 +126,6 @@ class App extends React.Component {
       <div>
         <header className="navBar">
           <NavBar
-            //this can be passed down
             showSplashPage={this.state.showSplashPage}
             displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCardPage}
