@@ -15,10 +15,10 @@ class App extends React.Component {
       searchResults: [],
       currentResult: null,
       showCard: false,
-      showResults: false,
-      showSplash: true,
+      showAllResultsPage: false,
+      showSplashPage: true,
       cardComponent: null,
-      showSuggestions: false,
+      displaySearchSuggestions: false,
       bars: [{ shows: [] }],
       queens: []
     };
@@ -46,7 +46,7 @@ class App extends React.Component {
   //as props into the searchBar component?
   updateResults = query => {
     this.setState({
-      showSuggestions: true,
+      displaySearchSuggestions: true,
       //we have a component called SearchResults and a property on Apps state
       //with the same name.
       searchResults: search(query, this.state.bars, this.state.queens)
@@ -54,52 +54,46 @@ class App extends React.Component {
   };
 
   selectResult = resultName => {
-    if (this.state.showSplash || this.state.showResults) {
-      this.toggleCard();
+    if (this.state.showSplashPage || this.state.showAllResultsPage) {
+      this.displayCard();
     }
 
     this.setState({
       currentResult: resultName,
-      showSplash: false,
+      showSplashPage: false,
       cardData: search(resultName, this.state.bars, this.state.queens)[0],
-      showSuggestions: false
+      displaySearchSuggestions: false
     });
   };
 
-  toggleCard = () => {
+  //formerly toggleCard()
+  displayCard = () => {
     this.setState({
       showCard: true,
-      showResults: false,
-      showSplash: false
+      showAllResultsPage: false,
+      showSplashPage: false
     });
   };
 
   // -> SplashPage || SearchResults =X
   // -> SplashPage || NavBar -> SearchBar -> form onSubmit{this.findResults} -> findResults
-  // formally toggleResults()
+  // formerly toggleResults()
   displayAllSearchResults = () => {
     this.setState({
       showCard: false,
-      showResults: true,
-      showSplash: false,
-      showSuggestions: false
+      showAllResultsPage: true,
+      showSplashPage: false,
+      displaySearchSuggestions: false
     });
   };
 
-  // toggleSplash = () => {
-  //   this.setState({
-  //     showCard: false,
-  //     showResults: false,
-  //     showSplash: true
-  //   });
-  // };
-
-  //formally toggleSplash()
+  //formerly toggleSplash()
   displaySplashPage = () => {
     this.setState({
       showCard: false,
-      showResults: false,
-      showSplash: true
+      //no apparent difference having this true || false
+      showAllResultsPage: true,
+      showSplashPage: true
     });
   };
 
@@ -109,7 +103,8 @@ class App extends React.Component {
     let cardComponent = (
       <Card
         cardData={this.state.cardData}
-        toggleCard={this.toggleCard}
+        // not used in the component
+        // displayCard={this.displayCard}
         displaySplashPage={this.displaySplashPage}
         bars={this.state.bars}
         queens={this.state.queens}
@@ -132,14 +127,14 @@ class App extends React.Component {
         updateResults={this.updateResults}
         selectResult={this.selectResult}
         searchResults={this.state.searchResults}
-        showSuggestions={this.state.showSuggestions}
+        displaySearchSuggestions={this.state.displaySearchSuggestions}
       />
     );
 
     //this conditional is displaying what displays in the main content area of the
-    if (this.state.showSplash) {
+    if (this.state.showSplashPage) {
       card = splashPageComponent;
-    } else if (this.state.showResults) {
+    } else if (this.state.showAllResultsPage) {
       card = searchResultsComponent;
     } else {
       card = cardComponent;
@@ -150,13 +145,13 @@ class App extends React.Component {
         <header className="navBar">
           <NavBar
             //this can be passed down
-            showSplash={this.state.showSplash}
+            showSplashPage={this.state.showSplashPage}
             displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCard}
             updateResults={this.updateResults}
             selectResult={this.selectResult}
             searchResults={this.state.searchResults}
-            showSuggestions={this.state.showSuggestions}
+            displaySearchSuggestions={this.state.displaySearchSuggestions}
           />
         </header>
         <section className="App">

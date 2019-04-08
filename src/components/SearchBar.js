@@ -40,7 +40,9 @@ class SearchBar extends Component {
         </form>
         <div
           className="searchHolder"
-          style={{ display: this.props.showSuggestions ? "block" : "none" }}
+          style={{
+            display: this.props.displaySearchSuggestions ? "block" : "none"
+          }}
         >
           {this.props.searchResults.slice(0, 5).map(result => (
             <SearchSuggestion

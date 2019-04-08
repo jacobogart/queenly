@@ -9,7 +9,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    if (!this.props.showSplash) {
+    if (!this.props.showSplashPage) {
       return (
         <nav className="NavBar">
           <Hamburger />
