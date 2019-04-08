@@ -102,7 +102,7 @@ class App extends React.Component {
         searchResults={this.state.searchResults}
         selectSearchResult={this.selectSearchResult}
       />
-    ;
+    );
 
     let splashPageComponent = (
       <SplashPage
