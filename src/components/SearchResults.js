@@ -21,7 +21,7 @@ export default class SearchResults extends Component {
             name={result.name}
             key={result.id}
           /> 
-        )}
+        ))}
       </section>
     )
   }

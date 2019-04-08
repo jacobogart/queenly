@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-import search from "../helpers.js";
+import { search } from "../helpers.js";
 import SplashPage from "./SplashPage";
 import Card from "./Card";
 import SearchResults from "./SearchResults";
@@ -95,6 +95,7 @@ class App extends React.Component {
         toggleSplash={this.toggleSplash}
         bars={this.state.bars}
         queens={this.state.queens}
+        selectResult={this.selectResult}
       />
 
     let searchResultsComponent = 
@@ -104,7 +105,7 @@ class App extends React.Component {
         toggleResults={this.toggleResults}
         selectResult={this.selectResult}
       />
-    );
+    ;
 
     let splashPageComponent =
       <SplashPage
