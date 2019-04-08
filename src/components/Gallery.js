@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import Thumbnail from './Thumbnail.js';
 import { search, searchBars, searchShows, searchQueens } from "../helpers.js";
 
-
 // * CSS imports
-import '../css/Gallery.css';
+import "../css/Gallery.css";
 
 export default class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
+    this.shows = this.props.cardData.shows || [];
   }
 
   render() {
@@ -38,6 +36,6 @@ export default class Gallery extends Component {
           />
         )}
       </section>
-    )
+    );
   }
 }

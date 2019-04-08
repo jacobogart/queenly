@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import search from "../helpers.js";
 
 // * Component imports
 import Show_Main from "./Show_Main.js";
@@ -35,7 +34,7 @@ export default class Card extends Component {
   render() {
     const cardData = this.props.cardData;
     const { id } = cardData;
-    let mainInfo, cardType; 
+    let mainInfo, cardType;
 
     if (id < 1000) {
       mainInfo = 
@@ -63,7 +62,7 @@ export default class Card extends Component {
     return (
       <section className="Card">
           <button className="toggle-close" 
-            onClick={this.props.toggleSplash}>{this.state.icons.close}</button>
+            onClick={this.props.displaySplashPage}>{this.state.icons.close}</button>
           {mainInfo}
           <Sub_Info 
             cardData={cardData}

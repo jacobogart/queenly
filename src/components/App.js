@@ -12,14 +12,13 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      showCardPage: false,
+      showAllResultsPage: false,
+      showSplashPage: true,
+      displaySearchSuggestions: false,
       searchResults: [],
       currentResult: null,
-      showCard: false,
-      showResults: false,
-      showSplash: true,
-      cardComponent: null,
-      showSuggestions: false,
-      bars: [{shows: []}],
+      bars: [{ shows: [] }],
       queens: []
     };
   }
@@ -40,107 +39,104 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
-  updateResults = query => {
+  updateSearchResults = query => {
     this.setState({
-      showSuggestions: true,
+      displaySearchSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
-  }
+  };
 
-  selectResult = resultName => {
-    if (this.state.showSplash || this.state.showResults) {
-      this.toggleCard();
+  selectSearchResult = resultName => {
+    if (this.state.showSplashPage || this.state.showAllResultsPage) {
+      this.displayCard();
     }
 
     this.setState({
       currentResult: resultName,
-      showSplash: false,
+      showSplashPage: false,
       cardData: search(resultName, this.state.bars, this.state.queens)[0],
-      showSuggestions: false
+      displaySearchSuggestions: false
     });
-  }
+  };
 
-  toggleCard = () => {
+  displayCard = () => {
     this.setState({
-      showCard: true,
-      showResults: false,
-      showSplash: false
+      showCardPage: true,
+      showAllResultsPage: false,
+      showSplashPage: false
     });
-  }
+  };
 
-  toggleResults = () => {
+  displayAllSearchResults = () => {
     this.setState({
-      showCard: false,
-      showResults: true,
-      showSplash: false,
-      showSuggestions: false
+      showCardPage: false,
+      showAllResultsPage: true,
+      showSplashPage: false,
+      displaySearchSuggestions: false
     });
-  }
+  };
 
-  toggleSplash = () => {
+  displaySplashPage = () => {
     this.setState({
-      showCard: false,
-      showResults: false,
-      showSplash: true
+      showCardPage: false,
+      showAllResultsPage: true,
+      showSplashPage: true
     });
-  }
+  };
 
   render() {
     let card;
 
-    let cardComponent = 
+    let cardComponent = (
       <Card
         cardData={this.state.cardData}
-        toggleCard={this.toggleCard}
-        toggleSplash={this.toggleSplash}
+        displaySplashPage={this.displaySplashPage}
         bars={this.state.bars}
         queens={this.state.queens}
         selectResult={this.selectResult}
       />
-
-    let searchResultsComponent = 
-      <SearchResults 
-        toggleSplash={this.toggleSplash}
+    );
+    let searchResultsComponent = (
+      <SearchResults
+        displaySplashPage={this.displaySplashPage}
         searchResults={this.state.searchResults}
-        toggleResults={this.toggleResults}
-        selectResult={this.selectResult}
+        selectSearchResult={this.selectSearchResult}
       />
     ;
 
-    let splashPageComponent =
+    let splashPageComponent = (
       <SplashPage
-        toggleResults={this.toggleResults}
-        updateResults={this.updateResults}
-        selectResult={this.selectResult}
+        displayAllSearchResults={this.displayAllSearchResults}
+        updateSearchResults={this.updateSearchResults}
+        selectSearchResult={this.selectSearchResult}
         searchResults={this.state.searchResults}
-        showSuggestions={this.state.showSuggestions}
+        displaySearchSuggestions={this.state.displaySearchSuggestions}
       />
+    );
 
-    if (this.state.showSplash) {
-      card = splashPageComponent
-    } else if (this.state.showResults) {
-      card = searchResultsComponent
+    if (this.state.showSplashPage) {
+      card = splashPageComponent;
+    } else if (this.state.showAllResultsPage) {
+      card = searchResultsComponent;
     } else {
-      card = cardComponent
+      card = cardComponent;
     }
 
     return (
       <div>
         <header className="navBar">
           <NavBar
-            showSplash={this.state.showSplash}
-            toggleResults={this.toggleResults}
-            searchBarDisplay={this.state.showCard}
-            updateResults={this.updateResults}
-            selectResult={this.selectResult}
+            showSplashPage={this.state.showSplashPage}
+            displayAllSearchResults={this.displayAllSearchResults}
+            searchBarDisplay={this.state.showCardPage}
+            updateSearchResults={this.updateSearchResults}
+            selectSearchResult={this.selectSearchResult}
             searchResults={this.state.searchResults}
-            showSuggestions={this.state.showSuggestions}
+            displaySearchSuggestions={this.state.displaySearchSuggestions}
           />
         </header>
         <section className="App">
-          <article className="mainContent">
-            {card}
-          </article>
+          <article className="mainContent">{card}</article>
         </section>
         <div className="appBackground" />
       </div>
