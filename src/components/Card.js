@@ -30,44 +30,36 @@ export default class Card extends Component {
   render() {
     const cardData = this.props.cardData;
     const { id } = cardData;
-    let mainInfo, cardType; 
+    let mainInfo, cardType;
 
     if (id < 1000) {
-      mainInfo = 
-        <Queen_Main cardData={cardData}
-        icons={this.state.icons} />;
-      cardType = "Queen"
-      console.log("MainInf", mainInfo)
-      console.log("props", this.props)
-      console.log("cardData", cardData)
+      mainInfo = <Queen_Main cardData={cardData} icons={this.state.icons} />;
+      cardType = "Queen";
+      // console.log("MainInf", mainInfo)
+      // console.log("props", this.props)
+      // console.log("cardData", cardData)
     } else if (id.toString().slice(2) > 0) {
-      mainInfo = 
-        <Show_Main cardData={cardData} 
-        icons={this.state.icons} />;
-      cardType = "Show"
-      console.log("MainInf", mainInfo);
-      console.log("props", this.props);
-      console.log("cardData", cardData);
+      mainInfo = <Show_Main cardData={cardData} icons={this.state.icons} />;
+      cardType = "Show";
+      // console.log("MainInf", mainInfo);
+      // console.log("props", this.props);
+      // console.log("cardData", cardData);
     } else {
-      mainInfo = 
-        <Bar_Main cardData={cardData}
-        icons={this.state.icons} />;
-      cardType = "Bar"
-      console.log("MainInf", mainInfo);
-      console.log("props", this.props);
-      console.log("cardData", cardData);
+      mainInfo = <Bar_Main cardData={cardData} icons={this.state.icons} />;
+      cardType = "Bar";
+      // console.log("MainInf", mainInfo);
+      // console.log("props", this.props);
+      // console.log("cardData", cardData);
     }
 
     return (
       <section className="Card">
-          <button className="toggle-close" 
-            onClick={this.props.toggleSplash}>{this.state.icons.close}</button>
-          {mainInfo}
-          <Sub_Info 
-            cardData={cardData}
-            cardType={cardType}
-          />
-          <Gallery cardData={cardData} />
+        <button className="toggle-close" onClick={this.props.displaySplashPage}>
+          {this.state.icons.close}
+        </button>
+        {mainInfo}
+        <Sub_Info cardData={cardData} cardType={cardType} />
+        <Gallery cardData={cardData} />
       </section>
     );
   }

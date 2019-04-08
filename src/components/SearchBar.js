@@ -11,7 +11,7 @@ class SearchBar extends Component {
   }
 
   handleChange = e => {
-    this.props.updateResults(e.target.value);
+    this.props.updateSearchResults(e.target.value);
     this.setState({
       searchQuery: e.target.value
     });
@@ -19,7 +19,7 @@ class SearchBar extends Component {
 
   findResults = e => {
     e.preventDefault();
-    this.props.toggleResults();
+    this.props.displayAllSearchResults();
   };
 
   render() {
@@ -32,18 +32,21 @@ class SearchBar extends Component {
             placeholder="Search..."
             className="searchTerm"
           />
+
           <button type="submit" className="searchButton">
             <i className="fas fa-search searchIcon" />
           </button>
         </form>
         <div
           className="searchHolder"
-          style={{ display: this.props.showSuggestions ? "block" : "none" }}
+          style={{
+            display: this.props.displaySearchSuggestions ? "block" : "none"
+          }}
         >
           {this.props.searchResults.slice(0, 5).map(result => (
             <SearchSuggestion
               name={result.name}
-              selectResult={this.props.selectResult}
+              selectSearchResult={this.props.selectSearchResult}
               key={result.id}
             />
           ))}
