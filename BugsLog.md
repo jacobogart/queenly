@@ -1,4 +1,4 @@
-#bugs
+#bugs | notes
 
 #1
 What: App -> method: displayAllResults() [formerly toggleResults()]
