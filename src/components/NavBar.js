@@ -13,13 +13,7 @@ class NavBar extends React.Component {
       return (
         <nav className="NavBar">
           <Hamburger />
-          <SearchBar
-            displayAllSearchResults={this.props.displayAllSearchResults}
-            updateResults={this.props.updateResults}
-            selectResult={this.props.selectResult}
-            searchResults={this.props.searchResults}
-            showSuggestions={this.props.showSuggestions}
-          />
+          <SearchBar {...this.props} />
           <Favorites />
         </nav>
       );

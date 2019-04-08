@@ -74,17 +74,8 @@ class App extends React.Component {
     });
   };
 
-  // toggleResults = () => {
-  //   this.setState({
-  //     showCard: false,
-  //     showResults: true,
-  //     showSplash: false,
-  //     showSuggestions: false
-  //   });
-  // };
-
   // -> SplashPage || SearchResults =X
-  // -> SplashPage -> SearchBar -> form onSubmit{this.findResults} -> findResults
+  // -> SplashPage || NavBar -> SearchBar -> form onSubmit{this.findResults} -> findResults
   displayAllSearchResults = () => {
     this.setState({
       showCard: false,
@@ -150,7 +141,6 @@ class App extends React.Component {
           <NavBar
             //this can be passed down
             showSplash={this.state.showSplash}
-            //
             displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCard}
             updateResults={this.updateResults}
