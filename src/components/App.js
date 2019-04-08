@@ -12,13 +12,13 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      searchResults: [],
-      currentResult: null,
-      showCard: false,
+      showCardPage: false,
       showAllResultsPage: false,
       showSplashPage: true,
-      cardComponent: null,
       displaySearchSuggestions: false,
+      searchResults: [],
+      currentResult: null,
+      cardComponent: null,
       bars: [{ shows: [] }],
       queens: []
     };
@@ -69,7 +69,7 @@ class App extends React.Component {
   //formerly toggleCard()
   displayCard = () => {
     this.setState({
-      showCard: true,
+      showCardPage: true,
       showAllResultsPage: false,
       showSplashPage: false
     });
@@ -80,7 +80,7 @@ class App extends React.Component {
   // formerly toggleResults()
   displayAllSearchResults = () => {
     this.setState({
-      showCard: false,
+      showCardPage: false,
       showAllResultsPage: true,
       showSplashPage: false,
       displaySearchSuggestions: false
@@ -90,7 +90,7 @@ class App extends React.Component {
   //formerly toggleSplash()
   displaySplashPage = () => {
     this.setState({
-      showCard: false,
+      showCardPage: false,
       //no apparent difference having this true || false
       showAllResultsPage: true,
       showSplashPage: true
@@ -147,7 +147,7 @@ class App extends React.Component {
             //this can be passed down
             showSplashPage={this.state.showSplashPage}
             displayAllSearchResults={this.displayAllSearchResults}
-            searchBarDisplay={this.state.showCard}
+            searchBarDisplay={this.state.showCardPage}
             updateResults={this.updateResults}
             selectResult={this.selectResult}
             searchResults={this.state.searchResults}
