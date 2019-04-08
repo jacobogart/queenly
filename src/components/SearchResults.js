@@ -11,15 +11,17 @@ export default class SearchResults extends Component {
   render() {
     return (
       <section className="searchResults">
-        <button className="toggle-close" 
-          onClick={this.props.toggleSplash}>
-            <i className="fas fa-times-circle"></i>
-          </button>
+        <button
+          className="toggle-close"
+          onClick={this.props.displaySplashPage}
+        >
+          <i className="fas fa-times-circle" />
+        </button>
         <h1>Search Results</h1>
         {this.props.searchResults.map(result => (
           <Thumbnail
             imgURL={result.imageURL}
-            selectResult={this.props.selectResult}
+            selectResult={this.props.selectSearchResult}
             name={result.name}
             key={result.id}
           />
