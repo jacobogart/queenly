@@ -18,7 +18,7 @@ class App extends React.Component {
       displaySearchSuggestions: false,
       searchResults: [],
       currentResult: null,
-      cardComponent: null,
+      // cardComponent: null,
       bars: [{ shows: [] }],
       queens: []
     };
@@ -42,18 +42,16 @@ class App extends React.Component {
   }
 
   //does App need to know if the suggestions bar is open or closed?
-  //can we confine that to the search bar and simply pass the data we need
+  //confine that to the search bar and pass the data needed
   //as props into the searchBar component?
-  updateResults = query => {
+  updateSearchResults = query => {
     this.setState({
       displaySearchSuggestions: true,
-      //we have a component called SearchResults and a property on Apps state
-      //with the same name.
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   };
 
-  selectResult = resultName => {
+  selectSearchResult = resultName => {
     if (this.state.showSplashPage || this.state.showAllResultsPage) {
       this.displayCard();
     }
@@ -103,7 +101,7 @@ class App extends React.Component {
     let cardComponent = (
       <Card
         cardData={this.state.cardData}
-        // not used in the component
+        // not used in the component currently
         // displayCard={this.displayCard}
         displaySplashPage={this.displaySplashPage}
         bars={this.state.bars}
@@ -117,15 +115,15 @@ class App extends React.Component {
         searchResults={this.state.searchResults}
         // there is no displayAllSearchResults || toggleResults used in this component
         // displayAllSearchResults={this.displayAllSearchResults}
-        selectResult={this.selectResult}
+        selectSearchResult={this.selectSearchResult}
       />
     );
 
     let splashPageComponent = (
       <SplashPage
         displayAllSearchResults={this.displayAllSearchResults}
-        updateResults={this.updateResults}
-        selectResult={this.selectResult}
+        updateSearchResults={this.updateSearchResults}
+        selectSearchResult={this.selectSearchResult}
         searchResults={this.state.searchResults}
         displaySearchSuggestions={this.state.displaySearchSuggestions}
       />
@@ -148,8 +146,8 @@ class App extends React.Component {
             showSplashPage={this.state.showSplashPage}
             displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCardPage}
-            updateResults={this.updateResults}
-            selectResult={this.selectResult}
+            updateSearchResults={this.updateSearchResults}
+            selectSearchResult={this.selectSearchResult}
             searchResults={this.state.searchResults}
             displaySearchSuggestions={this.state.displaySearchSuggestions}
           />
