@@ -1,5 +1,8 @@
 /* Testing Purposes */
 .Gallery {
+  display: flex;
+  overflow: scroll;
+  height: 200px;
 }
 /* ================ */
 .Gallery {

@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import Thumbnail from "./Thumbnail";
-import GalleryImage from "./GalleryImage";
+import React, { Component } from 'react';
+import Thumbnail from './Thumbnail.js';
+import { search, searchBars, searchShows, searchQueens } from "../helpers.js";
+
 // * CSS imports
 import "../css/Gallery.css";
 
@@ -12,14 +13,28 @@ export default class Gallery extends Component {
   }
 
   render() {
+    let galleryData
+
+    if (this.props.cardType === "Bar") {
+      galleryData = this.props.cardData.shows;
+    } else if (this.props.cardType === "Show") {
+      galleryData = this.props.queens.filter(queen => queen.shows.includes(this.props.cardData.name));
+    } else if (this.props.cardType === "Queen") {
+      galleryData = [];
+      this.props.cardData.shows.forEach(show => {
+        galleryData.push(searchShows(show, this.props.bars)[0])
+      })
+    }
     return (
       <section className="Gallery">
-        <p>Gallery</p>
-        <ul>
-          {this.shows.map(show => {
-            return <GalleryImage showCategory={show.category} key={show.id} />;
-          })}
-        </ul>
+        {galleryData.map(result =>
+        <Thumbnail
+            imgURL={result.imageURL}
+            selectResult={this.props.selectResult}
+            name={result.name}
+            key={result.id} 
+          />
+        )}
       </section>
     );
   }

@@ -15,17 +15,21 @@ export default class Card extends Component {
     super(props);
 
     this.state = {
-      cardType: ["Bar", "Show", "Queen"],
       icons: {
         webIcon: <i className="fas fa-globe" />,
         phoneIcon: <i className="fas fa-phone-square" />,
         instaIcon: <i className="fab fa-instagram" />,
         facebookIcon: <i className="fab fa-facebook-square" />,
         twitterIcon: <i className="fab fa-twitter-square" />,
-        close: <i className="fas fa-times-circle" />
-      }
+        close: <i className="fas fa-times-circle" /> 
+      },
     };
+    // this.setCardType()
   }
+
+  // setCardType = () => {
+  //   console.log(this.props.cardData.id);
+  // }
 
   render() {
     const cardData = this.props.cardData;
@@ -33,33 +37,44 @@ export default class Card extends Component {
     let mainInfo, cardType;
 
     if (id < 1000) {
-      mainInfo = <Queen_Main cardData={cardData} icons={this.state.icons} />;
-      cardType = "Queen";
-      // console.log("MainInf", mainInfo)
-      // console.log("props", this.props)
-      // console.log("cardData", cardData)
+      mainInfo = 
+        <Queen_Main 
+        cardData={cardData}
+        icons={this.state.icons}
+        />;
+      cardType="Queen";
     } else if (id.toString().slice(2) > 0) {
-      mainInfo = <Show_Main cardData={cardData} icons={this.state.icons} />;
+      mainInfo = 
+        <Show_Main 
+        cardData={cardData} 
+        icons={this.state.icons}
+        />;
       cardType = "Show";
-      // console.log("MainInf", mainInfo);
-      // console.log("props", this.props);
-      // console.log("cardData", cardData);
     } else {
-      mainInfo = <Bar_Main cardData={cardData} icons={this.state.icons} />;
+      mainInfo = 
+        <Bar_Main 
+        cardData={cardData}
+        icons={this.state.icons}
+        />;
       cardType = "Bar";
-      // console.log("MainInf", mainInfo);
-      // console.log("props", this.props);
-      // console.log("cardData", cardData);
     }
 
     return (
       <section className="Card">
-        <button className="toggle-close" onClick={this.props.displaySplashPage}>
-          {this.state.icons.close}
-        </button>
-        {mainInfo}
-        <Sub_Info cardData={cardData} cardType={cardType} />
-        <Gallery cardData={cardData} />
+          <button className="toggle-close" 
+            onClick={this.props.displaySplashPage}>{this.state.icons.close}</button>
+          {mainInfo}
+          <Sub_Info 
+            cardData={cardData}
+            cardType={cardType}
+          />
+          <Gallery 
+            cardData={cardData}
+            cardType={cardType}
+            selectResult={this.props.selectResult}
+            bars={this.props.bars}
+            queens={this.props.queens}
+          />
       </section>
     );
   }

@@ -24,7 +24,7 @@ export default class SearchResults extends Component {
             selectResult={this.props.selectSearchResult}
             name={result.name}
             key={result.id}
-          />
+          /> 
         ))}
       </section>
     );
