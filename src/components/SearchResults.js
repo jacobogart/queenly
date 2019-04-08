@@ -12,7 +12,9 @@ export default class SearchResults extends Component {
     return (
       <section className="searchResults">
         <button className="toggle-close" 
-          onClick={this.props.toggleSplash}>X</button>
+          onClick={this.props.toggleSplash}>
+            <i className="fas fa-times-circle"></i>
+          </button>
         <h1>Search Results</h1>
         {this.props.searchResults.map(result => (
           <Thumbnail

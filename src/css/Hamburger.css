@@ -1,3 +1,25 @@
 .fa-bars:hover {
   color: white;
 }
+
+.showMenu {
+  background-color: #202828;
+  position: absolute;
+  height: 170px;
+  width: 200px;
+  z-index: 100;
+  list-style: none;
+  left: 10px;
+}
+
+.hamburgerMenu ul {
+  padding: 10px;
+}
+
+.showMenu input {
+  background-color: #202828;
+  color: lightgray;
+  font-size: 24px;
+  border: none;
+  margin-bottom: 10px;
+}
