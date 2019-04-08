@@ -49,7 +49,8 @@ class App extends React.Component {
       displaySearchSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
-  };
+  }
+
 
   selectSearchResult = resultName => {
     if (this.state.showSplashPage || this.state.showAllResultsPage) {
@@ -62,7 +63,7 @@ class App extends React.Component {
       cardData: search(resultName, this.state.bars, this.state.queens)[0],
       displaySearchSuggestions: false
     });
-  };
+  }
 
   //formerly toggleCard()
   displayCard = () => {
@@ -71,7 +72,7 @@ class App extends React.Component {
       showAllResultsPage: false,
       showSplashPage: false
     });
-  };
+  }
 
   // -> SplashPage || SearchResults =X
   // -> SplashPage || NavBar -> SearchBar -> form onSubmit{this.findResults} -> findResults
@@ -107,7 +108,6 @@ class App extends React.Component {
         bars={this.state.bars}
         queens={this.state.queens}
       />
-    );
 
     let searchResultsComponent = (
       <SearchResults
