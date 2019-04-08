@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Thumbnail from './Thumbnail.js';
+import React, { Component } from "react";
+import Thumbnail from "./Thumbnail.js";
 
 import "../css/SearchResults.css";
 
@@ -11,8 +11,9 @@ export default class SearchResults extends Component {
   render() {
     return (
       <section className="searchResults">
-        <button className="toggle-close" 
-          onClick={this.props.toggleSplash}>X</button>
+        <button className="toggle-close" onClick={this.props.displaySplashPage}>
+          X
+        </button>
         <h1>Search Results</h1>
         {this.props.searchResults.map(result => (
           <Thumbnail
@@ -20,9 +21,9 @@ export default class SearchResults extends Component {
             selectResult={this.props.selectResult}
             name={result.name}
             key={result.id}
-          /> 
-         ))}
+          />
+        ))}
       </section>
-    )
+    );
   }
 }

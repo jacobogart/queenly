@@ -76,6 +76,7 @@ class App extends React.Component {
 
   // -> SplashPage || SearchResults =X
   // -> SplashPage || NavBar -> SearchBar -> form onSubmit{this.findResults} -> findResults
+  // formally toggleResults()
   displayAllSearchResults = () => {
     this.setState({
       showCard: false,
@@ -85,7 +86,16 @@ class App extends React.Component {
     });
   };
 
-  toggleSplash = () => {
+  // toggleSplash = () => {
+  //   this.setState({
+  //     showCard: false,
+  //     showResults: false,
+  //     showSplash: true
+  //   });
+  // };
+
+  //formally toggleSplash()
+  displaySplashPage = () => {
     this.setState({
       showCard: false,
       showResults: false,
@@ -100,7 +110,7 @@ class App extends React.Component {
       <Card
         cardData={this.state.cardData}
         toggleCard={this.toggleCard}
-        toggleSplash={this.toggleSplash}
+        displaySplashPage={this.displaySplashPage}
         bars={this.state.bars}
         queens={this.state.queens}
       />
@@ -108,7 +118,7 @@ class App extends React.Component {
 
     let searchResultsComponent = (
       <SearchResults
-        toggleSplash={this.toggleSplash}
+        displaySplashPage={this.displaySplashPage}
         searchResults={this.state.searchResults}
         // there is no displayAllSearchResults || toggleResults used in this component
         // displayAllSearchResults={this.displayAllSearchResults}

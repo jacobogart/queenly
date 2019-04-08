@@ -54,7 +54,7 @@ export default class Card extends Component {
 
     return (
       <section className="Card">
-        <button className="toggle-close" onClick={this.props.toggleSplash}>
+        <button className="toggle-close" onClick={this.props.displaySplashPage}>
           {this.state.icons.close}
         </button>
         {mainInfo}
