@@ -12,7 +12,6 @@ export default class Gallery extends Component {
   }
 
   render() {
-    // console.log(this.props.cardData);
     return (
       <section className="Gallery">
         <p>Gallery</p>
