@@ -23,8 +23,29 @@ export default class Card extends Component {
         twitterIcon: <i className="fab fa-twitter-square" />,
         close: <i className="fas fa-times-circle" /> 
       },
+      favorite: false
     };
   }
+
+  handleFavorites = () => {
+    if (this.state.favorite) {
+      this.removeFromFavorites();
+    } else {
+      this.addToFavorites();
+    }
+    this.setState({
+      favorite: !this.state.favorite
+    });
+  }
+
+  removeFromFavorites = () => {
+    console.log('REMOVED')
+  }
+
+  addToFavorites = () => {
+    console.log('ADDED')
+  }
+
   
   render() {
     const cardData = this.props.cardData;
@@ -56,7 +77,10 @@ export default class Card extends Component {
 
     return (
       <section className="Card">
-        <button className="favoriteBtn">
+        <button 
+          className={`favoriteBtn fave-${this.state.favorite}`}
+          onClick={this.handleFavorites}
+        >
           <i className="fas fa-heart fa-2x" />
         </button>
         <button

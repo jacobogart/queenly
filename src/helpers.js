@@ -1,8 +1,8 @@
 export function search(searchQuery, bars, queens) {
   let barResults = searchBars(searchQuery, bars);
-  let showResults = searchShows(searchQuery, bars);
   let queenResults = searchQueens(searchQuery, queens);
-  const results = [barResults, showResults, queenResults].flat();
+  let showResults = searchShows(searchQuery, bars);
+  const results = [barResults, queenResults, showResults].flat();
 
   return results;
 }
