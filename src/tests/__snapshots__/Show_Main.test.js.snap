@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Show_Main should match snapshop 1`] = `
+<main
+  className="Bar-Main Main_Info"
+>
+  <article
+    className="Content"
+  >
+    <h2>
+      Sunday Social
+    </h2>
+    <h4>
+      Type of Show: 
+      drag show
+    </h4>
+    <h4>
+      Notes:
+    </h4>
+    <p
+      className="notes"
+    />
+    <p
+      className="hosts"
+    >
+      Host(s): 
+      Chamilla Foxx
+    </p>
+    <p>
+      When: 
+    </p>
+    <p
+      className="showtime"
+    >
+      Every Sudnay on the weekly of the month.
+       
+    </p>
+    <p
+      className="time"
+    >
+      At: 
+    </p>
+  </article>
+</main>
+`;

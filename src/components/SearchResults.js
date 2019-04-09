@@ -9,6 +9,23 @@ export default class SearchResults extends Component {
   }
 
   render() {
+    let results;
+
+    if (this.props.searchResults.length === 0) {
+      results = (
+        <h2>Please Broaden Your Search</h2>
+      )
+    } else {
+      results = this.props.searchResults.map(result => (
+        <Thumbnail
+          imgURL={result.imageURL}
+          selectResult={this.props.selectSearchResult}
+          name={result.name}
+          key={result.id}
+        />
+      ))
+    }
+
     return (
       <section className="searchResults">
         <button
@@ -17,15 +34,7 @@ export default class SearchResults extends Component {
         >
           <i className="fas fa-times-circle" />
         </button>
-        <h1>Search Results</h1>
-        {this.props.searchResults.map(result => (
-          <Thumbnail
-            imgURL={result.imageURL}
-            selectSearchResult={this.props.selectSearchResult}
-            name={result.name}
-            key={result.id}
-          /> 
-        ))}
+        {results}
       </section>
     );
   }

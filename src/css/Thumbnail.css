@@ -1,8 +1,12 @@
-
+.Thumbnail {
+  width: 150px;
+  margin: 18px;
+}
 
 .ThumbnailImg {
   object-fit: cover;
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
+  margin: 10px auto;
 }

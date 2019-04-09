@@ -9,6 +9,23 @@ export default class Show_Main extends Component {
     }
   }
 
+  stringifyHosts = (host) => {
+    switch(host.length) {
+      case 0:
+        return null
+        break;
+      case 1:
+        return `Host: ${host}`
+        break;
+      case 2:
+        return `Hosts: ${host.join(' & ')}`
+        break;
+      default:
+        return `Hosts: ${host.join(' , ')}`
+        break;
+    }
+  }
+
   stringifyReoccuring = (reoccuring) => {
     return reoccuring ? "Every" : "Only this";
   }
@@ -66,7 +83,7 @@ export default class Show_Main extends Component {
           <h4>Type of Show: {category}</h4>
           <h4>Notes:</h4>
           <p className="notes">{notes}</p>
-          <p className="hosts">Host(s): {host.join(" & ")}</p>
+          <p className="hosts">{this.stringifyHosts(host)}</p>
           <p>When: </p>
           <p className="showtime">
             {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}

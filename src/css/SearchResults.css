@@ -6,9 +6,10 @@
   z-index: 10;
   top: -110px;
   left: -30%;
-  height: 80%;
+  height: 100%;
   width: 150%;
   padding: 25px;
   display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
 }
