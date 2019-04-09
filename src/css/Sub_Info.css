@@ -2,6 +2,7 @@
 .Sub-Info {
   /* border: 3px solid orange; */
 }
+
 /* ================ */
 .Sub-Info {
   background-color: #2e5658;
@@ -9,8 +10,22 @@
   padding: 25px;
   box-shadow: #202828 3px 3px 2px;
 }
+
 .Sub-Info img {
-  border-radius: 50%;
-  border: 5px ridge white;
+  height: 100%;
   margin-top: 40px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.img-holder {
+  height: 300px;
+  width: 300px;
+}
+
+.queen-img {
+  height: 250px;
+  margin-top: 40px;
+  object-fit: cover;
+  width: 250px;
 }

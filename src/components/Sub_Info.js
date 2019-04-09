@@ -10,17 +10,18 @@ export default class Sub_Info extends Component {
   }
   
   render() {
-    console.log(this.props.cardData.imageURL);
     let asset;
-    if(this.props.cardType === "Bar") {
+
+    if (this.props.cardType === "Bar") {
       asset = this.props.cardData.map;
     } else if (this.props.cardType === "Queen") {
       asset = `<img className="queen-img" 
-        src=${this.props.cardData.imageURL} alt=${
-        this.props.cardData.name
-      }/>`;
+        src=${this.props.cardData.imageURL} 
+        alt=${this.props.cardData.name}/>`;
     } else {
-      asset = `<img src=${this.props.cardData.imageURL} alt=${this.props.cardData.name}/>`;
+      asset = `<img 
+        src=${this.props.cardData.imageURL} 
+        alt=${this.props.cardData.name}/>`;
     }
 
     function createMarkup() {
@@ -29,7 +30,10 @@ export default class Sub_Info extends Component {
 
     return (
       <article className="Sub-Info">
-        <div dangerouslySetInnerHTML={createMarkup()} />
+        <div 
+          className="img-holder"
+          dangerouslySetInnerHTML={createMarkup()}
+        />
       </article>
     );
   }
