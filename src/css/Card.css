@@ -6,19 +6,16 @@
 .Card {
   background-color: #202828;
   box-shadow: #2e5657 5px 5px 5px;
-  border-radius: 20px;
+  top: 40px;
+  left: 3%;
+  width: 90%;
   position: absolute;
-  z-index: 10;
-  top: -130px;
-  left: -30%;
-  height: 80%;
-  width: 150%;
+  height: 110%;
   padding: 25px;
   display: grid;
   grid-template-areas: "Main Sub" "Gall Gall";
-  grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 450px 1fr;
+  grid-template-rows: 450px 200px;
 }
 
 .favoriteBtn {
