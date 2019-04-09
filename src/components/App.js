@@ -15,7 +15,7 @@ class App extends React.Component {
       showCardPage: false,
       showAllResultsPage: false,
       showSplashPage: true,
-      displaySearchSuggestions: false,
+      // displaySearchSuggestions: false,
       searchResults: [],
       currentResult: null,
       bars: [{ shows: [] }],
@@ -41,7 +41,7 @@ class App extends React.Component {
 
   updateSearchResults = query => {
     this.setState({
-      displaySearchSuggestions: true,
+      // displaySearchSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   };
@@ -57,7 +57,7 @@ class App extends React.Component {
       cardData: search(resultName, this.state.bars, this.state.queens)[0],
       displaySearchSuggestions: false
     });
-  };
+  }
 
   displayCard = () => {
     this.setState({
@@ -65,7 +65,7 @@ class App extends React.Component {
       showAllResultsPage: false,
       showSplashPage: false
     });
-  };
+  }
 
   displayAllSearchResults = () => {
     this.setState({
@@ -74,7 +74,7 @@ class App extends React.Component {
       showSplashPage: false,
       displaySearchSuggestions: false
     });
-  };
+  }
 
   displayAllOfType = (type) => {
     let searches = {
@@ -93,7 +93,7 @@ class App extends React.Component {
       showAllResultsPage: true,
       showSplashPage: true
     });
-  };
+  }
 
   render() {
     let card;
@@ -121,7 +121,7 @@ class App extends React.Component {
         updateSearchResults={this.updateSearchResults}
         selectSearchResult={this.selectSearchResult}
         searchResults={this.state.searchResults}
-        displaySearchSuggestions={this.state.displaySearchSuggestions}
+        // displaySearchSuggestions={this.state.displaySearchSuggestions}
       />
     );
 
@@ -144,7 +144,7 @@ class App extends React.Component {
             updateSearchResults={this.updateSearchResults}
             selectSearchResult={this.selectSearchResult}
             searchResults={this.state.searchResults}
-            displaySearchSuggestions={this.state.displaySearchSuggestions}
+            // displaySearchSuggestions={this.state.displaySearchSuggestions}
           />
         </header>
         <section className="App">

@@ -35,26 +35,27 @@ describe('SearchBar', () => {
   });
 
   it('should match snapshot', () => {
-    console.log(wrapper);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should have a default state', () => {
-    console.log(wrapper);
-    expect(wrapper.state).to.equal({
-      searchQuery: ""
+  it('should have a default state', () => {
+    expect(wrapper.state()).toEqual({
+      searchQuery: ''
     });
   });
 
   it.skip('should update searchQuery on change', () => {
-    wrapper.find('.searchTerm').simulate('change');
+    wrapper.find('.searchTerm').simulate('keyUp', {keyCode: 13});
 
-    expect(mockUpdateResults).toBeCalled();
-    // expect(wrapper.state('searchQuery').toEqual(''));
+    expect(mockUpdateResults).toHaveBeenCalled();
 
-    // wrapper.instance().handleChange( {target: {value: 'Sasha'} } );
+    expect(wrapper.state('searchQuery').toEqual(''));
 
-    // expect(wrapper.state('searchQuery').toEqual('Sasha'))
+    wrapper.instance().handleChange( {target: {value: 'Sasha'}} );
+
+    expect(wrapper.state()).toEqual({
+          searchQuery: 'Sasha'
+    });
   });
 });
 
