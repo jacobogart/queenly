@@ -38,9 +38,22 @@ describe("Card", () => {
   it("should match snapshop", () => {
     expect(wrapper).toMatchSnapshot();
   });
-  it.skip("should have default state", () => {
+  it("should have default state", () => {
     expect(wrapper.state()).toEqual({
-      // Put state here
+      icons: {
+        webIcon: <i className="fas fa-globe" />,
+        phoneIcon: <i className="fas fa-phone-square" />,
+        instaIcon: <i className="fab fa-instagram" />,
+        facebookIcon: <i className="fab fa-facebook-square" />,
+        twitterIcon: <i className="fab fa-twitter-square" />,
+        close: <i className="fas fa-times-circle" />
+      }
     });
   });
+  it("should invoke displaySplashPage when X button is clicked", () => {
+    wrapper.find(".toggle-close").simulate('click');
+    expect(mockDisplaySplashPage).toBeCalled();
+  });
+
+  
 });
