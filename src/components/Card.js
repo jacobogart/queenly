@@ -24,13 +24,8 @@ export default class Card extends Component {
         close: <i className="fas fa-times-circle" /> 
       },
     };
-    // this.setCardType()
   }
-
-  // setCardType = () => {
-  //   console.log(this.props.cardData.id);
-  // }
-
+  
   render() {
     const cardData = this.props.cardData;
     const { id } = cardData;
