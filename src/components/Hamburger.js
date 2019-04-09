@@ -1,16 +1,23 @@
 import React from "react";
 import "../css/Hamburger.css";
 class Hamburger extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showMenu: false
     }
   }
+
   toggleBurger = () => {
     this.state.showMenu
       ? this.setState( {showMenu: false} )
       : this.setState( {showMenu: true} )
+  }
+
+  clickHamburger = (event) => {
+    let type = event.target.value.split(' ')[2];
+    this.props.displayAllOfType(type);
+    this.props.displayAllSearchResults();
   }
 
   render() {
@@ -21,6 +28,7 @@ class Hamburger extends React.Component {
           <ul className="showMenu">
             <li>
               <input
+                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Venues"
@@ -28,6 +36,7 @@ class Hamburger extends React.Component {
             </li>
             <li>
               <input
+                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Shows"
@@ -35,6 +44,7 @@ class Hamburger extends React.Component {
             </li>
             <li>
               <input
+                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Queens"
@@ -42,6 +52,7 @@ class Hamburger extends React.Component {
             </li>
             <li>
               <input
+                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Favorites"
