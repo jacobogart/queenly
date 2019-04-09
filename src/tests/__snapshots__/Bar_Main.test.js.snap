@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bar_Main should match snapshop 1`] = `
+<main
+  className="Bar-Main Main_Info"
+>
+  <article
+    className="Content"
+  >
+    <h2>
+      Meeting House Tavern
+    </h2>
+    <img
+      alt="Image of [object Object]"
+      className="bar-img"
+      src="https://scontent-dfw5-1.cdninstagram.com/vp/dc393598c8355083e81b210447749477/5D30B2CA/t51.2885-19/s320x320/30920559_218883882204264_3986740088989024256_n.jpg?_nc_ht=scontent-dfw5-1.cdninstagram.com"
+    />
+    <p
+      className="phone"
+    >
+      (773) 696-4211
+    </p>
+    <h4>
+      Notes:
+    </h4>
+    <p
+      className="notes"
+    />
+  </article>
+  <aside
+    className="social-links"
+  >
+    <a
+      href="http://www.meetinghousetavern.com/"
+    />
+    <a
+      href="https://www.instagram.com/meetinghousetavernchi/"
+    />
+    <a
+      href="https://www.facebook.com/MeetingHouseChi"
+    />
+    <a
+      href="https://twitter.com/meetinghousechi"
+    />
+  </aside>
+</main>
+`;
