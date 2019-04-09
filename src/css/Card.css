@@ -20,25 +20,25 @@
 
 .favoriteBtn {
   position: absolute;
-  top: 45px;
-  right: 115px;
-  font-size: 19px;
+  top: 43px;
+  right: 83px;
+  font-size: 16px;
   background: none;
   border: none;
 }
 
 .toggle-close {
-  position: absolute;
+  position: fixed;
   background: none;
   width: 50px;
-  font-size: 40px;
-  right: 40px;
-  top: 40px;
+  font-size: 35px;
+  right: 77px;
   border: none;
+  top: 145px;
 }
 
 .toggle-close i {
-  color: #202828;
+  color: lightgrey;
 }
 
 .Card p {
@@ -56,12 +56,15 @@
 iframe {
   border: 0;
   position: relative;
-  top: 50px;
-  border-radius: 20px;
-  background-color: lightgrey;
+  right: -8px;
+  top: 40px;
+  /* border-radius: 20px; */
+  background-color: #153233;
   padding: 10px;
+  height: 358px;
+  width: 570px;
 }
 
-.Gallery {
+.Card .Gallery {
   grid-area: Gall;
 }

@@ -13,5 +13,34 @@
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow-y: auto;
+  display: grid;
+  grid-auto-rows: 250px;
+  grid-auto-columns: auto;
+  grid-template-areas: "thumb thumb thumb thumb";
+}
+
+.searchResults figcaption {
+  color: lightgray;
+  text-align: center;
+  height: 15px;
+}
+
+.searchResults > .Thumbnail {
+  /* margin: auto; */
+  display: flex;
+  justify-items: baseline;
+}
+
+.searchResults::-webkit-scrollbar-track {
+  /* border: 5px solid red; */
+}
+
+.searchResults::-webkit-scrollbar {
+  background-color: #635083;
+}
+
+.searchResults::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: teal;
 }
