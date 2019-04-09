@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Thumbnail should match snapshot 1`] = `
+<figure
+  className="Thumbnail"
+  onClick={[Function]}
+>
+  <img
+    className="ThumbnailImg"
+    src="https://pbs.twimg.com/media/D1Any4VWkAA86HL.jpg"
+  />
+  <figcaption>
+    Sunday Social
+  </figcaption>
+</figure>
+`;
