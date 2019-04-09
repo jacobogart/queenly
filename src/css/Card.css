@@ -6,42 +6,39 @@
 .Card {
   background-color: #202828;
   box-shadow: #2e5657 5px 5px 5px;
-  border-radius: 20px;
+  top: 40px;
+  left: 3%;
+  width: 90%;
   position: absolute;
-  z-index: 10;
-  top: -130px;
-  left: -30%;
-  height: 80%;
-  width: 150%;
+  height: 110%;
   padding: 25px;
   display: grid;
   grid-template-areas: "Main Sub" "Gall Gall";
-  grid-row-gap: 25px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 450px 1fr;
+  grid-template-rows: 450px 200px;
 }
 
 .favoriteBtn {
   position: absolute;
-  top: 45px;
-  right: 115px;
-  font-size: 19px;
+  top: 43px;
+  right: 83px;
+  font-size: 16px;
   background: none;
   border: none;
 }
 
 .toggle-close {
-  position: absolute;
+  position: fixed;
   background: none;
   width: 50px;
-  font-size: 40px;
-  right: 40px;
-  top: 40px;
+  font-size: 35px;
+  right: 77px;
   border: none;
+  top: 145px;
 }
 
 .toggle-close i {
-  color: #202828;
+  color: lightgrey;
 }
 
 .Card p {
@@ -59,12 +56,15 @@
 iframe {
   border: 0;
   position: relative;
-  top: 50px;
-  border-radius: 20px;
-  background-color: lightgrey;
+  right: -8px;
+  top: 40px;
+  /* border-radius: 20px; */
+  background-color: #153233;
   padding: 10px;
+  height: 358px;
+  width: 570px;
 }
 
-.Gallery {
+.Card .Gallery {
   grid-area: Gall;
 }

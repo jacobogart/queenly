@@ -76,7 +76,7 @@ class App extends React.Component {
     });
   }
 
-  displayAllOfType = (type) => {
+  displayAllOfType = type => {
     let searches = {
       Venues: searchBars("", this.state.bars),
       Shows: searchShows("", this.state.bars),
@@ -85,7 +85,7 @@ class App extends React.Component {
     this.setState({
       searchResults: searches[type]
     });
-  }
+  };
 
   displaySplashPage = () => {
     this.setState({
@@ -147,10 +147,8 @@ class App extends React.Component {
             // displaySearchSuggestions={this.state.displaySearchSuggestions}
           />
         </header>
-        <section className="App">
-          <article className="mainContent">{card}</article>
-        </section>
-        <div className="appBackground" />
+        <section className="App">{card}</section>
+        <div className="backgroundImage" />
       </div>
     );
   }
