@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match snapshop 1`] = `
+<section
+  className="Card"
+>
+  <button
+    className="toggle-close"
+    onClick={[MockFunction]}
+  >
+    <i
+      className="fas fa-times-circle"
+    />
+  </button>
+  <Queen_Main
+    cardData={
+      Object {
+        "bio": "❤️🧡💛💚💙💜💙💚💛🧡❤️ Double-D list Celebrity📍Chicago Drag Queen and Opinionated Scum ❤️🧡💛💚💙💜💙💚💛🧡❤️ IMHO EP. 4 💋⬇️",
+        "facebook": "https://www.facebook.com/auntycherrychan",
+        "id": 121,
+        "imageURL": "https://scontent-ort2-1.cdninstagram.com/vp/f0b2195af69b918c1baa1ed18c56d446/5D4AF54C/t51.2885-19/s320x320/51218190_377069173112153_1261515169956102144_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com",
+        "instagram": "https://www.instagram.com/aunty_chan/?hl=en",
+        "name": "Aunty Chan",
+        "shows": Array [
+          "Drag Matinee",
+        ],
+        "twitter": "https://twitter.com/aunty_chan?lang=en",
+      }
+    }
+    icons={
+      Object {
+        "close": <i
+          className="fas fa-times-circle"
+        />,
+        "facebookIcon": <i
+          className="fab fa-facebook-square"
+        />,
+        "instaIcon": <i
+          className="fab fa-instagram"
+        />,
+        "phoneIcon": <i
+          className="fas fa-phone-square"
+        />,
+        "twitterIcon": <i
+          className="fab fa-twitter-square"
+        />,
+        "webIcon": <i
+          className="fas fa-globe"
+        />,
+      }
+    }
+  />
+  <Sub_Info
+    cardData={
+      Object {
+        "bio": "❤️🧡💛💚💙💜💙💚💛🧡❤️ Double-D list Celebrity📍Chicago Drag Queen and Opinionated Scum ❤️🧡💛💚💙💜💙💚💛🧡❤️ IMHO EP. 4 💋⬇️",
+        "facebook": "https://www.facebook.com/auntycherrychan",
+        "id": 121,
+        "imageURL": "https://scontent-ort2-1.cdninstagram.com/vp/f0b2195af69b918c1baa1ed18c56d446/5D4AF54C/t51.2885-19/s320x320/51218190_377069173112153_1261515169956102144_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com",
+        "instagram": "https://www.instagram.com/aunty_chan/?hl=en",
+        "name": "Aunty Chan",
+        "shows": Array [
+          "Drag Matinee",
+        ],
+        "twitter": "https://twitter.com/aunty_chan?lang=en",
+      }
+    }
+    cardType="Queen"
+  />
+  <Gallery
+    bars={
+      Array [
+        Object {
+          "shows": Array [],
+        },
+      ]
+    }
+    cardData={
+      Object {
+        "bio": "❤️🧡💛💚💙💜💙💚💛🧡❤️ Double-D list Celebrity📍Chicago Drag Queen and Opinionated Scum ❤️🧡💛💚💙💜💙💚💛🧡❤️ IMHO EP. 4 💋⬇️",
+        "facebook": "https://www.facebook.com/auntycherrychan",
+        "id": 121,
+        "imageURL": "https://scontent-ort2-1.cdninstagram.com/vp/f0b2195af69b918c1baa1ed18c56d446/5D4AF54C/t51.2885-19/s320x320/51218190_377069173112153_1261515169956102144_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com",
+        "instagram": "https://www.instagram.com/aunty_chan/?hl=en",
+        "name": "Aunty Chan",
+        "shows": Array [
+          "Drag Matinee",
+        ],
+        "twitter": "https://twitter.com/aunty_chan?lang=en",
+      }
+    }
+    cardType="Queen"
+    queens={Array []}
+    selectSearchResult={[MockFunction]}
+  />
+</section>
+`;
