@@ -27,9 +27,23 @@ export default class Card extends Component {
     };
   }
 
+  componentDidMount() {
+    this.checkFavorite();
+  }
+
+  checkFavorite = () => {
+    let localFavoritesList = JSON.parse(localStorage.getItem("favoritesList")).map(object => object.name);
+    if (localFavoritesList.includes(this.props.cardData.name)) {
+      this.setState({
+        favorite: true
+      })
+    }
+  }
+
   handleFavorites = () => {
     if (this.state.favorite) {
       this.removeFromFavorites();
+      console.log(this.state.favoritesList);
     } else {
       this.addToFavorites();
     }
@@ -43,7 +57,17 @@ export default class Card extends Component {
   }
 
   addToFavorites = () => {
-    console.log('ADDED')
+    let favoritesList;
+    if (this.state.favoritesList) {
+      favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+      localStorage.setItem("favoritesList", JSON.stringify(this.state.favoritesList.push(this.props.cardData)));
+    } else {
+      favoritesList = [this.props.cardData];
+      localStorage.setItem("favoritesList", JSON.stringify(favoritesList));
+    }
+    this.setState({
+      favoritesList: favoritesList
+    })
   }
 
   

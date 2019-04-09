@@ -16,6 +16,7 @@ export default class SearchResults extends Component {
         <h2>Please Broaden Your Search</h2>
       )
     } else {
+      console.log(this.props.searchResults);
       results = this.props.searchResults.map(result => (
         <Thumbnail
           imgURL={result.imageURL}

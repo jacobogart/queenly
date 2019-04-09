@@ -19,7 +19,8 @@ class App extends React.Component {
       searchResults: [],
       currentResult: null,
       bars: [{ shows: [] }],
-      queens: []
+      queens: [],
+      favoritesList: localStorage.getItem("favoritesList")
     };
   }
 
@@ -80,7 +81,8 @@ class App extends React.Component {
     let searches = {
       Venues: searchBars("", this.state.bars),
       Shows: searchShows("", this.state.bars),
-      Queens: searchQueens("", this.state.queens)
+      Queens: searchQueens("", this.state.queens),
+      Favorites: this.state.favoritesList
     };
     this.setState({
       searchResults: searches[type]
@@ -105,6 +107,7 @@ class App extends React.Component {
         bars={this.state.bars}
         queens={this.state.queens}
         selectSearchResult={this.selectSearchResult}
+        favoritesList={this.state.favoritesList}
       />
     );
     let searchResultsComponent = (
