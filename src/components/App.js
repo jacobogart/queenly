@@ -77,19 +77,14 @@ class App extends React.Component {
   };
 
   displayAllOfType = (type) => {
-    if (type === "Venues") {
-      this.setState({
-        searchResults: searchBars('', this.state.bars)
-      });
-    } else if (type === "Shows") {
-      this.setState({
-        searchResults: searchShows('', this.state.bars)
-      });
-    } else if (type === "Queens") {
-      this.setState({
-        searchResults: searchQueens('', this.state.queens)
-      });
-    }
+    let searches = {
+      Venues: searchBars("", this.state.bars),
+      Shows: searchShows("", this.state.bars),
+      Queens: searchQueens("", this.state.queens)
+    };
+    this.setState({
+      searchResults: searches[type]
+    });
   }
 
   displaySplashPage = () => {
