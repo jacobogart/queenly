@@ -20,11 +20,14 @@ class App extends React.Component {
       currentResult: null,
       bars: [{ shows: [] }],
       queens: [],
-      favoritesList: localStorage.getItem("favoritesList")
     };
   }
 
   componentDidMount() {
+    let newFavoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+    this.setState({
+      favoritesList: newFavoritesList
+    });
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
     )
@@ -40,6 +43,11 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
+  updateFavorites = (faveList) => {
+    this.setState({
+      favoritesList: faveList
+    });
+  }
   updateSearchResults = query => {
     this.setState({
       displaySearchSuggestions: true,
@@ -86,7 +94,7 @@ class App extends React.Component {
     };
     this.setState({
       searchResults: searches[type]
-    });
+    }, this.displayAllSearchResults());
   }
 
   displaySplashPage = () => {
@@ -108,6 +116,7 @@ class App extends React.Component {
         queens={this.state.queens}
         selectSearchResult={this.selectSearchResult}
         favoritesList={this.state.favoritesList}
+        updateFavorites={this.updateFavorites}
       />
     );
     let searchResultsComponent = (

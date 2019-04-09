@@ -32,18 +32,19 @@ export default class Card extends Component {
   }
 
   checkFavorite = () => {
-    let localFavoritesList = JSON.parse(localStorage.getItem("favoritesList")).map(object => object.name);
-    if (localFavoritesList.includes(this.props.cardData.name)) {
-      this.setState({
-        favorite: true
-      })
-    }
+    if (localStorage.getItem("favoritesList")){
+      let localFavoritesList = JSON.parse(localStorage.getItem("favoritesList")).map(object => object.name);
+      if (localFavoritesList.includes(this.props.cardData.name)) {
+        this.setState({
+          favorite: true
+        })
+      }
+    } 
   }
 
   handleFavorites = () => {
     if (this.state.favorite) {
       this.removeFromFavorites();
-      console.log(this.state.favoritesList);
     } else {
       this.addToFavorites();
     }
@@ -57,21 +58,22 @@ export default class Card extends Component {
   }
 
   addToFavorites = () => {
-    let favoritesList;
-    if (this.state.favoritesList) {
-      favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
-      localStorage.setItem("favoritesList", JSON.stringify(this.state.favoritesList.push(this.props.cardData)));
+    let workingFavoritesList;
+    if (this.props.favoritesList) {
+      workingFavoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+      workingFavoritesList.push(this.props.cardData);
+      console.log(workingFavoritesList)
+      localStorage.setItem("favoritesList", JSON.stringify(workingFavoritesList));
     } else {
-      favoritesList = [this.props.cardData];
-      localStorage.setItem("favoritesList", JSON.stringify(favoritesList));
+      workingFavoritesList = [this.props.cardData];
+      localStorage.setItem("favoritesList", JSON.stringify(workingFavoritesList));
     }
-    this.setState({
-      favoritesList: favoritesList
-    })
+    this.props.updateFavorites(workingFavoritesList);
   }
 
   
   render() {
+    console.log(this.props.favoritesList);
     const cardData = this.props.cardData;
     const { id } = cardData;
     let mainInfo, cardType;
