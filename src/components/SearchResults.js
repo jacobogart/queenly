@@ -21,7 +21,7 @@ export default class SearchResults extends Component {
         {this.props.searchResults.map(result => (
           <Thumbnail
             imgURL={result.imageURL}
-            selectResult={this.props.selectSearchResult}
+            selectSearchResult={this.props.selectSearchResult}
             name={result.name}
             key={result.id}
           /> 
