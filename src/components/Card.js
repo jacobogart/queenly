@@ -55,7 +55,11 @@ export default class Card extends Component {
   }
 
   removeFromFavorites = () => {
-    console.log('REMOVED')
+    let workingFavoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+    let targetIndex = workingFavoritesList.map(fave => fave.name).indexOf(this.props.cardData.name);
+    workingFavoritesList.splice(targetIndex, 1);
+    localStorage.setItem("favoritesList", JSON.stringify(workingFavoritesList));
+    this.props.updateFavorites(workingFavoritesList);
   }
 
   addToFavorites = () => {
