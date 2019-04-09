@@ -25,10 +25,9 @@ class Hamburger extends React.Component {
       return (
         <div className="hamburgerMenu">
           <i className="fas fa-bars fa-2x" onClick={this.toggleBurger} />
-          <ul className="showMenu">
+          <ul className="showMenu" onClick={this.clickHamburger}>
             <li>
               <input
-                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Venues"
@@ -36,7 +35,6 @@ class Hamburger extends React.Component {
             </li>
             <li>
               <input
-                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Shows"
@@ -44,7 +42,6 @@ class Hamburger extends React.Component {
             </li>
             <li>
               <input
-                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Queens"
@@ -52,7 +49,6 @@ class Hamburger extends React.Component {
             </li>
             <li>
               <input
-                onClick={this.clickHamburger}
                 type="button"
                 className="menu"
                 value="Show All Favorites"

@@ -81,6 +81,14 @@ class App extends React.Component {
       this.setState({
         searchResults: searchBars('', this.state.bars)
       });
+    } else if (type === "Shows") {
+      this.setState({
+        searchResults: searchShows('', this.state.bars)
+      });
+    } else if (type === "Queens") {
+      this.setState({
+        searchResults: searchQueens('', this.state.queens)
+      });
     }
   }
 
