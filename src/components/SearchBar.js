@@ -23,7 +23,6 @@ class SearchBar extends Component {
   };
 
   render() {
-    console.log(this.props.searchResults);
     return (
       <section className="searchBarContainer">
         <form onSubmit={this.findResults} className="SearchBar">
