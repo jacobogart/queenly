@@ -1,3 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchBar should match snapshot 1`] = `undefined`;
+exports[`SearchBar should match snapshot 1`] = `
+<section
+  className="searchBarContainer"
+>
+  <form
+    className="SearchBar"
+    onSubmit={[Function]}
+  >
+    <input
+      className="searchTerm"
+      onKeyUp={[Function]}
+      placeholder="Search..."
+      type="search"
+    />
+    <button
+      className="searchButton"
+      type="submit"
+    >
+      <i
+        className="fas fa-search searchIcon"
+      />
+    </button>
+  </form>
+  <div
+    className="searchHolder"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <SearchSuggestion
+      key="118"
+      name="Sasha Belle"
+      selectSearchResult={[MockFunction]}
+    />
+  </div>
+</section>
+`;

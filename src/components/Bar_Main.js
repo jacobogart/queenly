@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 // * CSS imports
 import '../css/Main_Info.css';
 

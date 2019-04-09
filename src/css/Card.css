@@ -21,6 +21,15 @@
   grid-template-rows: 450px 1fr;
 }
 
+.favoriteBtn {
+  position: absolute;
+  top: 45px;
+  right: 115px;
+  font-size: 19px;
+  background: none;
+  border: none;
+}
+
 .toggle-close {
   position: absolute;
   background: none;

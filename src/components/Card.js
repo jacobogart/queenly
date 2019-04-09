@@ -56,20 +56,24 @@ export default class Card extends Component {
 
     return (
       <section className="Card">
-          <button className="toggle-close" 
-            onClick={this.props.displaySplashPage}>{this.state.icons.close}</button>
-          {mainInfo}
-          <Sub_Info 
-            cardData={cardData}
-            cardType={cardType}
-          />
-          <Gallery 
-            cardData={cardData}
-            cardType={cardType}
-            selectSearchResult={this.props.selectSearchResult}
-            bars={this.props.bars}
-            queens={this.props.queens}
-          />
+        <button className="favoriteBtn">
+          <i className="fas fa-heart fa-2x" />
+        </button>
+        <button
+          className="toggle-close"
+          onClick={this.props.displaySplashPage}
+        >
+          {this.state.icons.close}
+        </button>
+        {mainInfo}
+        <Sub_Info cardData={cardData} cardType={cardType} />
+        <Gallery
+          cardData={cardData}
+          cardType={cardType}
+          selectSearchResult={this.props.selectSearchResult}
+          bars={this.props.bars}
+          queens={this.props.queens}
+        />
       </section>
     );
   }
