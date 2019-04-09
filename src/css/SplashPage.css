@@ -3,6 +3,8 @@
   font-family: "Lobster";
   font-size: 86px;
   border: 1px solid orange;
+  position: fixed;
+  top: 200px;
 }
 
 .SplashPage h1 {
