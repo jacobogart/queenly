@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-import { search } from "../helpers.js";
+import { search, searchBars, searchShows, searchQueens } from "../helpers.js";
 import SplashPage from "./SplashPage";
 import Card from "./Card";
 import SearchResults from "./SearchResults";
@@ -76,6 +76,17 @@ class App extends React.Component {
     });
   };
 
+  displayAllOfType = (type) => {
+    let searches = {
+      Venues: searchBars("", this.state.bars),
+      Shows: searchShows("", this.state.bars),
+      Queens: searchQueens("", this.state.queens)
+    };
+    this.setState({
+      searchResults: searches[type]
+    });
+  }
+
   displaySplashPage = () => {
     this.setState({
       showCardPage: false,
@@ -126,6 +137,7 @@ class App extends React.Component {
       <div>
         <header className="navBar">
           <NavBar
+            displayAllOfType={this.displayAllOfType}
             showSplashPage={this.state.showSplashPage}
             displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCardPage}

@@ -1,16 +1,23 @@
 import React from "react";
 import "../css/Hamburger.css";
 class Hamburger extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showMenu: false
     }
   }
+
   toggleBurger = () => {
     this.state.showMenu
       ? this.setState( {showMenu: false} )
       : this.setState( {showMenu: true} )
+  }
+
+  clickHamburger = (event) => {
+    let type = event.target.value.split(' ')[2];
+    this.props.displayAllOfType(type);
+    this.props.displayAllSearchResults();
   }
 
   render() {
@@ -18,7 +25,7 @@ class Hamburger extends React.Component {
       return (
         <div className="hamburgerMenu">
           <i className="fas fa-bars fa-2x" onClick={this.toggleBurger} />
-          <ul className="showMenu">
+          <ul className="showMenu" onClick={this.clickHamburger}>
             <li>
               <input
                 type="button"

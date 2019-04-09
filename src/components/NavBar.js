@@ -12,7 +12,7 @@ class NavBar extends React.Component {
     if (!this.props.showSplashPage) {
       return (
         <nav className="NavBar">
-          <Hamburger />
+          <Hamburger {...this.props} />
           <SearchBar {...this.props} />
           <Favorites />
         </nav>
@@ -20,7 +20,7 @@ class NavBar extends React.Component {
     } else {
       return (
         <nav className="NavBar">
-          <Hamburger />
+          <Hamburger {...this.props} />
           <Favorites />
         </nav>
       );
