@@ -55,5 +55,4 @@ describe("Card", () => {
     expect(mockDisplaySplashPage).toBeCalled();
   });
 
-  
 });
