@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Queen_Main should match snapshop 1`] = `
+<main
+  className="Queen-Main Main_Info"
+>
+  <article
+    className="queen-content"
+  >
+    <h2>
+      Aunty Chan
+    </h2>
+    <h4>
+      Instagram Bio:
+    </h4>
+    <p
+      className="bio"
+    >
+      ❤️🧡💛💚💙💜💙💚💛🧡❤️ Double-D list Celebrity📍Chicago Drag Queen and Opinionated Scum ❤️🧡💛💚💙💜💙💚💛🧡❤️ IMHO EP. 4 💋⬇️
+    </p>
+  </article>
+  <aside
+    className="queen-links social-links"
+  >
+    <a
+      href="https://www.instagram.com/aunty_chan/?hl=en"
+    >
+      <i
+        className="fab fa-instagram"
+      />
+    </a>
+    <a
+      href="https://www.facebook.com/auntycherrychan"
+    >
+      <i
+        className="fab fa-facebook-square"
+      />
+    </a>
+    <a
+      href="https://twitter.com/aunty_chan?lang=en"
+    >
+      <i
+        className="fab fa-twitter-square"
+      />
+    </a>
+  </aside>
+</main>
+`;
