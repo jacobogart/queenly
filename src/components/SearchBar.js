@@ -17,7 +17,6 @@ class SearchBar extends Component {
         searchQuery: e.target.value,
       });
     } else {
-      console.log('empty')
       this.hideSuggestions();
     }
   }
@@ -28,14 +27,18 @@ class SearchBar extends Component {
     this.hideSuggestions();
   }
 
-  hideSuggestions = e => {
+  hideSuggestions = () => {
     this.props.hideSearchSuggestions();
     this.searchInput.value = '';
   }
 
   render() {
     return (
-      <section className="searchBarContainer">
+      <section 
+        className="searchBarContainer" 
+        tabIndex="0"
+        onBlur={this.hideSuggestions} 
+        ref={el => this.searchContainer = el}>
         <form onSubmit={this.findResults} className="SearchBar">
           <input
             onKeyUp={this.handleChange}
