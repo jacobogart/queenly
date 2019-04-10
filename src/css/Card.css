@@ -72,3 +72,11 @@ iframe {
 .Card .Gallery {
   grid-area: Gall;
 }
+
+.favoriteBtn i:hover {
+  color: white;
+}
+
+.toggle-close i:hover {
+  color: white;
+}

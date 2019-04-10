@@ -32,6 +32,6 @@ i {
   color: lightgrey;
 }
 
-i:hover {
+.NavBar i:hover {
   color: white;
 }
