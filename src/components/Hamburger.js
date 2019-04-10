@@ -8,7 +8,8 @@ class Hamburger extends React.Component {
     }
   }
 
-  toggleBurger = () => {
+  toggleBurger = (event) => {
+    event.stopPropagation();
     this.state.showMenu
       ? this.setState( {showMenu: false} )
       : this.setState( {showMenu: true} )
