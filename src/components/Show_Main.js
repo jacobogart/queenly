@@ -1,46 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // * CSS imports
-import '../css/Main_Info.css';
+import "../css/Main_Info.css";
 
 export default class Show_Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {};
   }
 
-  stringifyHosts = (host) => {
+  stringifyHosts = host => {
     if (host) {
-      switch(host.length) {
+      switch (host.length) {
         case 0:
-          return null
+          return null;
           break;
         case 1:
-          return `Host: ${host}`
+          return `Host: ${host}`;
           break;
         case 2:
-          return `Hosts: ${host.join(' & ')}`
+          return `Hosts: ${host.join(" & ")}`;
           break;
         default:
-          return `Hosts: ${host.join(' , ')}`
+          return `Hosts: ${host.join(" , ")}`;
           break;
       }
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
-  stringifyReoccuring = (reoccuring) => {
+  stringifyReoccuring = reoccuring => {
     return reoccuring ? "Every" : "Only this";
-  }
+  };
 
   convertWhen = (dayOfWeek, frequency, reoccuring) => {
     let howOften = this.stringifyReoccuring(reoccuring);
-    
-    return `${howOften} ${dayOfWeek.dayOfWeek} on the ${frequency.frequency} of the month.`
-  }
 
-  convertTime = (startTime) => {
+    return `${howOften} ${dayOfWeek.dayOfWeek} on the ${
+      frequency.frequency
+    } of the month.`;
+  };
+
+  convertTime = startTime => {
     // let standardTime = startTime.startTime.toString().split('');
     // if (startTime.startTime >= 1300) {
     //   console.log('stand', standardTime)
@@ -49,7 +50,7 @@ export default class Show_Main extends Component {
     //   console.log('hours', hours)
     //   console.log(standardTime)
     // }
-  }
+  };
 
   // convertTime = (startTime) => {
   //   console.log('time: ', startTime.startTime.toString().split('').splice(0,0, ':'));
@@ -77,24 +78,33 @@ export default class Show_Main extends Component {
   // }
 
   render() {
-    let { name, category, notes, host, dayOfWeek, frequency, startTime, reoccuring }
-      = this.props.cardData;
+    let {
+      name,
+      category,
+      notes,
+      host,
+      dayOfWeek,
+      frequency,
+      startTime,
+      reoccuring
+    } = this.props.cardData;
 
     return (
       <main className="Bar-Main Main_Info">
         <article className="Content">
           <h2>{name}</h2>
-          <h4>Type of Show: {category}</h4>
-          <h4>Notes:</h4>
-          <p className="notes">{notes}</p>
+          {!notes ? null : (
+            <div>
+              <h4>Notes:</h4>
+              <p className="notes">{notes}</p>
+            </div>
+          )}
           <p className="hosts">{this.stringifyHosts(host)}</p>
           <p>When: </p>
           <p className="showtime">
             {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}
           </p>
-          <p className="time">
-            At: {this.convertTime({startTime})}
-          </p>
+          <p className="time">At: {this.convertTime({ startTime })}</p>
         </article>
       </main>
     );
