@@ -6,8 +6,6 @@ import '../css/Main_Info.css';
 export default class Bar_Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
   }
 
   render() {
@@ -19,28 +17,28 @@ export default class Bar_Main extends Component {
     return (
       <main className="Bar-Main Main_Info">
         <article className="Content">
-          <h2>{ name }</h2>
-          <img className="bar-img" src={ imageURL } alt={"Image of " + { name }} />
+          <h2>{name}</h2>
+          <img
+            className="bar-img"
+            src={imageURL}
+            alt={"Image of " + { name }}
+          />
           <p className="phone">
-            { phoneIcon }
-            { phone }
+            {phoneIcon}
+            {phone}
           </p>
-          <h4>Notes:</h4>
-          <p className="notes">{ notes }</p>
+          {!notes ? null : (
+            <div>
+              <h4>Notes:</h4>
+              <p className="notes">{notes}</p>
+            </div>
+          )}
         </article>
         <aside className="social-links">
-          <a href={ website }>
-            { webIcon }
-          </a>
-          <a href={ instagram }>
-            { instaIcon }
-          </a>
-          <a href={ facebook }>
-            { facebookIcon }
-          </a>
-          <a href={ twitter }>
-            { twitterIcon }
-          </a>
+          <a href={website}>{webIcon}</a>
+          <a href={instagram}>{instaIcon}</a>
+          <a href={facebook}>{facebookIcon}</a>
+          <a href={twitter}>{twitterIcon}</a>
         </aside>
       </main>
     );
