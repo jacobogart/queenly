@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Thumbnail from './Thumbnail.js';
-import { search, searchBars, searchShows, searchQueens } from "../helpers.js";
+import { searchShows } from "../helpers.js";
 
 // * CSS imports
 import "../css/Gallery.css";

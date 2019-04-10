@@ -12,10 +12,7 @@ class Favorites extends React.Component {
 
   render() {
     return (
-      <div 
-        className="favoriteBtn"
-        onClick={this.showFavorites}
-      >
+      <div onClick={this.showFavorites} >
         <i className="fas fa-heart fa-2x" />
       </div>
     );

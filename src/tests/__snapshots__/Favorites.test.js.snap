@@ -2,7 +2,6 @@
 
 exports[`Favorites should match snapshot 1`] = `
 <div
-  className="favoriteBtn"
   onClick={[Function]}
 >
   <i
