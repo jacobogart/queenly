@@ -175,6 +175,7 @@ class App extends React.Component {
           <NavBar
             displayAllOfType={this.displayAllOfType}
             showSplashPage={this.state.showSplashPage}
+            displaySplashPage={this.displaySplashPage}
             displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCardPage}
             updateSearchResults={this.updateSearchResults}

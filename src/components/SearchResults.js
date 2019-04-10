@@ -13,7 +13,7 @@ export default class SearchResults extends Component {
 
     if (this.props.searchResults.length === 0) {
       results = 
-        <h2>Nothing to see here.</h2>
+        <h2>No results found.</h2>
     } else {
       results = this.props.searchResults.map(result => (
         <Thumbnail
