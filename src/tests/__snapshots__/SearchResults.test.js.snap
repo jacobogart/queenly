@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults should match snapshop 1`] = `
+<section
+  className="searchResults"
+>
+  <button
+    className="toggle-close"
+    onClick={[MockFunction]}
+  >
+    <i
+      className="fas fa-times-circle"
+    />
+  </button>
+  <Thumbnail
+    imgURL="https://scontent-ort2-1.cdninstagram.com/vp/f0b2195af69b918c1baa1ed18c56d446/5D4AF54C/t51.2885-19/s320x320/51218190_377069173112153_1261515169956102144_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com"
+    key="121"
+    name="Aunty Chan"
+    selectSearchResult={[MockFunction]}
+  />
+</section>
+`;

@@ -5,7 +5,7 @@
 /* ================ */
 .Main_Info {
   background-color: #2e5658;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 0px;
   padding: 25px;
   box-shadow: #202828 3px 3px 2px;
   /* height: 100%; */
@@ -66,6 +66,19 @@ p {
   border-radius: 20px;
   margin-top: 30px;
 }
+
+.phone {
+  position: absolute;
+  top: 45px;
+  display: flex;
+  flex-direction: row;
+  right: 400px;
+  font-size: 25px;
+  align-items: center;
+  justify-content: space-between;
+  width: 210px;
+}
+
 .phone-icon {
   margin-right: 10px;
   position: relative;

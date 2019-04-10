@@ -19,11 +19,16 @@ class App extends React.Component {
       searchResults: [],
       currentResult: null,
       bars: [{ shows: [] }],
-      queens: []
+      queens: [],
+      favoritesList: null
     };
   }
 
   componentDidMount() {
+    let newFavoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+    this.setState({
+      favoritesList: newFavoritesList
+    });
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
     )
@@ -39,11 +44,20 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
-  updateSearchResults = query => {
+  updateFavorites = (faveList) => {
     this.setState({
-      displaySearchSuggestions: true,
-      searchResults: search(query, this.state.bars, this.state.queens)
+      favoritesList: faveList
     });
+  }
+  updateSearchResults = query => {
+    query
+      ? this.setState({
+          displaySearchSuggestions: true,
+          searchResults: search(query, this.state.bars, this.state.queens)
+        })
+      : this.setState({
+        displaySearchSuggestions: false
+      })
   };
 
   selectSearchResult = resultName => {
@@ -72,19 +86,20 @@ class App extends React.Component {
       showCardPage: false,
       showAllResultsPage: true,
       showSplashPage: false,
-      // displaySearchSuggestions: false
+      displaySearchSuggestions: false
     });
   }
 
-  displayAllOfType = (type) => {
+  displayAllOfType = type => {
     let searches = {
       Venues: searchBars("", this.state.bars),
       Shows: searchShows("", this.state.bars),
-      Queens: searchQueens("", this.state.queens)
+      Queens: searchQueens("", this.state.queens),
+      Favorites: this.state.favoritesList || []
     };
     this.setState({
       searchResults: searches[type]
-    });
+    }, this.displayAllSearchResults());
   }
 
   displaySplashPage = () => {
@@ -111,6 +126,8 @@ class App extends React.Component {
         bars={this.state.bars}
         queens={this.state.queens}
         selectSearchResult={this.selectSearchResult}
+        favoritesList={this.state.favoritesList}
+        updateFavorites={this.updateFavorites}
       />
     );
     let searchResultsComponent = (
@@ -155,10 +172,8 @@ class App extends React.Component {
             hideSearchSuggestions={this.hideSearchSuggestions}
           />
         </header>
-        <section className="App">
-          <article className="mainContent">{card}</article>
-        </section>
-        <div className="appBackground" />
+        <section className="App">{card}</section>
+        <div className="backgroundImage" />
       </div>
     );
   }

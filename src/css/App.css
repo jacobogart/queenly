@@ -1,20 +1,19 @@
+html {
+  background-color: #202828;
+}
+
 .App {
-  /* border: 1px solid blue;
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; */
-  bottom: 0;
+  align-items: center;
   height: 70%;
-  left: 0;
   margin: 0 auto;
   position: fixed;
-  right: 0;
-  width: 500px;
+  width: 100%;
   z-index: 1;
 }
 
-.appBackground {
+.backgroundImage {
   height: 100vh;
   left: 0;
   margin: 0 auto;
