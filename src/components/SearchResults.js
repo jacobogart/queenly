@@ -26,9 +26,13 @@ export default class SearchResults extends Component {
       ))
     }
 
+    if (this.props.searchQuery) {
+      var resultsHeader = <h3>Search results for: {this.props.searchQuery}</h3>
+    } 
+
     return (
       <section className="searchResults">
-        <h3>Search Results for: {this.props.searchQuery}</h3>
+          {resultsHeader}
           <button
             className="toggle-close"
             onClick={this.props.displaySplashPage}

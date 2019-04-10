@@ -106,7 +106,8 @@ class App extends React.Component {
       Favorites: this.state.favoritesList || []
     };
     this.setState({
-      searchResults: searches[type]
+      searchResults: searches[type],
+      searchQuery: ''
     }, this.displayAllSearchResults());
   }
 
@@ -114,7 +115,7 @@ class App extends React.Component {
     this.setState({
       showCardPage: false,
       showAllResultsPage: true,
-      showSplashPage: true
+      showSplashPage: true,
     });
   }
 
@@ -138,6 +139,7 @@ class App extends React.Component {
         updateFavorites={this.updateFavorites}
       />
     );
+
     let searchResultsComponent = (
       <SearchResults
         displaySplashPage={this.displaySplashPage}
