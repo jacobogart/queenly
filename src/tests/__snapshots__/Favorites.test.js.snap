@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites should match snapshot 1`] = `
+<div
+  className="favoriteBtn"
+  onClick={[Function]}
+>
+  <i
+    className="fas fa-heart fa-2x"
+  />
+</div>
+`;

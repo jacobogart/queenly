@@ -9,9 +9,13 @@ class Favorites extends React.Component {
     this.props.displayAllOfType('Favorites');
     this.props.displayAllSearchResults();
   }
+
   render() {
     return (
-      <div onClick={this.showFavorites}>
+      <div 
+        className="favoriteBtn"
+        onClick={this.showFavorites}
+      >
         <i className="fas fa-heart fa-2x" />
       </div>
     );
