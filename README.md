@@ -1,4 +1,4 @@
-# Queenly - 
+# Queenly - A Whateverly Project
 #### [Tiffany Bacher](https://github.com/tiffanybacher), [Jacob Bogart](https://github.com/jacobogart), [Kevin Krato](https://github.com/KevinKra), & [Justin Pyktel](https://github.com/SiimonStark)
 An educational project utilizing React to create a dynamic search engine for local drag queens and drag shows. 
 
@@ -15,9 +15,6 @@ Run `npm start` and visit localhost:8080 in your browser
 Website is tested with Jest and Enzyme
 
 Run `npm run test` to see test suite
-
-## Partner Expectations
-[DTR Gist](https://gist.github.com/jacobogart/82a4cfaf581a3311902adc584051d252)
 
 ## Learning Goals
 * Synthesize knowledge of OOP, classes, and JS fundamentals to create an application using React
