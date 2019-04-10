@@ -9,26 +9,19 @@ class NavBar extends React.Component {
   }
 
   render() {
-    let navLogo = <h2 className="navLogo">Queenly</h2>
-    let searchBar = <SearchBar {...this.props} />
-
     if (!this.props.showSplashPage) {
-      return (
-        <nav className="NavBar">
-          <Hamburger {...this.props} />
-          {navLogo}
-          {searchBar}
-          <Favorites {...this.props} />
-        </nav>
-      );
-    } else {
-      return (
-        <nav className="NavBar">
-          <Hamburger {...this.props} />
-          <Favorites {...this.props} />
-        </nav>
-      );
+      var navLogo = <h2 className="navLogo">Queenly</h2> 
+      var searchBar = <SearchBar {...this.props} />
     }
+
+    return (
+      <nav className="NavBar">
+        <Hamburger {...this.props} />
+        {navLogo}
+        {searchBar}
+        <Favorites {...this.props} />
+      </nav>
+    );
   }
 }
 
