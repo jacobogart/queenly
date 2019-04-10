@@ -8,7 +8,6 @@ exports[`App should match snapshop 1`] = `
     <NavBar
       displayAllOfType={[Function]}
       displayAllSearchResults={[Function]}
-      displaySearchSuggestions={false}
       searchBarDisplay={false}
       searchResults={Array []}
       selectSearchResult={[Function]}
@@ -19,20 +18,15 @@ exports[`App should match snapshop 1`] = `
   <section
     className="App"
   >
-    <article
-      className="mainContent"
-    >
-      <SplashPage
-        displayAllSearchResults={[Function]}
-        displaySearchSuggestions={false}
-        searchResults={Array []}
-        selectSearchResult={[Function]}
-        updateSearchResults={[Function]}
-      />
-    </article>
+    <SplashPage
+      displayAllSearchResults={[Function]}
+      searchResults={Array []}
+      selectSearchResult={[Function]}
+      updateSearchResults={[Function]}
+    />
   </section>
   <div
-    className="appBackground"
+    className="backgroundImage"
   />
 </div>
 `;
