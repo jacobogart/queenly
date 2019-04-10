@@ -8,8 +8,6 @@ import "../css/Gallery.css";
 export default class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.shows = this.props.cardData.shows || [];
   }
 
   render() {

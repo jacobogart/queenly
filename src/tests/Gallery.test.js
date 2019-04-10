@@ -37,7 +37,4 @@ describe('Gallery', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have default state', () => {
-    expect(wrapper.state()).toEqual({});
-  });
 })
