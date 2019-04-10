@@ -14,14 +14,14 @@ class NavBar extends React.Component {
         <nav className="NavBar">
           <Hamburger {...this.props} />
           <SearchBar {...this.props} />
-          <Favorites />
+          <Favorites {...this.props} />
         </nav>
       );
     } else {
       return (
         <nav className="NavBar">
           <Hamburger {...this.props} />
-          <Favorites />
+          <Favorites {...this.props} />
         </nav>
       );
     }
