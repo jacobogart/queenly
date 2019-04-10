@@ -1,3 +1,7 @@
+html {
+  background-color: #202828;
+}
+
 .App {
   display: flex;
   justify-content: center;

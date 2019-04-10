@@ -11,7 +11,7 @@ class SearchBar extends Component {
   }
 
   handleChange = e => {
-    if (e.target.value) {
+    if (e.target !== undefined) {
       this.props.updateSearchResults(e.target.value);
       this.setState({
         searchQuery: e.target.value,
@@ -28,21 +28,23 @@ class SearchBar extends Component {
   }
 
   hideSuggestions = () => {
-    this.props.hideSearchSuggestions();
     this.searchInput.value = '';
+    // this.props.hideSearchSuggestions();
   }
 
   render() {
     return (
-      <section 
-        className="searchBarContainer" 
+      <section
+        className="searchBarContainer"
         tabIndex="0"
-        onBlur={this.hideSuggestions} 
-        ref={el => this.searchContainer = el}>
+        onBlur={this.hideSuggestions}
+        onMouseLeave={this.props.hideSearchSuggestions}
+        ref={el => (this.searchContainer = el)}
+      >
         <form onSubmit={this.findResults} className="SearchBar">
           <input
-            onKeyUp={this.handleChange}
-            ref={el => this.searchInput = el}
+            onChange={this.handleChange}
+            ref={el => (this.searchInput = el)}
             type="search"
             placeholder="Search..."
             className="searchTerm"
@@ -59,6 +61,7 @@ class SearchBar extends Component {
         >
           {this.props.searchResults.slice(0, 5).map(result => (
             <SearchSuggestion
+              {...this.props}
               name={result.name}
               selectSearchResult={this.props.selectSearchResult}
               key={result.id}
