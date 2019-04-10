@@ -6,11 +6,9 @@
 }
 
 .SearchBar {
-  border-radius: 25px 25px 25px 25px;
   display: inline-flex;
   flex: 1 1;
   width: 550px;
-  overflow: auto;
   position: relative;
   height: 40px;
 }
@@ -49,7 +47,7 @@
 
 .searchButton {
   background: #538ac5;
-  border-radius: 0;
+  border-radius: 0 20px 20px 0;
   border: 0;
   height: 40px;
   color: white;
