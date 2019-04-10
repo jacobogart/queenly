@@ -6,21 +6,33 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchQuery: ""
-    };
+      searchQuery: "",
+      showSuggestions: false
+    }
   }
 
   handleChange = e => {
-    this.props.updateSearchResults(e.target.value);
-    this.setState({
-      searchQuery: e.target.value
-    });
-  };
+    if (e.target.value) {
+      this.props.updateSearchResults(e.target.value);
+      this.setState({
+        searchQuery: e.target.value,
+        showSuggestions: true
+      });
+    } else {
+      this.hideSuggestions();
+    }
+  }
 
   findResults = e => {
     e.preventDefault();
     this.props.displayAllSearchResults();
-  };
+  }
+
+  hideSuggestions = () => {
+    this.setState({
+      showSuggestions: false
+    })
+  }
 
   render() {
     return (
@@ -40,7 +52,7 @@ class SearchBar extends Component {
         <div
           className="searchHolder"
           style={{
-            display: this.props.displaySearchSuggestions ? "block" : "none"
+            display: this.state.showSuggestions ? "block" : "none"
           }}
         >
           {this.props.searchResults.slice(0, 5).map(result => (

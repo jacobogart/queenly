@@ -15,7 +15,7 @@ class App extends React.Component {
       showCardPage: false,
       showAllResultsPage: false,
       showSplashPage: true,
-      displaySearchSuggestions: false,
+      // displaySearchSuggestions: false,
       searchResults: [],
       currentResult: null,
       bars: [{ shows: [] }],
@@ -50,7 +50,7 @@ class App extends React.Component {
   }
   updateSearchResults = query => {
     this.setState({
-      displaySearchSuggestions: true,
+      // displaySearchSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   };
@@ -66,7 +66,7 @@ class App extends React.Component {
       cardData: search(resultName, this.state.bars, this.state.queens)[0],
       displaySearchSuggestions: false
     });
-  };
+  }
 
   displayCard = () => {
     this.setState({
@@ -74,7 +74,7 @@ class App extends React.Component {
       showAllResultsPage: false,
       showSplashPage: false
     });
-  };
+  }
 
   displayAllSearchResults = () => {
     this.setState({
@@ -83,9 +83,9 @@ class App extends React.Component {
       showSplashPage: false,
       displaySearchSuggestions: false
     });
-  };
+  }
 
-  displayAllOfType = (type) => {
+  displayAllOfType = type => {
     let searches = {
       Venues: searchBars("", this.state.bars),
       Shows: searchShows("", this.state.bars),
@@ -103,7 +103,7 @@ class App extends React.Component {
       showAllResultsPage: true,
       showSplashPage: true
     });
-  };
+  }
 
   render() {
     let card;
@@ -133,7 +133,7 @@ class App extends React.Component {
         updateSearchResults={this.updateSearchResults}
         selectSearchResult={this.selectSearchResult}
         searchResults={this.state.searchResults}
-        displaySearchSuggestions={this.state.displaySearchSuggestions}
+        // displaySearchSuggestions={this.state.displaySearchSuggestions}
       />
     );
 
@@ -156,13 +156,11 @@ class App extends React.Component {
             updateSearchResults={this.updateSearchResults}
             selectSearchResult={this.selectSearchResult}
             searchResults={this.state.searchResults}
-            displaySearchSuggestions={this.state.displaySearchSuggestions}
+            // displaySearchSuggestions={this.state.displaySearchSuggestions}
           />
         </header>
-        <section className="App">
-          <article className="mainContent">{card}</article>
-        </section>
-        <div className="appBackground" />
+        <section className="App">{card}</section>
+        <div className="backgroundImage" />
       </div>
     );
   }
