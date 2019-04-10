@@ -2,7 +2,7 @@
 #### [Tiffany Bacher](https://github.com/tiffanybacher), [Jacob Bogart](https://github.com/jacobogart), [Kevin Krato](https://github.com/KevinKra), & [Justin Pyktel](https://github.com/SiimonStark)
 An educational project utilizing React to create a dynamic search engine for local drag queens and drag shows. 
 
-## Instalation
+## Installation
 Clone the repo - https://github.com/jacobogart/queenly.git
 
 Run `npm install` from the root directory
