@@ -9,7 +9,7 @@ const queens=[];
 const cardType = "Show";
 const cardData = {
   "category": "drag show",
-  "dayOfWeek": "Sudnay",
+  "dayOfWeek": "Sunday",
   "frequency": "weekly",
   "host": ["Chamilla Foxx"],
   "id": 2101,
