@@ -6,6 +6,7 @@ import { shallow } from 'enzyme';
 const mockDisplayAllSearchResults = jest.fn();
 const mockUpdateResults = jest.fn();
 const mockSelectResult = jest.fn();
+const mockHideSearchSuggestions = jest.fn();
 const mockSearchResults = [
   {
     "bio": "",
@@ -30,7 +31,8 @@ describe('SearchBar', () => {
         updateSearchResults={mockUpdateResults}
         selectSearchResult={mockSelectResult}
         searchResults={mockSearchResults}
-        displaySearchSuggestions={false} />
+        displaySearchSuggestions={false}
+        hideSearchSuggestions={mockHideSearchSuggestions} />
     );
   });
 
@@ -44,20 +46,22 @@ describe('SearchBar', () => {
     });
   });
 
-  it.skip('should update searchQuery on change', () => {
-    wrapper.find('.searchTerm').simulate('keyUp', {keyCode: 13});
-
-    expect(mockUpdateResults).toHaveBeenCalled();
+  it('should update searchQuery on change', () => {
+    const mockEvent = { target: { value: "Sasha" } };
 
     expect(wrapper.state('searchQuery').toEqual(''));
 
-    wrapper.instance().handleChange( {target: {value: 'Sasha'}} );
+    wrapper.find('.searchTerm').simulate('keyUp', mockEvent);
 
-    expect(wrapper.state()).toEqual({
-          searchQuery: 'Sasha'
-    });
+    expect(mockUpdateResults).toHaveBeenCalled();
+
+    // wrapper.instance().handleChange( {target: {value: 'Sasha'}} );
+
+    expect(wrapper.state()).toEqual({ searchQuery: 'Sasha' });
   });
 });
+
+
 
 
 

@@ -15,6 +15,7 @@ const mockResult = {
       "name": "Sunday Social"
     }
 
+const mockSetResult = jest.fn();
 const mockSelectSearchResult = jest.fn();
 
 describe('Thumbnail', () => {
@@ -33,9 +34,17 @@ describe('Thumbnail', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should have default state', () => {
-    expect(wrapper.state()).toEqual({
-      // Put state here
-    });
-  });
+  // it.skip('should have default state', () => {
+  //   expect(wrapper.state()).toEqual({
+  //     // Put state here
+  //   });
+  // });
+
+  it('should call setResult on click', () => {
+    const mockEvent = { target: { value: "Sunday Social" } };
+
+    wrapper.find('.ThumbnailImg').simulate('click');
+
+    expect(mockSetResult).toHaveBeenCalled();
+  })
 })

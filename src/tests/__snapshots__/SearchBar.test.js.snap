@@ -3,6 +3,8 @@
 exports[`SearchBar should match snapshot 1`] = `
 <section
   className="searchBarContainer"
+  onBlur={[Function]}
+  tabIndex="0"
 >
   <form
     className="SearchBar"
@@ -32,6 +34,7 @@ exports[`SearchBar should match snapshot 1`] = `
     }
   >
     <SearchSuggestion
+      hideSuggestions={[Function]}
       key="118"
       name="Sasha Belle"
       selectSearchResult={[MockFunction]}

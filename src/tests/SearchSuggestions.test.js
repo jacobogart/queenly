@@ -2,6 +2,9 @@ import React from "react";
 import SearchSuggestion from "../components/SearchSuggestion";
 import { shallow } from "enzyme";
 
+const setResult = jest.fn();
+const hideSuggestions = jest.fn();
+const selectResult = jest.fn();
 const result = {
   category: "viewing party",
   dayOfWeek: "Thursday",
@@ -20,8 +23,9 @@ describe("SearchSuggestion", () => {
     wrapper = shallow(
       <SearchSuggestion
         name={result.name}
-        selectResult={this.props.selectResult}
+        selectSearchResult={selectResult}
         key={result.id}
+        hideSuggestions={hideSuggestions}
       />
     );
   });
@@ -30,5 +34,11 @@ describe("SearchSuggestion", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should on click set the result to be the prop.name clicked");
+  it("should on click set the result to be the prop.name clicked", () => {
+    const mockEvent = {target: {value: result.name}};
+
+    wrapper.find('.SuggestionsContainer').simulate('click', mockEvent);
+
+    expect(setResult).toHaveBeenCalled();
+  });
 });
