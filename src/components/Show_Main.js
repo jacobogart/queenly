@@ -80,7 +80,6 @@ export default class Show_Main extends Component {
   render() {
     let {
       name,
-      category,
       notes,
       host,
       dayOfWeek,
