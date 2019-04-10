@@ -14,6 +14,10 @@ class Hamburger extends React.Component {
       : this.setState( {showMenu: true} )
   }
 
+  handleMouseOut = () => {
+    this.setState( {showMenu: false} )
+  }
+
   clickHamburger = (event) => {
     let type = event.target.value.split(' ')[2];
     this.props.displayAllOfType(type);
@@ -25,36 +29,41 @@ class Hamburger extends React.Component {
       return (
         <div className="hamburgerMenu">
           <i className="fas fa-bars fa-2x" onClick={this.toggleBurger} />
-          <ul className="showMenu" onClick={this.clickHamburger}>
-            <li>
-              <input
-                type="button"
-                className="menu"
-                value="Show All Venues"
-              />
-            </li>
-            <li>
-              <input
-                type="button"
-                className="menu"
-                value="Show All Shows"
-              />
-            </li>
-            <li>
-              <input
-                type="button"
-                className="menu"
-                value="Show All Queens"
-              />
-            </li>
-            <li>
-              <input
-                type="button"
-                className="menu"
-                value="Show All Favorites"
-              />
-            </li>
-          </ul>
+          <div
+            className="burger-container"
+            onMouseLeave={this.handleMouseOut}
+          >
+            <ul className="showMenu" onClick={this.clickHamburger}>
+              <li>
+                <input
+                  type="button"
+                  className="menu"
+                  value="Show All Venues"
+                />
+              </li>
+              <li>
+                <input
+                  type="button"
+                  className="menu"
+                  value="Show All Shows"
+                />
+              </li>
+              <li>
+                <input
+                  type="button"
+                  className="menu"
+                  value="Show All Queens"
+                />
+              </li>
+              <li>
+                <input
+                  type="button"
+                  className="menu"
+                  value="Show All Favorites"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       );
     } else {
