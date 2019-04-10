@@ -15,15 +15,20 @@ class App extends React.Component {
       showCardPage: false,
       showAllResultsPage: false,
       showSplashPage: true,
-      // displaySearchSuggestions: false,
+      searchSuggestions: false,
       searchResults: [],
       currentResult: null,
       bars: [{ shows: [] }],
-      queens: []
+      queens: [],
+      favoritesList: null
     };
   }
 
   componentDidMount() {
+    let newFavoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+    this.setState({
+      favoritesList: newFavoritesList
+    });
     fetch(
       "https://fe-apps.herokuapp.com/api/v1/whateverly/1901/jacobogart/bars"
     )
@@ -39,9 +44,14 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
+  updateFavorites = (faveList) => {
+    this.setState({
+      favoritesList: faveList
+    });
+  }
   updateSearchResults = query => {
     this.setState({
-      // displaySearchSuggestions: true,
+      displaySearchSuggestions: true,
       searchResults: search(query, this.state.bars, this.state.queens)
     });
   };
@@ -72,7 +82,7 @@ class App extends React.Component {
       showCardPage: false,
       showAllResultsPage: true,
       showSplashPage: false,
-      displaySearchSuggestions: false
+      // displaySearchSuggestions: false
     });
   }
 
@@ -80,12 +90,13 @@ class App extends React.Component {
     let searches = {
       Venues: searchBars("", this.state.bars),
       Shows: searchShows("", this.state.bars),
-      Queens: searchQueens("", this.state.queens)
+      Queens: searchQueens("", this.state.queens),
+      Favorites: this.state.favoritesList || []
     };
     this.setState({
       searchResults: searches[type]
-    });
-  };
+    }, this.displayAllSearchResults());
+  }
 
   displaySplashPage = () => {
     this.setState({
@@ -93,6 +104,12 @@ class App extends React.Component {
       showAllResultsPage: true,
       showSplashPage: true
     });
+  }
+
+  hideSearchSuggestions = () => {
+      this.setState({
+        displaySearchSuggestions: false,
+      });
   }
 
   render() {
@@ -105,6 +122,8 @@ class App extends React.Component {
         bars={this.state.bars}
         queens={this.state.queens}
         selectSearchResult={this.selectSearchResult}
+        favoritesList={this.state.favoritesList}
+        updateFavorites={this.updateFavorites}
       />
     );
     let searchResultsComponent = (
@@ -121,7 +140,8 @@ class App extends React.Component {
         updateSearchResults={this.updateSearchResults}
         selectSearchResult={this.selectSearchResult}
         searchResults={this.state.searchResults}
-        // displaySearchSuggestions={this.state.displaySearchSuggestions}
+        displaySearchSuggestions={this.state.displaySearchSuggestions}
+        hideSearchSuggestions={this.hideSearchSuggestions}
       />
     );
 
@@ -144,7 +164,8 @@ class App extends React.Component {
             updateSearchResults={this.updateSearchResults}
             selectSearchResult={this.selectSearchResult}
             searchResults={this.state.searchResults}
-            // displaySearchSuggestions={this.state.displaySearchSuggestions}
+            displaySearchSuggestions={this.state.displaySearchSuggestions}
+            hideSearchSuggestions={this.hideSearchSuggestions}
           />
         </header>
         <section className="App">{card}</section>

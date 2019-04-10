@@ -27,6 +27,10 @@
   border: none;
 }
 
+.fave-true > * {
+  color: red;
+}
+
 .toggle-close {
   position: fixed;
   background: none;

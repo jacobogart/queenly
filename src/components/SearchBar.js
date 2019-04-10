@@ -7,7 +7,6 @@ class SearchBar extends Component {
     super(props);
     this.state = {
       searchQuery: "",
-      showSuggestions: false
     }
   }
 
@@ -16,7 +15,6 @@ class SearchBar extends Component {
       this.props.updateSearchResults(e.target.value);
       this.setState({
         searchQuery: e.target.value,
-        showSuggestions: true
       });
     } else {
       this.hideSuggestions();
@@ -26,25 +24,29 @@ class SearchBar extends Component {
   findResults = e => {
     e.preventDefault();
     this.props.displayAllSearchResults();
+    this.hideSuggestions();
   }
 
   hideSuggestions = () => {
-    this.setState({
-      showSuggestions: false
-    })
+    this.props.hideSearchSuggestions();
+    this.searchInput.value = '';
   }
 
   render() {
     return (
-      <section className="searchBarContainer">
+      <section 
+        className="searchBarContainer" 
+        tabIndex="0"
+        onBlur={this.hideSuggestions} 
+        ref={el => this.searchContainer = el}>
         <form onSubmit={this.findResults} className="SearchBar">
           <input
             onKeyUp={this.handleChange}
+            ref={el => this.searchInput = el}
             type="search"
             placeholder="Search..."
             className="searchTerm"
           />
-
           <button type="submit" className="searchButton">
             <i className="fas fa-search searchIcon" />
           </button>
@@ -52,7 +54,7 @@ class SearchBar extends Component {
         <div
           className="searchHolder"
           style={{
-            display: this.state.showSuggestions ? "block" : "none"
+            display: this.props.displaySearchSuggestions ? "block" : "none"
           }}
         >
           {this.props.searchResults.slice(0, 5).map(result => (
@@ -60,6 +62,7 @@ class SearchBar extends Component {
               name={result.name}
               selectSearchResult={this.props.selectSearchResult}
               key={result.id}
+              hideSuggestions={this.hideSuggestions}
             />
           ))}
         </div>

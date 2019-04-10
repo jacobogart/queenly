@@ -23,13 +23,70 @@ export default class Card extends Component {
         twitterIcon: <i className="fab fa-twitter-square" />,
         close: <i className="fas fa-times-circle" /> 
       },
+      favorite: false
     };
   }
+
+  componentDidMount() {
+    this.checkFavorite();
+  }
+
+  checkFavorite = () => {
+    if (localStorage.getItem("favoritesList")){
+      let localFavoritesList = JSON.parse(localStorage.getItem("favoritesList")).map(object => object.name);
+      if (localFavoritesList.includes(this.props.cardData.name)) {
+        this.setState({
+          favorite: true
+        })
+      }
+    } 
+  }
+
+  handleFavorites = () => {
+    if (this.state.favorite) {
+      this.removeFromFavorites();
+    } else {
+      this.addToFavorites();
+    }
+    this.setState({
+      favorite: !this.state.favorite
+    });
+  }
+
+  removeFromFavorites = () => {
+    let workingFavoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+    let targetIndex = workingFavoritesList.map(fave => fave.name).indexOf(this.props.cardData.name);
+    workingFavoritesList.splice(targetIndex, 1);
+    localStorage.setItem("favoritesList", JSON.stringify(workingFavoritesList));
+    this.props.updateFavorites(workingFavoritesList);
+  }
+
+  addToFavorites = () => {
+    let workingFavoritesList;
+    if (this.props.favoritesList) {
+      workingFavoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+      workingFavoritesList.push(this.props.cardData);
+      localStorage.setItem("favoritesList", JSON.stringify(workingFavoritesList));
+    } else {
+      workingFavoritesList = [this.props.cardData];
+      localStorage.setItem("favoritesList", JSON.stringify(workingFavoritesList));
+    }
+    this.props.updateFavorites(workingFavoritesList);
+  }
+
   
   render() {
     const cardData = this.props.cardData;
     const { id } = cardData;
     let mainInfo, cardType;
+    let favorite = false;
+    
+    if (localStorage.getItem("favoritesList")) {
+      let localFavoritesList = JSON.parse(localStorage.getItem("favoritesList")).map(object => object.name);
+      if (localFavoritesList.includes(this.props.cardData.name)) {
+          favorite = true
+      }
+    } 
 
     if (id < 1000) {
       mainInfo = 
@@ -56,7 +113,10 @@ export default class Card extends Component {
 
     return (
       <section className="Card">
-        <button className="favoriteBtn">
+        <button 
+          className={`favoriteBtn fave-${favorite}`}
+          onClick={this.handleFavorites}
+        >
           <i className="fas fa-heart fa-2x" />
         </button>
         <button
