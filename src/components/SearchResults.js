@@ -28,13 +28,14 @@ export default class SearchResults extends Component {
 
     return (
       <section className="searchResults">
-        <button
-          className="toggle-close"
-          onClick={this.props.displaySplashPage}
-        >
-          <i className="fas fa-times-circle" />
-        </button>
-        {results}
+        <h3>Search Results for: {this.props.searchQuery}</h3>
+          <button
+            className="toggle-close"
+            onClick={this.props.displaySplashPage}
+          >
+            <i className="fas fa-times-circle" />
+          </button>
+          {results}
       </section>
     );
   }

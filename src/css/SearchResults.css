@@ -44,3 +44,11 @@
   border-radius: 15px;
   background-color: teal;
 }
+
+.searchResults h3 {
+  color: lightgray;
+  position: fixed;
+  left: 77px;
+  border: none;
+  top: 145px;
+}
