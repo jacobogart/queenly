@@ -24,7 +24,6 @@ export default class Gallery extends Component {
       this.props.cardData.shows.forEach(show => {
         galleryData.push(searchShows(show, this.props.bars)[0])
       })
-      console.log(galleryData);
     }
     return (
       <section className="Gallery">
