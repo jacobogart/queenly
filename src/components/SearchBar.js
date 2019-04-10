@@ -22,6 +22,12 @@ class SearchBar extends Component {
   findResults = e => {
     e.preventDefault();
     this.props.displayAllSearchResults();
+    this.clearSearchInput();
+    this.props.updateQuery(this.state.searchQuery);
+  }
+
+  clearSearchInput = () => {
+    this.searchInput.value = '';
   }
 
 
