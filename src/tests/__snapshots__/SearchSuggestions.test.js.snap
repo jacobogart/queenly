@@ -1,3 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchSuggestion should match the snapshot with all the data passed in 1`] = `undefined`;
+exports[`SearchSuggestion should match the snapshot with all the data passed in 1`] = `
+<div
+  className="SuggestionsContainer"
+>
+  <p
+    onClick={[Function]}
+  >
+    Chicago's RuPaul's Drag Race Season 11 Viewing Party
+  </p>
+</div>
+`;
