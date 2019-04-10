@@ -8,12 +8,14 @@ class SearchSuggestion extends Component {
 
   setResult = () => {
     this.props.selectSearchResult(this.props.name);
+    this.props.hideSuggestions();
   };
 
   render() {
     return (
       <div className="SuggestionsContainer">
-        <p onClick={this.setResult}>{this.props.name}</p>
+        <p onClick={this.setResult}>{this.props.name}
+          </p>
       </div>
     );
   }
