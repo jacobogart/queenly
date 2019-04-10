@@ -35,3 +35,10 @@ i {
 .NavBar i:hover {
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  .NavBar {
+    /* flex-direction: column;
+    height: 100%; */
+  }
+}

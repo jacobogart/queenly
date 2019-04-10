@@ -59,3 +59,17 @@
   margin: 0 38px 0 19px;
   padding-left: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+  .searchBarContainer {
+    background-color: lightgreen;
+    border: 1px solid red;
+    width: 80%;
+  }
+  .SearchBar {
+    width: 100%;
+  }
+  .searchTerm {
+    font-size: 14px;
+  }
+}
