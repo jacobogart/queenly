@@ -10,19 +10,23 @@ export default class Show_Main extends Component {
   }
 
   stringifyHosts = (host) => {
-    switch(host.length) {
-      case 0:
-        return null
-        break;
-      case 1:
-        return `Host: ${host}`
-        break;
-      case 2:
-        return `Hosts: ${host.join(' & ')}`
-        break;
-      default:
-        return `Hosts: ${host.join(' , ')}`
-        break;
+    if (host) {
+      switch(host.length) {
+        case 0:
+          return null
+          break;
+        case 1:
+          return `Host: ${host}`
+          break;
+        case 2:
+          return `Hosts: ${host.join(' & ')}`
+          break;
+        default:
+          return `Hosts: ${host.join(' , ')}`
+          break;
+      }
+    } else {
+      return null
     }
   }
 

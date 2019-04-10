@@ -1,6 +1,10 @@
 .Thumbnail {
   width: 150px;
   margin: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .ThumbnailImg {
