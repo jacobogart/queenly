@@ -23,12 +23,11 @@ export default class Card extends Component {
         twitterIcon: <i className="fab fa-twitter-square" />,
         close: <i className="fas fa-times-circle" /> 
       },
-      // favorite: false
+      favorite: false
     };
   }
 
   componentDidMount() {
-    console.log("TEST");
     this.checkFavorite();
   }
 
@@ -82,6 +81,8 @@ export default class Card extends Component {
     let mainInfo, cardType;
     let favorite = false;
 
+    console.log(this.state.favorite);
+    
     if (localStorage.getItem("favoritesList")) {
       let localFavoritesList = JSON.parse(localStorage.getItem("favoritesList")).map(object => object.name);
       if (localFavoritesList.includes(this.props.cardData.name)) {

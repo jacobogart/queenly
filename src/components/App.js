@@ -90,7 +90,7 @@ class App extends React.Component {
       Venues: searchBars("", this.state.bars),
       Shows: searchShows("", this.state.bars),
       Queens: searchQueens("", this.state.queens),
-      Favorites: this.state.favoritesList
+      Favorites: this.state.favoritesList || []
     };
     this.setState({
       searchResults: searches[type]
