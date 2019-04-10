@@ -4,7 +4,10 @@
   font-size: 86px;
   border: 1px solid orange;
   position: fixed;
-  top: 200px;
+  top: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .SplashPage h1 {
@@ -14,7 +17,16 @@
 }
 
 .SplashPage .searchHolder {
+  position: relative;
+  bottom: -10px;
+  left: -26px;
   margin: -8px 38px 0 43px;
   padding: 1px 5px;
   width: 483px;
+}
+
+.SplashPage .searchBarContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
 }

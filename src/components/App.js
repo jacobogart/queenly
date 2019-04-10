@@ -49,10 +49,14 @@ class App extends React.Component {
     });
   }
   updateSearchResults = query => {
-    this.setState({
-      displaySearchSuggestions: true,
-      searchResults: search(query, this.state.bars, this.state.queens)
-    });
+    query
+      ? this.setState({
+          displaySearchSuggestions: true,
+          searchResults: search(query, this.state.bars, this.state.queens)
+        })
+      : this.setState({
+        displaySearchSuggestions: false
+      })
   };
 
   selectSearchResult = resultName => {
@@ -81,7 +85,7 @@ class App extends React.Component {
       showCardPage: false,
       showAllResultsPage: true,
       showSplashPage: false,
-      // displaySearchSuggestions: false
+      displaySearchSuggestions: false
     });
   }
 
