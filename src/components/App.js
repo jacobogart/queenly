@@ -20,6 +20,7 @@ class App extends React.Component {
       currentResult: null,
       bars: [{ shows: [] }],
       queens: [],
+      favoritesList: null
     };
   }
 
