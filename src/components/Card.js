@@ -80,8 +80,6 @@ export default class Card extends Component {
     const { id } = cardData;
     let mainInfo, cardType;
     let favorite = false;
-
-    console.log(this.state.favorite);
     
     if (localStorage.getItem("favoritesList")) {
       let localFavoritesList = JSON.parse(localStorage.getItem("favoritesList")).map(object => object.name);
