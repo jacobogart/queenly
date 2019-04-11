@@ -117,7 +117,7 @@ export default class Show_Main extends Component {
             {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}
           </p>
           <p className="time">At: {this.convertTime({ startTime })}</p>
-          <p className="location" onClick={this.goToBar}> Where: {this.state.location}</p>
+          <p className="location" onClick={this.goToBar}> Where: <span>{this.state.location}</span></p>
         </article>
       </main>
     );

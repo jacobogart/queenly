@@ -35,6 +35,10 @@ p {
   margin-top: 0;
 }
 
+.location span:hover {
+  color: white;
+}
+
 .queen-content {
   background-color: white;
   padding: 20px;
