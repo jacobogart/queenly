@@ -26,7 +26,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Lobster';
   text-align: center;
   justify-content: center;
   font-size: 30px;
@@ -165,4 +164,8 @@ p {
 .fb-icon {
   width: 45px;
   position: relative;
+}
+
+p {
+  font-family: "Lato", sans-serif;
 }
