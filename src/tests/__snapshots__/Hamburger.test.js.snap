@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hamburger should match snapshot 1`] = `
+<div
+  className="hamburgerMenu"
+>
+  <i
+    className="fas fa-bars fa-2x"
+    onClick={[Function]}
+  />
+</div>
+`;
