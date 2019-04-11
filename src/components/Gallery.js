@@ -8,24 +8,30 @@ import "../css/Gallery.css";
 export default class Gallery extends Component {
   constructor(props) {
     super(props);
+    this.galleryData = [];
+  }
+
+  generateGalleryData = () => {
+    if (this.props.cardType === "Bar") {
+      this.galleryData = this.props.cardData.shows;
+    } else if (this.props.cardType === "Show") {
+      this.galleryData = this.props.queens.filter(queen =>
+        queen.shows.includes(this.props.cardData.name)
+      );
+    } else if (this.props.cardType === "Queen") {
+      this.galleryData = [];
+      this.props.cardData.shows.forEach(show => {
+        this.galleryData.push(searchShows(show, this.props.bars)[0]);
+      });
+    }
+
   }
 
   render() {
-    let galleryData
-
-    if (this.props.cardType === "Bar") {
-      galleryData = this.props.cardData.shows;
-    } else if (this.props.cardType === "Show") {
-      galleryData = this.props.queens.filter(queen => queen.shows.includes(this.props.cardData.name));
-    } else if (this.props.cardType === "Queen") {
-      galleryData = [];
-      this.props.cardData.shows.forEach(show => {
-        galleryData.push(searchShows(show, this.props.bars)[0])
-      })
-    }
+    this.generateGalleryData();
     return (
       <section className="Gallery">
-        {galleryData.map(result =>
+        {this.galleryData.map(result =>
         <Thumbnail
             imgURL={result.imageURL}
             selectSearchResult={this.props.selectSearchResult}

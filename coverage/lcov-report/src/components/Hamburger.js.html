@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/9</span>
+        <span class='fraction'>10/10</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -107,39 +107,35 @@
 62
 63
 64
-65
-66
-67
-68
-69
-70
-71</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+65</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,15 +161,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,64 +174,58 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
 import "../css/Hamburger.css";
 class Hamburger extends React.Component {
-<span class="fstat-no" title="function not covered" >  co</span>nstructor(props) {
-<span class="cstat-no" title="statement not covered" >    super(props);</span>
-<span class="cstat-no" title="statement not covered" >    this.state = {</span>
+  constructor(props) {
+    super(props);
+    this.state = {
       showMenu: false
-    }
+    };
   }
 &nbsp;
-  toggleBurger = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    this.state.showMenu</span>
-      ? this.setState( {showMenu: false} )
-      : this.setState( {showMenu: true} )
-  }
+  toggleBurger = () =&gt; {
+    this.state.showMenu
+      ? this.setState({ showMenu: false })
+      : this.setState({ showMenu: true });
+  };
 &nbsp;
-  clickHamburger = <span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {
-    let type = <span class="cstat-no" title="statement not covered" >event.target.value.split(' ')[2];</span>
-<span class="cstat-no" title="statement not covered" >    this.props.displayAllOfType(type);</span>
-<span class="cstat-no" title="statement not covered" >    this.props.displayAllSearchResults();</span>
-  }
+  handleMouseOut = () =&gt; {
+    this.setState({ showMenu: false });
+  };
 &nbsp;
-<span class="fstat-no" title="function not covered" >  re</span>nder() {
-<span class="cstat-no" title="statement not covered" >    if (this.state.showMenu) {</span>
-<span class="cstat-no" title="statement not covered" >      return (</span>
+  clickHamburger = event =&gt; {
+    let type = event.target.value.split(" ")[2];
+    this.props.displayAllOfType(type);
+    this.props.displayAllSearchResults();
+  };
+&nbsp;
+  render() {
+    if (this.state.showMenu) {
+      return (
         &lt;div className="hamburgerMenu"&gt;
           &lt;i className="fas fa-bars fa-2x" onClick={this.toggleBurger} /&gt;
-          &lt;ul className="showMenu" onClick={this.clickHamburger}&gt;
-            &lt;li&gt;
-              &lt;input
-                type="button"
-                className="menu"
-                value="Show All Venues"
-              /&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;input
-                type="button"
-                className="menu"
-                value="Show All Shows"
-              /&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;input
-                type="button"
-                className="menu"
-                value="Show All Queens"
-              /&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;input
-                type="button"
-                className="menu"
-                value="Show All Favorites"
-              /&gt;
-            &lt;/li&gt;
-          &lt;/ul&gt;
+          &lt;div className="burger-container" onMouseLeave={this.handleMouseOut}&gt;
+            &lt;ul className="showMenu" onClick={this.clickHamburger}&gt;
+              &lt;li&gt;
+                &lt;input type="button" className="menu" value="Show All Venues" /&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;input type="button" className="menu" value="Show All Shows" /&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;input type="button" className="menu" value="Show All Queens" /&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;input
+                  type="button"
+                  className="menu"
+                  value="Show All Favorites"
+                /&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       );
     } else {
-<span class="cstat-no" title="statement not covered" >      return (</span>
+      return (
         &lt;div className="hamburgerMenu"&gt;
           &lt;i className="fas fa-bars fa-2x" onClick={this.toggleBurger} /&gt;
         &lt;/div&gt;
@@ -259,7 +241,7 @@ export default Hamburger;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 09 2019 22:29:34 GMT-0600 (Mountain Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 10 2019 22:18:49 GMT-0600 (Mountain Daylight Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
