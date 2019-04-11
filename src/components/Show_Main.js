@@ -32,46 +32,31 @@ export default class Show_Main extends Component {
   convertWhen = (dayOfWeek, frequency, reoccuring) => {
     let howOften = this.stringifyReoccuring(reoccuring);
 
-    return `${howOften} ${dayOfWeek.dayOfWeek} on the ${
-      frequency.frequency
-    } of the month.`;
+    if (frequency.frequency === 'weekly') {
+      return `${howOften} ${dayOfWeek.dayOfWeek} of the month.`;
+    } else {
+      return `${howOften} ${dayOfWeek.dayOfWeek} on the ${ frequency.frequency } of the month.`;
+    }
   };
 
   convertTime = startTime => {
-    // let standardTime = startTime.startTime.toString().split('');
-    // if (startTime.startTime >= 1300) {
-    //   console.log('stand', standardTime)
-    //   let hours = parseInt(standardTime.splice(0, 2).join(''));
-    //   standardTime = standardTime.splice(0, 2, (hours - 12).split(''))
-    //   console.log('hours', hours)
-    //   console.log(standardTime)
-    // }
+    console.log('initial log', startTime.startTime)
+    let standardTime = startTime.startTime.toString().split('');
+
+    standardTime = [
+      [standardTime[0], standardTime[1]],
+      ":",
+      [standardTime[2], standardTime[3]].join(''),
+      'AM'
+    ];
+
+    if (standardTime[0].join('') > 12) {
+      standardTime[0] = standardTime[0].join('') - 12;
+      standardTime[3] = 'PM';
+    }
+    
+    return `${standardTime.join('')}`
   };
-
-  // convertTime = (startTime) => {
-  //   console.log('time: ', startTime.startTime.toString().split('').splice(0,0, ':'));
-  //   let time = startTime.startTime.split('').splice(1,0, ':'); // your input
-  //   console.log(time);
-  //   time = time.split(':'); // convert to array
-
-  //   // fetch
-  //   var hours = Number(time[0]);
-  //   var minutes = Number(time[1]);
-
-  //   // calculate
-  //   var timeValue;
-
-  //   if (hours > 0 && hours <= 12) {
-  //     timeValue = "" + hours;
-  //   } else if (hours > 12) {
-  //     timeValue = "" + (hours - 12);
-  //   } else if (hours == 0) {
-  //     timeValue = "12";
-  //   }
-
-  //   timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
-  //   timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
-  // }
 
   getLocation = () => {
     let location = this.props.bars.find(bar => 
@@ -99,8 +84,8 @@ export default class Show_Main extends Component {
     } = this.props.cardData;
 
     return (
-      <main className="Bar-Main Main_Info">
-        <article className="Content">
+      <main className="Show-Main Main_Info Content">
+        <article className="Show-title">
           <h2>{name}</h2>
           {!notes ? null : (
             <div>
@@ -108,13 +93,20 @@ export default class Show_Main extends Component {
               <p className="notes">{notes}</p>
             </div>
           )}
-          <p className="hosts">{this.stringifyHosts(host)}</p>
+        </article>
+        <article className="Show-host">
+        <p className="location" onClick={this.goToBar}>
+        {" "}
+        Where: <span>{this.state.location}</span>
+        </p>
+        <p className="hosts">{this.stringifyHosts(host)}</p>
+        </article>
+        <article className="Show-when">
           <p>When: </p>
           <p className="showtime">
             {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}
           </p>
           <p className="time">At: {this.convertTime({ startTime })}</p>
-          <p className="location" onClick={this.goToBar}> Where: <span>{this.state.location}</span></p>
         </article>
       </main>
     );

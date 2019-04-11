@@ -1,14 +1,12 @@
 .searchResults {
   background-color: #202828;
   box-shadow: #2e5657 5px 5px 5px;
-  /* border-radius: 20px; */
   position: relative;
   z-index: 10;
   top: -5%;
   height: 75%;
   min-width: 60%;
   padding: 25px;
-  
   overflow-y: auto;
 }
 
@@ -21,33 +19,33 @@
 }
 
 .searchResults .toggle-close {
-  position: fixed;
   background: none;
-  width: 50px;
-  font-size: 35px;
-  right: 20%;
   border: none;
+  font-size: 35px;
+  position: fixed;
+  right: 20%;
   top: 15%;
+  width: 50px;
 }
 
 .searchResults figcaption {
   color: lightgray;
-  text-align: center;
   height: 15px;
+  text-align: center;
 }
 
 .results > .Thumbnail {
-  margin: auto;
-  display: flex;
-  justify-items: baseline;
-  padding-bottom: 50px;
-  box-shadow: 3px 8px 6px 1px #635083;
-  border-radius: 10px;
-  transition: all .2s ease-in-out;
   background-image:
     radial-gradient(
      #93818b, #202828
     );
+  border-radius: 10px;
+  box-shadow: 3px 8px 6px 1px #635083;
+  display: flex;
+  justify-items: baseline;
+  margin: auto;
+  padding-bottom: 50px;
+  transition: all .2s ease-in-out;
 }
 
 .results :hover {
@@ -65,23 +63,12 @@
   box-shadow: none;
 }
 
-// .searchResults i :hover{
-//   box-shadow: none !important;
-// }
-
-// .searchResults button :hover{
-//   box-shadow: none !important;
-// }
-
-.searchResults::-webkit-scrollbar-track {
-  /* border: 5px solid red; */
-}
-
 .searchResults::-webkit-scrollbar {
   background-color: #202828;
+  width: 10px;
 }
 
 .searchResults::-webkit-scrollbar-thumb {
-  border-radius: 10px;
   background-color: #635083;
+  border-radius: 10px;
 }
