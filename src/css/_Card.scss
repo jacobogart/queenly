@@ -106,10 +106,6 @@ iframe {
     top: 8px;
   }
 
-  // .toggle-close {
-  //   position: static;
-  // }
-
   .phone {
     position: static;
   }
@@ -124,11 +120,3 @@ iframe {
     height: 300px;
   }
 }
-
-//slay text-crops over on any resize
-//card fav/close button not responsive
-//bio will need resizing to accommodate small screen size
-//card interior will need refactoring to accommodate small screen size
-//drop down menus are static like everything else
-//can map be resized or sub component moved down
-//everything is built on top of a fixed position App
