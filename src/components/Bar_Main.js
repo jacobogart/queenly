@@ -15,29 +15,29 @@ export default class Bar_Main extends Component {
 
     return (
       <main className="Bar-Main Main_Info">
-        <article className="Content">
-          <h2>{ name }</h2>
-          <img className="bar-img" src={ imageURL } alt={"Image of " + { name }} />
-          <p className="phone">
-            { phoneIcon }
-            { phone }
-          </p>
+        <article className="title">
+          <h2>{name}</h2>
+        </article>
+        <div className="bar-img--container">
+          <img
+            className="bar-img"
+            src={imageURL}
+            alt={"Image of " + { name }}
+          />
+        </div>
+        <p className="phone">
+          {phoneIcon}
+          {phone}
+        </p>
+        <article className="notes-container">
           <h4>Notes:</h4>
-          <p className="notes">{ notes }</p>
+          <p className="notes">{notes}</p>
         </article>
         <aside className="social-links">
-          <a href={ website }>
-            { webIcon }
-          </a>
-          <a href={ instagram }>
-            { instaIcon }
-          </a>
-          <a href={ facebook }>
-            { facebookIcon }
-          </a>
-          <a href={ twitter }>
-            { twitterIcon }
-          </a>
+          <a href={website}>{webIcon}</a>
+          <a href={instagram}>{instaIcon}</a>
+          <a href={facebook}>{facebookIcon}</a>
+          <a href={twitter}>{twitterIcon}</a>
         </aside>
       </main>
     );

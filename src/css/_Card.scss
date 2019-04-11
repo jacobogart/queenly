@@ -1,27 +1,24 @@
-/* Testing Purpose */
-.Card {
-  /* border: yellow solid 5px; */
-}
-/* ==============  */
 .Card {
   background-color: #202828;
   box-shadow: #2e5657 5px 5px 5px;
-  top: 40px;
-  left: 3%;
-  width: 90%;
-  position: absolute;
-  height: 110%;
+  top: -5%;
+  // left: 3%;
+  min-width: 60%;
+  max-width: 70%;
+  position: relative;
+  height: 70%;
   padding: 25px;
   display: grid;
   grid-template-areas: "Main Sub" "Gall Gall";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 450px 200px;
+  grid-template-rows: 60% 40%;
+  text-shadow: black 1px 1px 1px;
 }
 
 .favoriteBtn {
   position: absolute;
-  top: 43px;
-  right: 83px;
+  top: 7%;
+  right: 10%;
   font-size: 16px;
   background: none;
   border: none;
@@ -32,13 +29,13 @@
 }
 
 .toggle-close {
-  position: fixed;
+  position: absolute;
   background: none;
   width: 50px;
   font-size: 35px;
-  right: 77px;
+  right: 5%;
   border: none;
-  top: 145px;
+  top: 6%;
 }
 
 .toggle-close i {
@@ -58,15 +55,13 @@
 }
 
 iframe {
-  border: 0;
   position: relative;
-  right: -8px;
-  top: 40px;
-  /* border-radius: 20px; */
+  right: 5%;
+  top: 15%;
   background-color: #153233;
   padding: 10px;
-  height: 358px;
-  width: 570px;
+  height: 75%;
+  width: 150%;
 }
 
 .Card .Gallery {

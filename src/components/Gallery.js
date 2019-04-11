@@ -25,6 +25,7 @@ export default class Gallery extends Component {
     }
     return (
       <section className="Gallery">
+      <div className="Gallery-border"></div>
         {galleryData.map(result =>
         <Thumbnail
             imgURL={result.imageURL}

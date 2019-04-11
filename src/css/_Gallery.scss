@@ -2,12 +2,41 @@
 .Gallery {
   display: flex;
   overflow: scroll;
-  height: 200px;
+  height: 100%;
 }
 /* ================ */
 .Gallery {
+  position: relative;
   background-color: #635083;
-  padding: 25px;
+  // padding: 25px;
   border-radius: 0px 0px 20px 20px;
-  border-top: 20px #202727 outset;
+  // border-top: 15px #474747 ridge;
+}
+
+.Gallery-border {
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  content: '';
+  height: 10px;
+  background-color: #202828;
+  // background: linear-gradient(to right, #202828 5%, rgba(211, 211, 211, 0.5) 50%, #202828 95%);
+}
+
+ .Card figcaption {
+  min-height: 50px;
+  min-width: 150px;
+  text-align: center;
+  color: lightgray;
+  text-shadow: black 1px 1px 1px;
+ }
+
+.Gallery .ThumbnailImg {
+  min-height: 110px;
+    &:hover {
+      box-shadow:
+      #202828 1px 5px 13px 1px,
+      #635083 0px 9px 6px 1px;
+    }
 }
