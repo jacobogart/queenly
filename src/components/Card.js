@@ -7,9 +7,6 @@ import Bar_Main from "./Bar_Main.js";
 import Sub_Info from "./Sub_Info.js";
 import Gallery from "./Gallery.js";
 
-// * CSS imports
-import "../css/Card.css";
-
 export default class Card extends Component {
   constructor(props) {
     super(props);

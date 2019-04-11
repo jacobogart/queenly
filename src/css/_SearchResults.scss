@@ -1,0 +1,87 @@
+.searchResults {
+  background-color: #202828;
+  box-shadow: #2e5657 5px 5px 5px;
+  /* border-radius: 20px; */
+  position: relative;
+  z-index: 10;
+  top: -5%;
+  height: 75%;
+  min-width: 60%;
+  padding: 25px;
+  
+  overflow-y: auto;
+}
+
+.results {
+  display: grid;
+  grid-auto-rows: 250px;
+  grid-auto-columns: auto;
+  grid-template-areas: "thumb thumb thumb thumb";
+  margin: 0 3%;;
+}
+
+.searchResults .toggle-close {
+  position: fixed;
+  background: none;
+  width: 50px;
+  font-size: 35px;
+  right: 20%;
+  border: none;
+  top: 15%;
+}
+
+.searchResults figcaption {
+  color: lightgray;
+  text-align: center;
+  height: 15px;
+}
+
+.results > .Thumbnail {
+  margin: auto;
+  display: flex;
+  justify-items: baseline;
+  padding-bottom: 50px;
+  box-shadow: 3px 8px 6px 1px #635083;
+  border-radius: 10px;
+  transition: all .2s ease-in-out;
+  background-image:
+    radial-gradient(
+     #93818b, #202828
+    );
+}
+
+.results :hover {
+  box-shadow: 3px 8px 6px 1px teal;
+  transform: scale(1.1);
+}
+
+.results > .Thumbnail :hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.searchResults button :hover,
+.toggle-close :hover {
+  box-shadow: none;
+}
+
+// .searchResults i :hover{
+//   box-shadow: none !important;
+// }
+
+// .searchResults button :hover{
+//   box-shadow: none !important;
+// }
+
+.searchResults::-webkit-scrollbar-track {
+  /* border: 5px solid red; */
+}
+
+.searchResults::-webkit-scrollbar {
+  background-color: #202828;
+}
+
+.searchResults::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #635083;
+}
