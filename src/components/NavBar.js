@@ -28,7 +28,10 @@ class NavBar extends React.Component {
         <Hamburger {...this.props} />
         {navLogo}
         {searchBar}
-        <Favorites {...this.props} />
+        <Favorites 
+          displayAllSearchResults={this.props.displayAllSearchResults}
+          displayAllOfType={this.props.displayAllOfType} 
+        />
       </nav>
     );
   }
