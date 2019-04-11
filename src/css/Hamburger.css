@@ -10,6 +10,10 @@
   left: 10px;
 }
 
+.hamburgerMenu {
+  margin: 0 0 0 8px;
+}
+
 .hamburgerMenu ul {
   padding: 0;
 }
