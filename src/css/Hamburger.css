@@ -24,4 +24,7 @@
   width: 100%;
 }
 
-
+.showMenu input:hover {
+  background-color: white;
+  color: #202828;
+}
