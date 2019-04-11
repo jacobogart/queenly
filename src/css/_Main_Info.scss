@@ -29,9 +29,9 @@ p {
 // ** ======================
 .Bar-Main {
   display: grid;
-  grid-template-areas: 
-    "title title" 
-    "img notes" 
+  grid-template-areas:
+    "title title"
+    "img notes"
     "icons icons";
   grid-template-columns: 1fr 2fr;
 
@@ -67,6 +67,10 @@ p {
   flex-direction: column;
 //   font-family: 'Lobster';
   font-size: 30px;
+  & h2 {
+    margin: 0;
+  }
+
   grid-area: title;
   justify-content: center;
   text-align: center;
@@ -102,6 +106,25 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0;
+
+  & h4 {
+    margin: 0;
+    text-decoration: underline;
+    padding-left: 10px;
+    font-size: 17px;
+    color: lightgray;
+  }
+  & p {
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  color: lightgray;
   padding-top: 0px;
   min-width: 500px;
 }
@@ -229,4 +252,34 @@ p {
 
 p {
   font-family: "Lato", sans-serif;
+}
+
+@media only screen and (max-width: 935px) {
+  .Main_Info {
+    padding: 5px 10px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .Bar-Main {
+    grid-template-areas: "title title" "img notes" "icons phone";
+  }
+
+  .phone {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    align-items: center;
+    justify-content: space-between;
+    width: 210px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-bottom: 0px;
+  }
+
+  .phone-icon {
+    margin-right: 10px;
+    position: relative;
+    top: 6px;
+  }
 }

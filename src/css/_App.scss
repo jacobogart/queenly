@@ -33,7 +33,6 @@ html {
 
 .mainContent {
   align-items: center;
-  border: 1px solid red;
   display: flex;
   height: 300px;
   justify-content: center;
@@ -45,6 +44,8 @@ html {
   background-color: rgb(32, 39, 39);
 }
 
+
+@media only screen and (max-width: 690px) {
 .Thumbnail :hover {
   cursor: pointer;
 }

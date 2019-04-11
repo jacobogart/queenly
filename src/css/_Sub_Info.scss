@@ -7,16 +7,56 @@
 .Sub-Info img {
   height: 100%;
   object-fit: contain;
-  width: 100%;
+  // width: 100%;
 }
 .img-holder {
   height: 300px;
-  width: 300px;
+  width: 100%;
+}
+
+.img-holder iframe {
+  width: 100%;
+  margin: 0 auto;
+}
 
   img {
     padding-left: 30px;
   }
 }
+@media only screen and (max-width: 935px) {
+  .Sub-Info {
+    border-radius: 0;
+    padding: 10px 0px 2px 0px;
+    border-bottom: 10px solid #202727;
+  }
+
+  .img-holder {
+    height: auto;
+    width: 90%;
+    margin-left: 7.5%;
+  }
+
+  .img-holder iframe {
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .Sub-Info {
+    display: none;
+  }
+  .Sub-Info {
+    border-radius: 0;
+    padding: 5% 0px 2px 0px;
+  }
+
+  .img-holder {
+    height: auto;
+    width: 90%;
+    margin-left: 7.2%;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .Sub-Info {
     display: none;

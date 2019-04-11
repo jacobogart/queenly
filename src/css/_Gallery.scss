@@ -13,22 +13,31 @@
   width: 100%;
   top: 0%;
   left: 0%;
-  content: '';
+  content: "";
   height: 10px;
   background-color: #202828;
-  // background: linear-gradient(to right, #202828 5%, rgba(211, 211, 211, 0.5) 50%, #202828 95%);
 }
 
- .Card figcaption {
+.Card figcaption {
   min-height: 50px;
   min-width: 150px;
   text-align: center;
   color: lightgray;
   text-shadow: black 1px 1px 1px;
- }
+}
 
 .Gallery .ThumbnailImg {
   min-height: 110px;
+  &:hover {
+    box-shadow: #202828 1px 5px 13px 1px, #635083 0px 9px 6px 1px;
+  }
+}
+
+@media only screen and (max-width: 935px) {
+  .Gallery-border {
+    display: none;
+  }
+}
     &:hover {
       box-shadow:
       #202828 1px 5px 13px 1px,

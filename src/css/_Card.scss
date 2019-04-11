@@ -2,7 +2,6 @@
   background-color: #202828;
   box-shadow: #2e5657 5px 5px 5px;
   top: -5%;
-  // left: 3%;
   min-width: 60%;
   max-width: 70%;
   position: relative;
@@ -78,15 +77,48 @@ iframe {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 935px) {
   .Card {
     display: flex;
-    position: -webkit-sticky;
-    position: sticky;
-    margin-top: 185px;
-    margin-left: 30px;
-    -webkit-flex-direction: column;
     flex-direction: column;
-    grid-template-columns: 1fr;
+    height: 83%;
+  }
+  .favoriteBtn {
+    position: absolute;
+    top: 6.5%;
+    right: 12%;
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .Card {
+    padding-top: 50px;
+    flex-direction: column;
+    height: auto;
+    top: -15%;
+    left: 4%;
+  }
+  .toggle-close {
+    right: 35px;
+    top: 5px;
+  }
+  .favoriteBtn {
+    right: 80px;
+    top: 8px;
+  }
+
+  .phone {
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .Card {
+    top: -45px;
+  }
+
+  .Main_Info {
+    height: 300px;
   }
 }
