@@ -32,16 +32,15 @@ export default class Show_Main extends Component {
   convertWhen = (dayOfWeek, frequency, reoccuring) => {
     let howOften = this.stringifyReoccuring(reoccuring);
 
-    if (frequency.frequency === 'weekly') {
-      return `${howOften} ${dayOfWeek.dayOfWeek} of the month.`;
+    if (frequency === 'weekly') {
+      return `${howOften} ${dayOfWeek} of the month.`;
     } else {
-      return `${howOften} ${dayOfWeek.dayOfWeek} on the ${ frequency.frequency } of the month.`;
+      return `${howOften} ${dayOfWeek} on the ${frequency} of the month.`;
     }
   };
 
   convertTime = startTime => {
-    console.log('initial log', startTime.startTime)
-    let standardTime = startTime.startTime.toString().split('');
+    let standardTime = startTime.toString().split('');
 
     standardTime = [
       [standardTime[0], standardTime[1]],
@@ -104,9 +103,9 @@ export default class Show_Main extends Component {
         <article className="Show-when">
           <p>When: </p>
           <p className="showtime">
-            {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}
+            {this.convertWhen(dayOfWeek, frequency, reoccuring)}{" "}
           </p>
-          <p className="time">At: {this.convertTime({ startTime })}</p>
+          <p className="time">At: {this.convertTime(startTime)}</p>
         </article>
       </main>
     );

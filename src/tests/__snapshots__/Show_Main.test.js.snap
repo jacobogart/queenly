@@ -2,32 +2,51 @@
 
 exports[`Show_Main should match snapshop 1`] = `
 <main
-  className="Bar-Main Main_Info"
+  className="Show-Main Main_Info Content"
 >
   <article
-    className="Content"
+    className="Show-title"
   >
     <h2>
       Sunday Social
     </h2>
+  </article>
+  <article
+    className="Show-host"
+  >
+    <p
+      className="location"
+      onClick={[Function]}
+    >
+       
+      Where: 
+      <span>
+        Meeting House Tavern
+      </span>
+    </p>
     <p
       className="hosts"
     >
       Host: Chamilla Foxx
     </p>
+  </article>
+  <article
+    className="Show-when"
+  >
     <p>
       When: 
     </p>
     <p
       className="showtime"
     >
-      Every Sudnay on the weekly of the month.
+      Every Sunday of the month.
        
     </p>
     <p
       className="time"
     >
       At: 
+      2:00PM
     </p>
   </article>
 </main>
