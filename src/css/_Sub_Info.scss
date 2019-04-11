@@ -9,12 +9,17 @@
   height: 100%;
   margin-top: 40px;
   object-fit: contain;
-  width: 100%;
+  // width: 100%;
 }
 
 .img-holder {
   height: 300px;
-  width: 300px;
+  width: 100%;
+}
+
+.img-holder iframe {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .queen-img {
@@ -22,6 +27,18 @@
   margin-top: 40px;
   object-fit: cover;
   width: 250px;
+}
+
+@media only screen and (max-width: 750px) {
+  .Sub-Info {
+    border-radius: 0;
+    padding: 0px;
+  }
+
+  .img-holder {
+    width: 90%;
+    margin-left: 7.5%;
+  }
 }
 
 @media only screen and (max-width: 450px) {
