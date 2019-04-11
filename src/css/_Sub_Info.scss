@@ -1,17 +1,14 @@
 .Sub-Info {
   background-color: #2e5658;
   border-radius: 0 20px 0px 0;
-  padding: 25px;
   box-shadow: #202828 3px 3px 2px;
+  padding: 25px;
 }
-
 .Sub-Info img {
   height: 100%;
-  margin-top: 40px;
   object-fit: contain;
   // width: 100%;
 }
-
 .img-holder {
   height: 300px;
   width: 100%;
@@ -22,13 +19,10 @@
   margin: 0 auto;
 }
 
-.queen-img {
-  height: 250px;
-  margin-top: 40px;
-  object-fit: cover;
-  width: 250px;
+  img {
+    padding-left: 30px;
+  }
 }
-
 @media only screen and (max-width: 935px) {
   .Sub-Info {
     border-radius: 0;
@@ -60,5 +54,11 @@
     height: auto;
     width: 90%;
     margin-left: 7.2%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .Sub-Info {
+    display: none;
   }
 }

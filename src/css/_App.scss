@@ -1,17 +1,17 @@
 // index.HTML
 // ========================
 html {
+  background-color: #202828;
   margin: 0;
   padding: 0;
-  background-color: #202828;
   font-family: "Lato", sans-serif;
 }
 
 .App {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   height: 100%;
+  justify-content: center;
   margin: 0 auto;
   position: fixed;
   width: 100%;
@@ -44,7 +44,13 @@ html {
   background-color: rgb(32, 39, 39);
 }
 
+
 @media only screen and (max-width: 690px) {
+.Thumbnail :hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 450px) {
   .App {
     left: -4%;
     width: 100%;
