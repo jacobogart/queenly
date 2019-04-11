@@ -2,12 +2,11 @@
   background-color: #202828;
   box-shadow: #2e5657 5px 5px 5px;
   /* border-radius: 20px; */
-  position: absolute;
+  position: relative;
   z-index: 10;
-  top: 60px;
-  /* left: -30%; */
-  height: 110%;
-  width: 90%;
+  top: -5%;
+  height: 75%;
+  min-width: 60%;
   padding: 25px;
   display: -webkit-flex;
   display: flex;
@@ -20,6 +19,16 @@
   grid-template-areas: "thumb thumb thumb thumb";
 }
 
+.searchResults .toggle-close {
+  position: fixed;
+  background: none;
+  width: 50px;
+  font-size: 35px;
+  right: 270px;
+  border: none;
+  top: 165px;
+}
+
 .searchResults figcaption {
   color: lightgray;
   text-align: center;
@@ -27,9 +36,16 @@
 }
 
 .searchResults > .Thumbnail {
-  /* margin: auto; */
+  margin: auto;
   display: flex;
   justify-items: baseline;
+  padding-bottom: 50px;
+  box-shadow: 3px 8px 6px 1px #635083;
+  border-radius: 10px;
+  background-image:
+    radial-gradient(
+     #93818b, #202828
+    );
 }
 
 .searchResults::-webkit-scrollbar-track {
@@ -37,10 +53,10 @@
 }
 
 .searchResults::-webkit-scrollbar {
-  background-color: #635083;
+  background-color: #202828;
 }
 
 .searchResults::-webkit-scrollbar-thumb {
-  border-radius: 15px;
-  background-color: teal;
+  border-radius: 10px;
+  background-color: #635083;
 }

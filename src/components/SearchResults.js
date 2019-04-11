@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Thumbnail from "./Thumbnail.js";
 
-import "../css/SearchResults.css";
-
 export default class SearchResults extends Component {
   constructor(props) {
     super(props);

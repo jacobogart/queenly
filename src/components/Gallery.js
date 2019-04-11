@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Thumbnail from './Thumbnail.js';
 import { search, searchBars, searchShows, searchQueens } from "../helpers.js";
 
-// * CSS imports
-import "../css/Gallery.css";
-
 export default class Gallery extends Component {
   constructor(props) {
     super(props);

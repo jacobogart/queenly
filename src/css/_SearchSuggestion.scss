@@ -1,0 +1,20 @@
+p {
+  font-family: sans-serif;
+    font-size: 20px;
+    color: black;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.SuggestionsContainer {
+  p {
+    margin: 0;
+  }
+}
+
+.SuggestionsContainer :hover {
+  background-color: #635083;
+  color: white;
+}

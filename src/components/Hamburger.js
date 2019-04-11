@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Hamburger.css";
+
 class Hamburger extends React.Component {
   constructor(props) {
     super(props);

@@ -2,9 +2,8 @@
 .SplashPage {
   font-family: "Lobster";
   font-size: 86px;
-  border: 1px solid orange;
   position: fixed;
-  top: 410px;
+  top: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +20,7 @@
   bottom: -10px;
   left: -26px;
   margin: -8px 38px 0 43px;
-  padding: 1px 5px;
+  padding: 0;
   width: 483px;
 }
 
