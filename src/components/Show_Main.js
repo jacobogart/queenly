@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-// * CSS imports
-import "../css/Main_Info.css";
+import React, { Component } from 'react';
 
 export default class Show_Main extends Component {
   constructor(props) {

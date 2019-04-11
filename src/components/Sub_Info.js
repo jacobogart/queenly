@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// * CSS imports
-import '../css/Sub_Info.css';
 
 export default class Sub_Info extends Component {
   constructor(props) {

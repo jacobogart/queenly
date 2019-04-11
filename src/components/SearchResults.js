@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Thumbnail from "./Thumbnail.js";
 
-import "../css/SearchResults.css";
-
 export default class SearchResults extends Component {
   constructor(props) {
     super(props);
@@ -31,14 +29,13 @@ export default class SearchResults extends Component {
 
     return (
       <section className="searchResults">
-          {resultsHeader}
-          <button
-            className="toggle-close"
-            onClick={this.props.displaySplashPage}
-          >
-            <i className="fas fa-times-circle" />
-          </button>
-          {results}
+        <button
+          className="toggle-close"
+          onClick={this.props.displaySplashPage}
+        >
+          <i className="fas fa-times-circle" />
+        </button>
+        <section className="results">{results}</section>
       </section>
     );
   }
