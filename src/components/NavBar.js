@@ -11,14 +11,16 @@ class NavBar extends React.Component {
 
   displaySplashPage = () => {
     this.props.displaySplashPage();
-  }
+  };
 
   render() {
     if (!this.props.showSplashPage) {
-      var navLogo = 
-        <h2 className="navLogo"
-            onClick={this.displaySplashPage}>Queenly</h2> 
-      var searchBar = <SearchBar {...this.props} />
+      var navLogo = (
+        <h2 className="navLogo" onClick={this.displaySplashPage}>
+          Queenly
+        </h2>
+      );
+      var searchBar = <SearchBar {...this.props} />;
     }
 
     return (
