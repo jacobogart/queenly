@@ -11,24 +11,26 @@ export default class Gallery extends Component {
     this.galleryData = [];
   }
 
-  generateGalleryData = () => {
-    if (this.props.cardType === "Bar") {
-      this.galleryData = this.props.cardData.shows;
-    } else if (this.props.cardType === "Show") {
-      this.galleryData = this.props.queens.filter(queen =>
-        queen.shows.includes(this.props.cardData.name)
-      );
-    } else if (this.props.cardType === "Queen") {
-      this.galleryData = [];
-      this.props.cardData.shows.forEach(show => {
-        this.galleryData.push(searchShows(show, this.props.bars)[0]);
-      });
+  generateGalleryData = (type) => {
+    switch (type) {
+      case "Bar":
+        this.galleryData = this.props.cardData.shows;
+        break;
+      case "Show":
+        this.galleryData = this.props.queens.filter(queen =>
+          queen.shows.includes(this.props.cardData.name));
+        break;
+      case "Queen":
+        this.galleryData = [];
+        this.props.cardData.shows.forEach(show => {
+          this.galleryData.push(searchShows(show, this.props.bars)[0]);
+        });
+        break;
     }
-
   }
 
   render() {
-    this.generateGalleryData();
+    this.generateGalleryData(this.props.cardType);
     return (
       <section className="Gallery">
         {this.galleryData.map(result =>
