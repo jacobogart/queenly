@@ -7,6 +7,9 @@ exports[`<SplashPage /> should render correctly. 1`] = `
   <h1>
     Queenly
   </h1>
-  <SearchBar />
+  <SearchBar
+    displaySearchSuggestions={true}
+    searchResults={Array []}
+  />
 </section>
 `;
