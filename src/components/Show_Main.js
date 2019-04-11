@@ -6,7 +6,9 @@ import "../css/Main_Info.css";
 export default class Show_Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      location: this.getLocation()
+    }
   }
 
   stringifyHosts = host => {
@@ -74,6 +76,20 @@ export default class Show_Main extends Component {
   //   timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
   // }
 
+  getLocation = () => {
+    let location = this.props.bars.filter(bar => 
+      bar.shows.find(show => 
+        show.name.includes(this.props.cardData.name)
+      )
+    );
+
+    return location[0].name;
+  }
+
+  goToBar = () => {
+    this.props.selectSearchResult(this.state.location);
+  }
+
   render() {
     let {
       name,
@@ -84,14 +100,6 @@ export default class Show_Main extends Component {
       startTime,
       reoccuring
     } = this.props.cardData;
-
-    let locations = this.props.bars.filter(bar => 
-      bar.shows.find(show => 
-        show.name.includes(this.props.cardData.name)
-      )
-    );
-
-    let locationNames = locations.map(location => location.name);
 
     return (
       <main className="Bar-Main Main_Info">
@@ -109,7 +117,7 @@ export default class Show_Main extends Component {
             {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}
           </p>
           <p className="time">At: {this.convertTime({ startTime })}</p>
-          <p className="location"> Where: {locationNames}</p>
+          <p className="location" onClick={this.goToBar}> Where: {this.state.location}</p>
         </article>
       </main>
     );

@@ -101,6 +101,7 @@ export default class Card extends Component {
         cardData={cardData} 
         bars={this.props.bars}
         icons={this.state.icons}
+        selectSearchResult={this.props.selectSearchResult}
         />;
       cardType = "Show";
     } else {
