@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 
 const mockSelectSearchResult = jest.fn();
 const mockDisplaySplashPage = jest.fn();
-
+const mockUpdateFavorites = jest.fn();
 
 const mockBars = [{ shows: [] }];
 const mockQueens = [];
@@ -32,6 +32,7 @@ describe("Card", () => {
         bars={mockBars}
         queens={mockQueens}
         selectSearchResult={mockSelectSearchResult}
+        updateFavorites={mockUpdateFavorites}
       />
     );
   });
@@ -47,13 +48,39 @@ describe("Card", () => {
         facebookIcon: <i className="fab fa-facebook-square" />,
         twitterIcon: <i className="fab fa-twitter-square" />,
         close: <i className="fas fa-times-circle" />
-      }
+      },
+      favorite: false
     });
   });
   it("should invoke displaySplashPage when X button is clicked", () => {
     wrapper.find(".toggle-close").simulate('click');
     expect(mockDisplaySplashPage).toBeCalled();
   });
-
-  
+  it("should toggle favorite state when heart button is clicked", () => {
+    expect(wrapper.state("favorite")).toEqual(false);
+    wrapper.find(".favoriteBtn").simulate("click");
+    expect(wrapper.state("favorite")).toEqual(true);
+    wrapper.find(".favoriteBtn").simulate("click");
+    expect(wrapper.state("favorite")).toEqual(false);
+  });
+  it("should invoke addToFavorites when heart button is clicked from default", () => {
+    wrapper.instance().addToFavorites = jest.fn();
+    expect(wrapper.state("favorite")).toEqual(false);
+    wrapper.find(".favoriteBtn").simulate("click");
+    expect(wrapper.instance().addToFavorites).toHaveBeenCalled();
+  });
+  it("should invoke removeFromFavorites when heart button is clicked a second time", () => {
+    wrapper.instance().addToFavorites = jest.fn();
+    wrapper.instance().removeFromFavorites = jest.fn();
+    expect(wrapper.state("favorite")).toEqual(false);
+    wrapper.find(".favoriteBtn").simulate("click");
+    expect(wrapper.instance().addToFavorites).toHaveBeenCalled();
+    wrapper.find(".favoriteBtn").simulate("click");
+    expect(wrapper.instance().removeFromFavorites).toHaveBeenCalled();
+  });
+  it("should invoke updateFavorites anytime the heart button is clicked", () => {
+    expect(wrapper.state("favorite")).toEqual(false);
+    wrapper.find(".favoriteBtn").simulate("click");
+    expect(mockUpdateFavorites).toHaveBeenCalled();
+  });
 });
