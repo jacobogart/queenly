@@ -32,7 +32,7 @@ export default class SearchResults extends Component {
         >
           <i className="fas fa-times-circle" />
         </button>
-        {results}
+        <section className="results">{results}</section>
       </section>
     );
   }
