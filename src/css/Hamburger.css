@@ -5,21 +5,23 @@
 .showMenu {
   background-color: #202828;
   position: absolute;
-  height: 170px;
-  width: 200px;
   z-index: 100;
   list-style: none;
   left: 10px;
 }
 
 .hamburgerMenu ul {
-  padding: 10px;
+  padding: 0;
 }
 
 .showMenu input {
+  text-align: left;
   background-color: #202828;
   color: lightgray;
   font-size: 24px;
   border: none;
-  margin-bottom: 10px;
+  padding: 5px 20px 10px;
+  width: 100%;
 }
+
+
