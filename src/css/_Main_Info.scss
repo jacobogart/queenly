@@ -2,6 +2,7 @@
   background-color: #2e5658;
   border-radius: 20px 0 0 0px;
   padding: 0 25px;
+  border: 1px solid blue;
 }
 
 .Queen-Main {
@@ -14,9 +15,9 @@
 
 .Bar-Main {
   display: grid;
-  grid-template-areas: 
-    "title title" 
-    "img notes" 
+  grid-template-areas:
+    "title title"
+    "img notes"
     "icons icons";
   grid-template-columns: 1fr 2fr;
 }
@@ -29,9 +30,9 @@
   text-align: center;
   justify-content: center;
   font-size: 30px;
-    & h2 {
-      margin: 0;
-    }
+  & h2 {
+    margin: 0;
+  }
 }
 
 .bar-img--container {
@@ -50,17 +51,17 @@
   justify-content: center;
   margin: 0;
 
-    & h4 {
-      margin: 0;
-      text-decoration: underline;
-      padding-left: 10px;
-      font-size: 17px;
-      color: lightgray;
-    }
-    & p {
-      font-size: 18px;
-      margin: 0;
-    }
+  & h4 {
+    margin: 0;
+    text-decoration: underline;
+    padding-left: 10px;
+    font-size: 17px;
+    color: lightgray;
+  }
+  & p {
+    font-size: 18px;
+    margin: 0;
+  }
 }
 
 h2 {
@@ -168,4 +169,37 @@ p {
 
 p {
   font-family: "Lato", sans-serif;
+}
+
+@media only screen and (max-width: 935px) {
+  .Main_Info {
+    padding: 5px 10px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .Bar-Main {
+    grid-template-areas: "title title" "img notes" "icons phone";
+  }
+
+  .phone {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    align-items: center;
+    justify-content: space-between;
+    width: 210px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-bottom: 0px;
+  }
+
+  .phone-icon {
+    margin-right: 10px;
+    position: relative;
+    top: 6px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
 }
