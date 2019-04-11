@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should match snapshop 1`] = `
+exports[`App should match snapshot 1`] = `
 <div>
   <header
     className="navBar"
