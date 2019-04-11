@@ -9,7 +9,7 @@ Run `npm install` from the root directory
 
 Run `npm start` and visit localhost:8080 in your browser
 
-![Queeny Screenshot](https://giphy.com/gifs/Ymba3bAkhmS72DRx8I/html5)
+![Queeny Screenshot](https://media.giphy.com/media/Ymba3bAkhmS72DRx8I/giphy.gif)
 
 ## Testing
 Website is tested with Jest and Enzyme
