@@ -3,6 +3,7 @@
   border-radius: 0 20px 0px 0;
   padding: 25px;
   box-shadow: #202828 3px 3px 2px;
+  border: 1px solid red;
 }
 
 .Sub-Info img {
@@ -32,17 +33,33 @@
 @media only screen and (max-width: 750px) {
   .Sub-Info {
     border-radius: 0;
-    padding: 0px;
+    padding: 10px 0px 2px 0px;
+    border: 1px solid red;
   }
 
   .img-holder {
+    height: auto;
     width: 90%;
     margin-left: 7.5%;
+  }
+
+  .img-holder iframe {
+    height: 200px;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .Sub-Info {
     display: none;
+  }
+  .Sub-Info {
+    border-radius: 0;
+    padding: 5% 0px 2px 0px;
+  }
+
+  .img-holder {
+    height: auto;
+    width: 90%;
+    margin-left: 7.2%;
   }
 }
