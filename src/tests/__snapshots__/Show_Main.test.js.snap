@@ -10,21 +10,10 @@ exports[`Show_Main should match snapshop 1`] = `
     <h2>
       Sunday Social
     </h2>
-    <h4>
-      Type of Show: 
-      drag show
-    </h4>
-    <h4>
-      Notes:
-    </h4>
-    <p
-      className="notes"
-    />
     <p
       className="hosts"
     >
-      Host(s): 
-      Chamilla Foxx
+      Host: Chamilla Foxx
     </p>
     <p>
       When: 

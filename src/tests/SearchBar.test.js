@@ -7,6 +7,7 @@ const mockDisplayAllSearchResults = jest.fn();
 const mockUpdateResults = jest.fn();
 const mockSelectResult = jest.fn();
 const mockHideSearchSuggestions = jest.fn();
+const mockUpdateQuery = jest.fn();
 const mockSearchResults = [
   {
     "bio": "",
@@ -26,13 +27,15 @@ describe('SearchBar', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <SearchBar 
+      <SearchBar
         displayAllSearchResults={mockDisplayAllSearchResults}
         updateSearchResults={mockUpdateResults}
         selectSearchResult={mockSelectResult}
         searchResults={mockSearchResults}
         displaySearchSuggestions={false}
-        hideSearchSuggestions={mockHideSearchSuggestions} />
+        hideSearchSuggestions={mockHideSearchSuggestions}
+        updateQuery={mockUpdateQuery}
+      />
     );
   });
 
@@ -46,18 +49,32 @@ describe('SearchBar', () => {
     });
   });
 
-  it('should update searchQuery on change', () => {
+  it('should update searchQuery on change and invoke updateSearchResults', () => {
     const mockEvent = { target: { value: "Sasha" } };
-
-    expect(wrapper.state('searchQuery').toEqual(''));
-
-    wrapper.find('.searchTerm').simulate('keyUp', mockEvent);
-
-    expect(mockUpdateResults).toHaveBeenCalled();
-
-    // wrapper.instance().handleChange( {target: {value: 'Sasha'}} );
-
+    expect(wrapper.state("searchQuery")).toEqual("");
+    wrapper.instance().handleChange(mockEvent);
+    expect(mockUpdateResults).toHaveBeenCalledWith("Sasha");
     expect(wrapper.state()).toEqual({ searchQuery: 'Sasha' });
+  });
+
+  it("should invoke displayAllSearchResults on submit", () => {
+    const mockEvent = { preventDefault: () => { } };
+    wrapper.instance().clearSearchInput = jest.fn();
+    wrapper.instance().findResults(mockEvent);
+    expect(mockUpdateQuery).toHaveBeenCalledWith('');
+  });
+
+  it("should invoke clearSearchInput on submit", () => {
+    const mockEvent = { preventDefault: () => {} };
+    wrapper.instance().clearSearchInput = jest.fn();
+    wrapper.instance().findResults(mockEvent);
+    expect(wrapper.instance().clearSearchInput).toHaveBeenCalled();
+  });
+  it("should invoke updateQuery on submit", () => {
+    const mockEvent = { preventDefault: () => { } };
+    wrapper.instance().clearSearchInput = jest.fn();
+    wrapper.instance().findResults(mockEvent);
+    expect(wrapper.instance().clearSearchInput).toHaveBeenCalled();
   });
 });
 

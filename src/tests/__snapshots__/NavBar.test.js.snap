@@ -5,6 +5,12 @@ exports[`<NavBar /> should match the snapshot 1`] = `
   className="NavBar"
 >
   <Hamburger />
+  <h2
+    className="navLogo"
+    onClick={[Function]}
+  >
+    Queenly
+  </h2>
   <SearchBar />
   <Favorites />
 </nav>

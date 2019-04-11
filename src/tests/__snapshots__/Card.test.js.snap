@@ -5,6 +5,14 @@ exports[`Card should match snapshop 1`] = `
   className="Card"
 >
   <button
+    className="favoriteBtn fave-false"
+    onClick={[Function]}
+  >
+    <i
+      className="fas fa-heart fa-2x"
+    />
+  </button>
+  <button
     className="toggle-close"
     onClick={[MockFunction]}
   >
