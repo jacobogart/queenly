@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 // * CSS imports
 import "../css/Main_Info.css";
 
@@ -84,13 +85,21 @@ export default class Show_Main extends Component {
       reoccuring
     } = this.props.cardData;
 
+    let locations = this.props.bars.filter(bar => 
+      bar.shows.find(show => 
+        show.name.includes(this.props.cardData.name)
+      )
+    );
+
+    let locationNames = locations.map(location => location.name);
+
     return (
       <main className="Bar-Main Main_Info">
         <article className="Content">
           <h2>{name}</h2>
           {!notes ? null : (
             <div>
-              <h4>Notes:</h4>
+              <h4>About:</h4>
               <p className="notes">{notes}</p>
             </div>
           )}
@@ -100,6 +109,7 @@ export default class Show_Main extends Component {
             {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}
           </p>
           <p className="time">At: {this.convertTime({ startTime })}</p>
+          <p className="location"> Where: {locationNames}</p>
         </article>
       </main>
     );
