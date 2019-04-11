@@ -1,8 +1,6 @@
-/* font size is reaching in and modifying search results */
 .SplashPage {
   font-family: "Lobster";
   font-size: 86px;
-  border: 1px solid orange;
   position: fixed;
   top: 410px;
   display: flex;
@@ -12,7 +10,7 @@
 
 .SplashPage h1 {
   margin: 1rem;
-  color: lightgrey;
+  color: lightgray;
   text-shadow: #5d477f 2px 2px 3px;
 }
 

@@ -20,12 +20,12 @@ html {
   position: fixed;
   right: 0;
   width: 100vw;
-  /* background: url("https://images.unsplash.com/photo-1512073490563-2fde3bf833ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"); */
   background: url("https://images.unsplash.com/photo-1552297777-dacae7d2b894?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
   background-position: center 25%;
   filter: brightness(0.5) sepia(30%) hue-rotate(270deg);
   z-index: 0;
 }
+
 .mainContent {
   align-items: center;
   border: 1px solid red;

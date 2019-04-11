@@ -3,7 +3,6 @@ p {
   font-size: 20px;
   color: black;
   text-align: left;
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   margin: 10px;

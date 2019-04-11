@@ -1,11 +1,7 @@
-/* Testing Purposes */
 .Gallery {
   display: flex;
   overflow: scroll;
   height: 200px;
-}
-/* ================ */
-.Gallery {
   background-color: #635083;
   padding: 25px;
   border-radius: 0px 0px 20px 20px;

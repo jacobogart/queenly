@@ -1,11 +1,9 @@
 .searchResults {
   background-color: #202828;
   box-shadow: #2e5657 5px 5px 5px;
-  /* border-radius: 20px; */
   position: absolute;
   z-index: 10;
   top: 60px;
-  /* left: -30%; */
   height: 110%;
   width: 90%;
   padding: 25px;
@@ -27,13 +25,11 @@
 }
 
 .searchResults > .Thumbnail {
-  /* margin: auto; */
   display: flex;
   justify-items: baseline;
 }
 
 .searchResults::-webkit-scrollbar-track {
-  /* border: 5px solid red; */
 }
 
 .searchResults::-webkit-scrollbar {
