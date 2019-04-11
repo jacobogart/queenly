@@ -105,6 +105,7 @@ class App extends React.Component {
       Queens: searchQueens("", this.state.queens),
       Favorites: this.state.favoritesList || []
     };
+    
     this.setState({
       searchResults: searches[type],
       searchQuery: ''
@@ -128,7 +129,7 @@ class App extends React.Component {
   render() {
     let card;
 
-    let cardComponent = (
+    let cardComponent = 
       <Card
         cardData={this.state.cardData}
         displaySplashPage={this.displaySplashPage}
@@ -138,18 +139,16 @@ class App extends React.Component {
         favoritesList={this.state.favoritesList}
         updateFavorites={this.updateFavorites}
       />
-    );
 
-    let searchResultsComponent = (
+    let searchResultsComponent = 
       <SearchResults
         displaySplashPage={this.displaySplashPage}
         searchResults={this.state.searchResults}
         selectSearchResult={this.selectSearchResult}
         searchQuery={this.state.searchQuery}
       />
-    );
 
-    let splashPageComponent = (
+    let splashPageComponent = 
       <SplashPage
         displayAllSearchResults={this.displayAllSearchResults}
         updateSearchResults={this.updateSearchResults}
@@ -159,7 +158,6 @@ class App extends React.Component {
         hideSearchSuggestions={this.hideSearchSuggestions}
         updateQuery={this.updateQuery}
       />
-    );
 
     if (this.state.showSplashPage) {
       card = splashPageComponent;
