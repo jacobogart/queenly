@@ -48,3 +48,18 @@ i {
 .NavBar i:hover {
   color: white;
 }
+
+@media only screen and (max-width: 450px) {
+  .NavBar {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  .navLogo {
+    left: 122px;
+    top: -5px;
+    padding: 0;
+  }
+  .NavBar .searchBarContainer {
+    margin-top: 0;
+  }
+}

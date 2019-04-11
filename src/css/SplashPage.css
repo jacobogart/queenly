@@ -30,3 +30,14 @@
   flex-direction: column;
   max-height: 400px;
 }
+
+@media only screen and (max-width: 450px) {
+  .SplashPage {
+    /* background-color: lightgreen; */
+    width: 80%;
+    position: fixed;
+    top: 240px;
+    right: 35px;
+    font-size: 64px;
+  }
+}
