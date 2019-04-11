@@ -1,7 +1,6 @@
 import React from "react";
 import Hamburger from "./Hamburger";
 import Favorites from "./Favorites";
-import "../css/NavBar.css";
 import SearchBar from "./SearchBar";
 
 class NavBar extends React.Component {
@@ -11,14 +10,16 @@ class NavBar extends React.Component {
 
   displaySplashPage = () => {
     this.props.displaySplashPage();
-  }
+  };
 
   render() {
     if (!this.props.showSplashPage) {
-      var navLogo = 
-        <h2 className="navLogo"
-            onClick={this.displaySplashPage}>Queenly</h2> 
-      var searchBar = <SearchBar {...this.props} />
+      var navLogo = (
+        <h2 className="navLogo" onClick={this.displaySplashPage}>
+          Queenly
+        </h2>
+      );
+      var searchBar = <SearchBar {...this.props} />;
     }
 
     return (

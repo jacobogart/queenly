@@ -1,6 +1,5 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import "../css/SplashPage.css";
 
 const SplashPage = props => {
   return (

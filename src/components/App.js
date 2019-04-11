@@ -5,9 +5,6 @@ import SplashPage from "./SplashPage";
 import Card from "./Card";
 import SearchResults from "./SearchResults";
 
-// * CSS imports
-import "../css/App.css";
-
 class App extends React.Component {
   constructor() {
     super();

@@ -3,5 +3,12 @@
 exports[`Gallery should match snapshop 1`] = `
 <section
   className="Gallery"
-/>
+>
+  <Thumbnail
+    imgURL="https://pbs.twimg.com/media/D1Any4VWkAA86HL.jpg"
+    key="2101"
+    name="Sunday Social"
+    selectSearchResult={[MockFunction]}
+  />
+</section>
 `;

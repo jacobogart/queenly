@@ -1,12 +1,17 @@
+// index.HTML
+// ========================
 html {
+  margin: 0;
+  padding: 0;
   background-color: #202828;
+  font-family: "Open Sans", sans-serif;
 }
 
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70%;
+  height: 100%;
   margin: 0 auto;
   position: fixed;
   width: 100%;
@@ -38,4 +43,12 @@ html {
 
 .navBar {
   background-color: rgb(32, 39, 39);
+}
+
+@media only screen and (max-width: 450px) {
+  .App {
+    left: -4%;
+    width: 100%;
+    top: 150px;
+  }
 }

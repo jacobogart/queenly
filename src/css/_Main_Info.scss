@@ -1,8 +1,7 @@
 .Main_Info {
   background-color: #2e5658;
   border-radius: 20px 0 0 0px;
-  padding: 25px;
-  box-shadow: #202828 3px 3px 2px;
+  padding: 0 25px;
 }
 
 .Queen-Main {
@@ -11,6 +10,58 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.Bar-Main {
+  display: grid;
+  grid-template-areas: 
+    "title title" 
+    "img notes" 
+    "icons icons";
+  grid-template-columns: 1fr 2fr;
+}
+
+.title {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lobster';
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+    & h2 {
+      margin: 0;
+    }
+}
+
+.bar-img--container {
+  grid-area: img;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notes-container {
+  grid-area: notes;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+
+    & h4 {
+      margin: 0;
+      text-decoration: underline;
+      padding-left: 10px;
+      font-size: 17px;
+      color: lightgray;
+    }
+    & p {
+      font-size: 18px;
+      margin: 0;
+    }
 }
 
 h2 {
@@ -61,10 +112,16 @@ p {
 }
 
 .social-links {
+  font-size: 25px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 10px;
+}
+
+.Bar-Main .social-links {
+  grid-area: icons;
+  width: 100%;
 }
 
 .Queen-Main .social-links {
@@ -79,10 +136,10 @@ p {
 
 .phone {
   position: absolute;
-  top: 45px;
+  top: 6%;
   display: flex;
   flex-direction: row;
-  right: 400px;
+  right: 25%;
   font-size: 25px;
   align-items: center;
   justify-content: space-between;
