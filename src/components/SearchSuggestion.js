@@ -7,7 +7,6 @@ class SearchSuggestion extends Component {
 
   setResult = () => {
     this.props.selectSearchResult(this.props.name);
-    this.props.hideSuggestions();
   };
 
   render() {

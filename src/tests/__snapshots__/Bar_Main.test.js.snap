@@ -20,12 +20,6 @@ exports[`Bar_Main should match snapshop 1`] = `
     >
       (773) 696-4211
     </p>
-    <h4>
-      Notes:
-    </h4>
-    <p
-      className="notes"
-    />
   </article>
   <aside
     className="social-links"

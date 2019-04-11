@@ -2,7 +2,8 @@ import React from "react";
 import SearchSuggestion from "../components/SearchSuggestion";
 import { shallow } from "enzyme";
 
-const result = {
+const mockSelectSearchResult = jest.fn();
+const mockResult = {
   category: "viewing party",
   dayOfWeek: "Thursday",
   frequency: "weekly",
@@ -19,9 +20,9 @@ describe("SearchSuggestion", () => {
   beforeEach(() => {
     wrapper = shallow(
       <SearchSuggestion
-        name={result.name}
-        selectResult={this.props.selectResult}
-        key={result.id}
+        name={mockResult.name}
+        selectSearchResult={mockSelectSearchResult}
+        key={mockResult.id}
       />
     );
   });
@@ -30,5 +31,12 @@ describe("SearchSuggestion", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should on click set the result to be the prop.name clicked");
+  it("should on click set the result to be the prop.name clicked", () => {
+    let setResultSpy = jest.spyOn(wrapper.instance(), 'setResult');
+    wrapper.instance().setResult()
+    expect(setResultSpy).toHaveBeenCalled();
+    expect(mockSelectSearchResult).toHaveBeenCalledWith(
+      "Chicago's RuPaul's Drag Race Season 11 Viewing Party"
+    );
+  });
 });

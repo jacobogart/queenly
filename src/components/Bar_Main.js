@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 export default class Bar_Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
   }
 
   render() {
@@ -30,7 +28,6 @@ export default class Bar_Main extends Component {
           {phone}
         </p>
         <article className="notes-container">
-          <h4>Notes:</h4>
           <p className="notes">{notes}</p>
         </article>
         <aside className="social-links">

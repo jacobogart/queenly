@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 const mockResult = {
       "category": "drag show",
-      "dayOfWeek": "Sudnay",
+      "dayOfWeek": "Sunday",
       "frequency": "weekly",
       "host": ["Chamilla Foxx"],
       "id": 2101,
@@ -33,9 +33,10 @@ describe('Thumbnail', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should have default state', () => {
-    expect(wrapper.state()).toEqual({
-      // Put state here
-    });
-  });
+  it('should call setResult on click', () => {
+    let setResultSpy = jest.spyOn(wrapper.instance(), "setResult");
+    wrapper.instance().setResult(mockResult.name);
+    expect(setResultSpy).toHaveBeenCalledWith("Sunday Social");
+    expect(mockSelectSearchResult).toHaveBeenCalled();
+  })
 })

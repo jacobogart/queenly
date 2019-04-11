@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 export default class Sub_Info extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
   }
   
   render() {

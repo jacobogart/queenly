@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import Thumbnail from './Thumbnail.js';
-import { search, searchBars, searchShows, searchQueens } from "../helpers.js";
+import { searchShows } from "../helpers.js";
 
 export default class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.shows = this.props.cardData.shows || [];
   }
 
   render() {
@@ -21,7 +19,6 @@ export default class Gallery extends Component {
       this.props.cardData.shows.forEach(show => {
         galleryData.push(searchShows(show, this.props.bars)[0])
       })
-      console.log(galleryData);
     }
     return (
       <section className="Gallery">

@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 export default class Thumbnail extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
   }
 
   setResult = () => {

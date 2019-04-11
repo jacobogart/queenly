@@ -9,6 +9,19 @@
   overflow: hidden;
 }
 
+.navLogo {
+  font-family: "Lobster";
+  color: lightgray;
+  font-size: 2.3em;
+  padding: 5px 0 0 20px;
+}
+
+.navLogo:hover {
+  cursor: pointer;
+  color: white;
+  padding: 4px 1px 0 19px;
+}
+
 .NavBar .searchBarContainer {
   display: flex;
   z-index: 9;
@@ -34,6 +47,21 @@ i {
   color: lightgrey;
 }
 
-i:hover {
+.NavBar i:hover {
   color: white;
+}
+
+@media only screen and (max-width: 450px) {
+  .NavBar {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  .navLogo {
+    left: 122px;
+    top: -5px;
+    padding: 0;
+  }
+  .NavBar .searchBarContainer {
+    margin-top: 0;
+  }
 }

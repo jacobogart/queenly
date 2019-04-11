@@ -17,7 +17,8 @@ class App extends React.Component {
       currentResult: null,
       bars: [{ shows: [] }],
       queens: [],
-      favoritesList: null
+      favoritesList: null,
+      searchQuery: ''
     };
   }
 
@@ -46,6 +47,7 @@ class App extends React.Component {
       favoritesList: faveList
     });
   }
+
   updateSearchResults = query => {
     query
       ? this.setState({
@@ -55,7 +57,13 @@ class App extends React.Component {
       : this.setState({
         displaySearchSuggestions: false
       })
-  };
+  }
+
+  updateQuery = (query) => {
+    this.setState({
+      searchQuery: query
+    })
+  }
 
   selectSearchResult = resultName => {
     if (this.state.showSplashPage || this.state.showAllResultsPage) {
@@ -94,8 +102,10 @@ class App extends React.Component {
       Queens: searchQueens("", this.state.queens),
       Favorites: this.state.favoritesList || []
     };
+    
     this.setState({
-      searchResults: searches[type]
+      searchResults: searches[type],
+      searchQuery: ''
     }, this.displayAllSearchResults());
   }
 
@@ -103,7 +113,7 @@ class App extends React.Component {
     this.setState({
       showCardPage: false,
       showAllResultsPage: true,
-      showSplashPage: true
+      showSplashPage: true,
     });
   }
 
@@ -116,7 +126,7 @@ class App extends React.Component {
   render() {
     let card;
 
-    let cardComponent = (
+    let cardComponent = 
       <Card
         cardData={this.state.cardData}
         displaySplashPage={this.displaySplashPage}
@@ -126,16 +136,16 @@ class App extends React.Component {
         favoritesList={this.state.favoritesList}
         updateFavorites={this.updateFavorites}
       />
-    );
-    let searchResultsComponent = (
+
+    let searchResultsComponent = 
       <SearchResults
         displaySplashPage={this.displaySplashPage}
         searchResults={this.state.searchResults}
         selectSearchResult={this.selectSearchResult}
+        searchQuery={this.state.searchQuery}
       />
-    );
 
-    let splashPageComponent = (
+    let splashPageComponent = 
       <SplashPage
         displayAllSearchResults={this.displayAllSearchResults}
         updateSearchResults={this.updateSearchResults}
@@ -143,8 +153,8 @@ class App extends React.Component {
         searchResults={this.state.searchResults}
         displaySearchSuggestions={this.state.displaySearchSuggestions}
         hideSearchSuggestions={this.hideSearchSuggestions}
+        updateQuery={this.updateQuery}
       />
-    );
 
     if (this.state.showSplashPage) {
       card = splashPageComponent;
@@ -160,6 +170,7 @@ class App extends React.Component {
           <NavBar
             displayAllOfType={this.displayAllOfType}
             showSplashPage={this.state.showSplashPage}
+            displaySplashPage={this.displaySplashPage}
             displayAllSearchResults={this.displayAllSearchResults}
             searchBarDisplay={this.state.showCardPage}
             updateSearchResults={this.updateSearchResults}
@@ -167,6 +178,7 @@ class App extends React.Component {
             searchResults={this.state.searchResults}
             displaySearchSuggestions={this.state.displaySearchSuggestions}
             hideSearchSuggestions={this.hideSearchSuggestions}
+            updateQuery={this.updateQuery}
           />
         </header>
         <section className="App">{card}</section>

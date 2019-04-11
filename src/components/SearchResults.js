@@ -10,9 +10,8 @@ export default class SearchResults extends Component {
     let results;
 
     if (this.props.searchResults.length === 0) {
-      results = (
-        <h2>Please Broaden Your Search</h2>
-      )
+      results = 
+        <h2>No results found.</h2>
     } else {
       results = this.props.searchResults.map(result => (
         <Thumbnail
@@ -23,6 +22,10 @@ export default class SearchResults extends Component {
         />
       ))
     }
+
+    if (this.props.searchQuery) {
+      var resultsHeader = <h3>Search results for: '{this.props.searchQuery}'</h3>
+    } 
 
     return (
       <section className="searchResults">
