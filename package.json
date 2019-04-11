@@ -23,10 +23,12 @@
   },
   "homepage": "https://github.com/jacobogart/queenly#readme",
   "dependencies": {
+    "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^2.1.5"
+    "react-scripts": "^2.1.5",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "enzyme": "^3.9.0",

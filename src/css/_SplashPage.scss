@@ -2,7 +2,7 @@
   font-family: "Lobster";
   font-size: 86px;
   position: fixed;
-  top: 410px;
+  top: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,7 @@
   bottom: -10px;
   left: -26px;
   margin: -8px 38px 0 43px;
-  padding: 1px 5px;
+  padding: 0;
   width: 483px;
 }
 
@@ -27,4 +27,15 @@
   display: flex;
   flex-direction: column;
   max-height: 400px;
+}
+
+@media only screen and (max-width: 450px) {
+  .SplashPage {
+    /* background-color: lightgreen; */
+    width: 80%;
+    position: fixed;
+    top: 240px;
+    right: 35px;
+    font-size: 64px;
+  }
 }

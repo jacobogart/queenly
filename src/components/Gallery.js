@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Thumbnail from './Thumbnail.js';
 import { searchShows } from "../helpers.js";
 
-// * CSS imports
-import "../css/Gallery.css";
-
 export default class Gallery extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +22,7 @@ export default class Gallery extends Component {
     }
     return (
       <section className="Gallery">
+      <div className="Gallery-border"></div>
         {galleryData.map(result =>
         <Thumbnail
             imgURL={result.imageURL}
