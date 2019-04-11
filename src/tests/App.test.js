@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from '../components/App.js';
 import { shallow } from 'enzyme';
 
-// const [nameOfFunctionHere] = jest.fn();
 const mockBars = [{
   "address": "5025 N Clark St, Chicago, IL 60640",
   "facebook": "https://www.facebook.com/MeetingHouseChi",
@@ -44,11 +43,13 @@ const defaultState = {
   showCardPage: false,
   showAllResultsPage: false,
   showSplashPage: true,
+  searchSuggestions: false,
   searchResults: [],
   currentResult: null,
   bars: [{ shows: [] }],
   queens: [],
-  favoritesList: null
+  favoritesList: null,
+  searchQuery: ''
 }
 
 describe('App', () => {
@@ -58,7 +59,7 @@ describe('App', () => {
     wrapper = shallow(<App />);
   });
 
-  it('should match snapshop', () => {
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -84,6 +85,13 @@ describe('App', () => {
     wrapper.instance().updateSearchResults(mockQuery);
     expect(wrapper.state('searchResults')).toEqual(mockBars);
   });
+
+  it("should update searchQuery when updateQuery is invoked", () => {
+    expect(wrapper.state("searchQuery")).toEqual('');
+    wrapper.instance().updateQuery("Aunt");
+    expect(wrapper.state("searchQuery")).toEqual("Aunt");
+  });
+
   it("should invoke displayCard when selectSearchResult is invoked from default", () => {
     expect(wrapper.state()).toEqual(defaultState);
     jest.spyOn(wrapper.instance(), "displayCard");
@@ -136,11 +144,25 @@ describe('App', () => {
     expect(wrapper.state("showSplashPage")).toEqual(false);
     expect(wrapper.state("displaySearchSuggestions")).toEqual(false);
   });
+  it("should update state and invoke displayAllSearchResults when displayAllOfType is invoked", () => {
+    expect(wrapper.state()).toEqual(defaultState);
+    jest.spyOn(wrapper.instance(), "displayAllSearchResults");
+    wrapper.instance().setState({ bars: mockBars });
+    wrapper.instance().displayAllOfType("Venues");
+    expect(wrapper.state("searchResults")).toEqual(mockBars);
+    expect(wrapper.state("searchQuery")).toEqual("");
+    expect(wrapper.instance().displayAllSearchResults).toHaveBeenCalled();
+  });
   it("should update state when displaySplashPage is invoked", () => {
     expect(wrapper.state()).toEqual(defaultState);
     wrapper.instance().displaySplashPage();
     expect(wrapper.state("showCardPage")).toEqual(false);
     expect(wrapper.state("showAllResultsPage")).toEqual(true);
     expect(wrapper.state("showSplashPage")).toEqual(true);
+  });
+  it("should update state when displaySplashPage is invoked", () => {
+    expect(wrapper.state()).toEqual(defaultState);
+    wrapper.instance().hideSearchSuggestions();
+    expect(wrapper.state("displaySearchSuggestions")).toEqual(false);
   });
 });

@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">55.56% </span>
+        <span class="strong">71.43% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/18</span>
+        <span class='fraction'>10/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/8</span>
+        <span class='fraction'>4/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">55.56% </span>
+        <span class="strong">71.43% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/18</span>
+        <span class='fraction'>10/14</span>
       </div>
     </div>
   </div>
@@ -144,7 +144,13 @@
 99
 100
 101
-102</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+102
+103
+104
+105
+106
+107
+108</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,7 +158,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,15 +165,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -224,6 +225,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -245,49 +255,48 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from "react";
 // * CSS imports
-import '../css/Main_Info.css';
+import "../css/Main_Info.css";
 &nbsp;
 export default class Show_Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {};
   }
 &nbsp;
-  stringifyHosts = (host) =&gt; {
+  stringifyHosts = host =&gt; {
     <span class="missing-if-branch" title="else path not taken" >E</span>if (host) {
-      switch(host.length) {
+      switch (host.length) {
 <span class="branch-0 cbranch-no" title="branch not covered" >        case 0:</span>
-<span class="cstat-no" title="statement not covered" >          return null</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >          return null;</span>
         case 1:
-          return `Host: ${host}`
-<span class="cstat-no" title="statement not covered" >          break;</span>
+          return `Host: ${host}`;
 <span class="branch-2 cbranch-no" title="branch not covered" >        case 2:</span>
-<span class="cstat-no" title="statement not covered" >          return `Hosts: ${host.join(' &amp; ')}`</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >          return `Hosts: ${host.join(" &amp; ")}`;</span>
 <span class="branch-3 cbranch-no" title="branch not covered" >        default:</span>
-<span class="cstat-no" title="statement not covered" >          return `Hosts: ${host.join(' , ')}`</span>
-<span class="cstat-no" title="statement not covered" >          break;</span>
+<span class="cstat-no" title="statement not covered" >          return `Hosts: ${host.join(" , ")}`;</span>
       }
     } else {
-<span class="cstat-no" title="statement not covered" >      return null</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
     }
-  }
+  };
 &nbsp;
-  stringifyReoccuring = (reoccuring) =&gt; {
+  stringifyReoccuring = reoccuring =&gt; {
     return reoccuring ? "Every" : <span class="branch-1 cbranch-no" title="branch not covered" >"Only this";</span>
-  }
+  };
 &nbsp;
   convertWhen = (dayOfWeek, frequency, reoccuring) =&gt; {
     let howOften = this.stringifyReoccuring(reoccuring);
-    
-    return `${howOften} ${dayOfWeek.dayOfWeek} on the ${frequency.frequency} of the month.`
-  }
 &nbsp;
-  convertTime = (startTime) =&gt; {
+    return `${howOften} ${dayOfWeek.dayOfWeek} on the ${
+      frequency.frequency
+    } of the month.`;
+  };
+&nbsp;
+  convertTime = startTime =&gt; {
     // let standardTime = startTime.startTime.toString().split('');
     // if (startTime.startTime &gt;= 1300) {
     //   console.log('stand', standardTime)
@@ -296,7 +305,7 @@ export default class Show_Main extends Component {
     //   console.log('hours', hours)
     //   console.log(standardTime)
     // }
-  }
+  };
 &nbsp;
   // convertTime = (startTime) =&gt; {
   //   console.log('time: ', startTime.startTime.toString().split('').splice(0,0, ':'));
@@ -324,35 +333,44 @@ export default class Show_Main extends Component {
   // }
 &nbsp;
   render() {
-    let { name, category, notes, host, dayOfWeek, frequency, startTime, reoccuring }
-      = this.props.cardData;
+    let {
+      name,
+      notes,
+      host,
+      dayOfWeek,
+      frequency,
+      startTime,
+      reoccuring
+    } = this.props.cardData;
 &nbsp;
     return (
       &lt;main className="Bar-Main Main_Info"&gt;
         &lt;article className="Content"&gt;
           &lt;h2&gt;{name}&lt;/h2&gt;
-          &lt;h4&gt;Type of Show: {category}&lt;/h4&gt;
-          &lt;h4&gt;Notes:&lt;/h4&gt;
-          &lt;p className="notes"&gt;{notes}&lt;/p&gt;
+          {!notes ? null : (
+<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;div&gt;</span>
+              &lt;h4&gt;Notes:&lt;/h4&gt;
+              &lt;p className="notes"&gt;{notes}&lt;/p&gt;
+            &lt;/div&gt;
+          )}
           &lt;p className="hosts"&gt;{this.stringifyHosts(host)}&lt;/p&gt;
           &lt;p&gt;When: &lt;/p&gt;
           &lt;p className="showtime"&gt;
             {this.convertWhen({ dayOfWeek }, { frequency }, { reoccuring })}{" "}
           &lt;/p&gt;
-          &lt;p className="time"&gt;
-            At: {this.convertTime({startTime})}
-          &lt;/p&gt;
+          &lt;p className="time"&gt;At: {this.convertTime({ startTime })}&lt;/p&gt;
         &lt;/article&gt;
       &lt;/main&gt;
     );
   }
-}</pre></td></tr>
+}
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 09 2019 22:29:34 GMT-0600 (Mountain Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 10 2019 22:18:49 GMT-0600 (Mountain Daylight Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -65,7 +65,7 @@ p {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: 'Lobster';
+//   font-family: 'Lobster';
   font-size: 30px;
   grid-area: title;
   justify-content: center;
@@ -221,4 +221,12 @@ p {
 .Show-host,
 .Show-when {
   box-shadow: black 1px 1px 1px;
+}
+.fb-icon {
+  width: 45px;
+  position: relative;
+}
+
+p {
+  font-family: "Lato", sans-serif;
 }

@@ -3,8 +3,7 @@
 exports[`SearchBar should match snapshot 1`] = `
 <section
   className="searchBarContainer"
-  onBlur={[Function]}
-  tabIndex="0"
+  onMouseLeave={[MockFunction]}
 >
   <form
     className="SearchBar"
@@ -12,7 +11,7 @@ exports[`SearchBar should match snapshot 1`] = `
   >
     <input
       className="searchTerm"
-      onKeyUp={[Function]}
+      onChange={[Function]}
       placeholder="Search..."
       type="search"
     />
@@ -34,10 +33,30 @@ exports[`SearchBar should match snapshot 1`] = `
     }
   >
     <SearchSuggestion
-      hideSuggestions={[Function]}
+      displayAllSearchResults={[MockFunction]}
+      displaySearchSuggestions={false}
+      hideSearchSuggestions={[MockFunction]}
       key="118"
       name="Sasha Belle"
+      searchResults={
+        Array [
+          Object {
+            "bio": "",
+            "facebook": "https://www.facebook.com/Sasha-Belle-1457446307864946/",
+            "id": 118,
+            "imageURL": "https://scontent-ort2-1.cdninstagram.com/vp/9e8e535948a6840c9778f3948b3bcd4c/5D2AB39C/t51.2885-19/s320x320/54196427_312652559394918_5887169852254191616_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com",
+            "instagram": "https://www.instagram.com/sashabelley/?hl=en",
+            "name": "Sasha Belle",
+            "shows": Array [
+              "Drag Matinee",
+            ],
+            "twitter": "https://twitter.com/sashabelle3?lang=en",
+          },
+        ]
+      }
       selectSearchResult={[MockFunction]}
+      updateQuery={[MockFunction]}
+      updateSearchResults={[MockFunction]}
     />
   </div>
 </section>
