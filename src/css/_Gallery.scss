@@ -37,13 +37,11 @@
   .Gallery-border {
     display: none;
   }
+  &:hover {
+    box-shadow: #202828 1px 5px 13px 1px, #635083 0px 9px 6px 1px;
+  }
 }
-    &:hover {
-      box-shadow:
-      #202828 1px 5px 13px 1px,
-      #635083 0px 9px 6px 1px;
-    }
-}
+
 .Gallery::-webkit-scrollbar {
   width: 10px;
 }
