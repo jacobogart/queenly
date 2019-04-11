@@ -3,34 +3,35 @@ import Hamburger from "./Hamburger";
 import Favorites from "./Favorites";
 import "../css/NavBar.css";
 import SearchBar from "./SearchBar";
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  displaySplashPage = () => {
+    this.props.displaySplashPage();
+  }
+
   render() {
     if (!this.props.showSplashPage) {
-      return (
-        <nav className="NavBar">
-          <Hamburger {...this.props} />
-          <SearchBar {...this.props} />
-          <Favorites
-            displayAllSearchResults={this.props.displayAllSearchResults}
-            displayAllOfType={this.props.displayAllOfType}
-          />        
-        </nav>
-      );
-    } else {
-      return (
-        <nav className="NavBar">
-          <Hamburger {...this.props} />
-          <Favorites
-            displayAllSearchResults={this.props.displayAllSearchResults}
-            displayAllOfType={this.props.displayAllOfType}
-          />
-        </nav>
-      );
+      var navLogo = 
+        <h2 className="navLogo"
+            onClick={this.displaySplashPage}>Queenly</h2> 
+      var searchBar = <SearchBar {...this.props} />
     }
+
+    return (
+      <nav className="NavBar">
+        <Hamburger {...this.props} />
+        {navLogo}
+        {searchBar}
+        <Favorites 
+          displayAllSearchResults={this.props.displayAllSearchResults}
+          displayAllOfType={this.props.displayAllOfType} 
+        />
+      </nav>
+    );
   }
 }
 
