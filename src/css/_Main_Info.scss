@@ -2,16 +2,31 @@
   background-color: #2e5658;
   border-radius: 20px 0 0 0px;
   padding: 0 25px;
+  padding: 0 0 0 20px;
 }
-
-.Queen-Main {
-  padding-top: 50px;
-  display: flex;
-  flex-direction: column;
+h2 {
+  color: lightgray;
+  margin-bottom: 10px;
+  margin: 0;
+}
+h4 {
+  margin-bottom: 10px;
+  margin: 0;
+  text-align: justify;
+}
+p {
+  margin-top: 0;
+}
+.social-links {
   align-items: center;
-  justify-content: space-evenly;
+  display: flex;
+  font-size: 25px;
+  justify-content: space-around;
+  margin-top: 10px;
 }
-
+// ** ======================
+// ** --------- Bar --------
+// ** ======================
 .Bar-Main {
   display: grid;
   grid-template-areas: 
@@ -19,150 +34,191 @@
     "img notes" 
     "icons icons";
   grid-template-columns: 1fr 2fr;
-}
 
+    .social-links {
+      grid-area: icons;
+      width: 100%;
+    }
+
+    .notes-container {
+      display: flex;
+      flex-direction: column;
+      grid-area: notes;
+      height: 100%;
+      justify-content: center;
+      margin: 0;
+
+      & h4 {
+        color: lightgray;
+        font-size: 17px;
+        margin: 0;
+        padding-left: 10px;
+        text-decoration: underline;
+      }
+      & p {
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+}
 .title {
-  grid-area: title;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: 'Lobster';
-  text-align: center;
-  justify-content: center;
   font-size: 30px;
-    & h2 {
-      margin: 0;
+  grid-area: title;
+  justify-content: center;
+  text-align: center;
+}
+.bar-img--container {
+  align-items: center;
+  display: flex;
+  grid-area: img;
+  justify-content: center;
+  width: 100%;
+    .bar-img {
+      border-radius: 50%;
+      border: 5px ridge lightgray;
+      width: 100px;
     }
 }
-
-.bar-img--container {
-  grid-area: img;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.phone {
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  justify-content: space-between;
+  position: absolute;
+  right: 25%;
+  top: 6%;
+  width: 210px;
 }
-
-.notes-container {
-  grid-area: notes;
-  height: 100%;
+// ** ======================
+// ** -------- Queen -------
+// ** ======================
+.Queen-Main {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0;
-
-    & h4 {
-      margin: 0;
-      text-decoration: underline;
-      padding-left: 10px;
-      font-size: 17px;
-      color: lightgray;
-    }
-    & p {
-      font-size: 18px;
-      margin: 0;
-    }
+  padding-top: 0px;
+  min-width: 500px;
 }
-
-h2 {
-  margin: 0;
-  margin-bottom: 10px;
-  color: lightgray;
-}
-
-h4 {
-  margin: 0;
-  margin-bottom: 10px;
-  text-align: justify;
-}
-
-.bar-img {
-  width: 100px;
-  border-radius: 50%;
-  border: 5px ridge lightgray;
-}
-
-p {
-  margin-top: 0;
-}
-
 .location span:hover {
   color: white;
 }
-
 .queen-content {
   background-color: white;
-  padding: 20px;
-  border-radius: 20px;
-  width: 285px;
-}
+    border-radius: 20px;
+    padding: 15px;
+    max-height: 200px;
+    width: 70%;
+    overflow: auto;
 
-.Card .queen-content h2,
-.Card .bio {
+    h2 {
+      text-decoration: underline;
+    }
+
+    h4 {
+      color: cornflowerblue;
+      max-height: 300px;
+      text-shadow: black .3px .3px;
+    }
+}
+.Queen-Main .queen-content h2,
+.Queen-Main .bio {
   color: rgb(75, 88, 114);
+  text-shadow: none;
 }
-
-.queen-content h4 {
-  color: cornflowerblue;
-  max-height: 300px;
-}
-
-.Card .bio {
+.Queen-Main .bio {
   font-size: 17px;
 }
-
-.social-links {
-  font-size: 25px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.Bar-Main .social-links {
-  grid-area: icons;
-  width: 100%;
-}
-
 .Queen-Main .social-links {
-  width: 315px;
+  width: 75%;
 }
-
 .queen-links {
   background-color: white;
   border-radius: 20px;
   margin-top: 30px;
 }
+// ** ======================
+// ** -------- Show --------
+// ** ======================
+.Show-Main {
+  display: grid;
+  grid-template-rows: 40% 20% 35%;
+  grid-template-areas:
+    "title"
+    "host"
+    "when";
 
-.phone {
-  position: absolute;
-  top: 6%;
+    p {
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      color: rgb(75, 88, 114);
+    }
+    h4, p {
+      text-shadow: none;
+    }
+}
+.Show-title {
+  grid-area: title;
+  background-color: white;
+  border-bottom: 4px double gray;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+  padding: 10px;
+
+    & h2 {
+      font-family: 'Lobster';
+      font-size: 30px;
+      text-align: center;
+    }
+}
+.Show-host {
+  grid-area: host;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: row;
-  right: 25%;
-  font-size: 25px;
-  align-items: center;
-  justify-content: space-between;
-  width: 210px;
+  justify-content: space-around;
+  padding: 10px;
+
+  .location span {
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline cornflowerblue;
+
+    &:hover {
+      color: cornflowerblue;
+    }
+  }
+}
+.Show-host{
+  background-color: lightgray;
+}
+.Show-when {
+  grid-area: when;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+  width: 350px;
+
+    .time {
+      margin-top: 10px;
+    }
 }
 
-.phone-icon {
-  margin-right: 10px;
-  position: relative;
-  top: 6px;
-}
-
-.social-icon {
-  width: 30px;
-}
-
-.web-icon {
-  width: 33px;
-  position: relative;
-  left: -8px;
-}
-
-.fb-icon {
-  width: 45px;
-  position: relative;
+.Show-host,
+.Show-when {
+  box-shadow: black 1px 1px 1px;
 }

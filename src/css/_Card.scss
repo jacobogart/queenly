@@ -70,10 +70,12 @@ iframe {
 
 .favoriteBtn i:hover {
   color: white;
+  cursor: pointer;
 }
 
 .toggle-close i:hover {
   color: white;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 450px) {
@@ -86,13 +88,5 @@ iframe {
     -webkit-flex-direction: column;
     flex-direction: column;
     grid-template-columns: 1fr;
-  }
-  .toggle-close {
-    right: 35px;
-    top: 221px;
-  }
-
-  .phone {
-    position: static;
   }
 }
