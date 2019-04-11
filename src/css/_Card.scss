@@ -115,6 +115,16 @@ iframe {
   }
 }
 
+@media only screen and (max-width: 490px) {
+  .Card {
+    top: -45px;
+  }
+
+  .Main_Info {
+    height: 300px;
+  }
+}
+
 //slay text-crops over on any resize
 //card fav/close button not responsive
 //bio will need resizing to accommodate small screen size
