@@ -77,13 +77,13 @@ export default class Show_Main extends Component {
   // }
 
   getLocation = () => {
-    let location = this.props.bars.filter(bar => 
+    let location = this.props.bars.find(bar => 
       bar.shows.find(show => 
         show.name.includes(this.props.cardData.name)
       )
     );
 
-    return location[0].name;
+    return location.name;
   }
 
   goToBar = () => {
