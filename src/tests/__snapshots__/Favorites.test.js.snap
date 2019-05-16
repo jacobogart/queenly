@@ -2,6 +2,7 @@
 
 exports[`Favorites should match snapshot 1`] = `
 <div
+  className="heartIcon"
   onClick={[Function]}
 >
   <i

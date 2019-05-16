@@ -35,7 +35,7 @@ export default class Show_Main extends Component {
     if (frequency === 'weekly') {
       return `${howOften} ${dayOfWeek} of the month.`;
     } else {
-      return `${howOften} ${dayOfWeek} on the ${frequency} of the month.`;
+      return `${howOften} ${frequency} ${dayOfWeek} of the month.`;
     }
   };
 
@@ -94,18 +94,21 @@ export default class Show_Main extends Component {
           )}
         </article>
         <article className="Show-host">
-        <p className="location" onClick={this.goToBar}>
-        {" "}
-        Where: <span>{this.state.location}</span>
-        </p>
-        <p className="hosts">{this.stringifyHosts(host)}</p>
-        </article>
-        <article className="Show-when">
-          <p>When: </p>
-          <p className="showtime">
-            {this.convertWhen(dayOfWeek, frequency, reoccuring)}{" "}
-          </p>
-          <p className="time">At: {this.convertTime(startTime)}</p>
+          <div>
+            <p className="location" onClick={this.goToBar}>
+              {" "}
+              <span> Where: {this.state.location}</span>
+            </p>
+            <br />
+            <p className="hosts">{this.stringifyHosts(host)}</p>
+          </div>
+          <div>
+            <p className="showtime">
+              {this.convertWhen(dayOfWeek, frequency, reoccuring)}{" "}
+            </p>
+            <br />
+            <p className="time">At: {this.convertTime(startTime)}</p>
+          </div>
         </article>
       </main>
     );

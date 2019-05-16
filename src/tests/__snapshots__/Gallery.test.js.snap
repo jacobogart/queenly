@@ -4,6 +4,9 @@ exports[`Gallery should match snapshop 1`] = `
 <section
   className="Gallery"
 >
+  <div
+    className="Gallery-border"
+  />
   <Thumbnail
     imgURL="https://pbs.twimg.com/media/D1Any4VWkAA86HL.jpg"
     key="2101"
