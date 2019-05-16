@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">41.67% </span>
+        <span class="strong">53.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/12</span>
+        <span class='fraction'>8/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">33.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/6</span>
+        <span class='fraction'>1/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.45% </span>
+        <span class="strong">53.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/11</span>
+        <span class='fraction'>8/15</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -82,35 +82,47 @@
 37
 38
 39
-40</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+40
+41
+42
+43
+44
+45
+46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,31 +137,37 @@
 import Thumbnail from './Thumbnail.js';
 import { searchShows } from "../helpers.js";
 &nbsp;
-// * CSS imports
-import "../css/Gallery.css";
-&nbsp;
 export default class Gallery extends Component {
   constructor(props) {
     super(props);
+    this.galleryData = [];
+  }
+&nbsp;
+  generateGalleryData = (type) =&gt; {
+    switch (type) {
+      case "Bar":
+        this.galleryData = this.props.cardData.shows;
+        break;
+<span class="branch-1 cbranch-no" title="branch not covered" >      case "Show":</span>
+<span class="cstat-no" title="statement not covered" >        this.galleryData = this.props.queens.filter(<span class="fstat-no" title="function not covered" >qu</span>een =&gt;</span>
+<span class="cstat-no" title="statement not covered" >          queen.shows.includes(this.props.cardData.name))</span>;
+<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >      case "Queen":</span>
+<span class="cstat-no" title="statement not covered" >        this.galleryData = [];</span>
+<span class="cstat-no" title="statement not covered" >        this.props.cardData.shows.forEach(<span class="fstat-no" title="function not covered" >sh</span>ow =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          this.galleryData.push(searchShows(show, this.props.bars)[0]);</span>
+        });
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
   }
 &nbsp;
   render() {
-    let galleryData
-&nbsp;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.cardType === "Bar") {
-<span class="cstat-no" title="statement not covered" >      galleryData = this.props.cardData.shows;</span>
-    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (this.props.cardType === "Show") {
-      galleryData = this.props.queens.filter(<span class="fstat-no" title="function not covered" >qu</span>een =&gt; <span class="cstat-no" title="statement not covered" >queen.shows.includes(this.props.cardData.name))</span>;
-    } else <span class="cstat-no" title="statement not covered" >if (this.props.cardType === "Queen") {</span>
-<span class="cstat-no" title="statement not covered" >      galleryData = [];</span>
-<span class="cstat-no" title="statement not covered" >      this.props.cardData.shows.forEach(<span class="fstat-no" title="function not covered" >sh</span>ow =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        galleryData.push(searchShows(show, this.props.bars)[0])</span>
-      })
-    }
+    this.generateGalleryData(this.props.cardType);
     return (
       &lt;section className="Gallery"&gt;
-        {galleryData.map(<span class="fstat-no" title="function not covered" >re</span>sult =&gt;
-<span class="cstat-no" title="statement not covered" >        &lt;Thumbnail</span>
+      &lt;div className="Gallery-border"&gt;&lt;/div&gt;
+        {this.galleryData.map(result =&gt;
+        &lt;Thumbnail
             imgURL={result.imageURL}
             selectSearchResult={this.props.selectSearchResult}
             name={result.name}
@@ -166,7 +184,7 @@ export default class Gallery extends Component {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 10 2019 22:18:49 GMT-0600 (Mountain Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Apr 11 2019 09:31:30 GMT-0600 (Mountain Daylight Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

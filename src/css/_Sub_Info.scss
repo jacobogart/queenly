@@ -7,16 +7,18 @@
 .Sub-Info img {
   height: 100%;
   object-fit: contain;
-  // width: 100%;
+  width: 100%;
 }
 .img-holder {
-  height: 300px;
+  margin-top: 50px;
+  height: 247px;
   width: 100%;
 }
 
 .img-holder iframe {
   width: 100%;
   margin: 0 auto;
+  height: 100%;
 
   img {
     padding-left: 30px;

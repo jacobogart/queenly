@@ -5,21 +5,32 @@ exports[`Bar_Main should match snapshop 1`] = `
   className="Bar-Main Main_Info"
 >
   <article
-    className="Content"
+    className="title"
   >
     <h2>
       Meeting House Tavern
     </h2>
+  </article>
+  <div
+    className="bar-img--container"
+  >
     <img
       alt="Image of [object Object]"
       className="bar-img"
       src="https://scontent-dfw5-1.cdninstagram.com/vp/dc393598c8355083e81b210447749477/5D30B2CA/t51.2885-19/s320x320/30920559_218883882204264_3986740088989024256_n.jpg?_nc_ht=scontent-dfw5-1.cdninstagram.com"
     />
+  </div>
+  <p
+    className="phone"
+  >
+    (773) 696-4211
+  </p>
+  <article
+    className="notes-container"
+  >
     <p
-      className="phone"
-    >
-      (773) 696-4211
-    </p>
+      className="notes"
+    />
   </article>
   <aside
     className="social-links"

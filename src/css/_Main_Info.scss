@@ -168,12 +168,13 @@ h2 {
 // ** -------- Show --------
 // ** ======================
 .Show-Main {
+  padding-top: 75px;
+  padding-left: 75px;
   display: grid;
-  grid-template-rows: 40% 20% 35%;
+  grid-template-rows: 50% 30%;
   grid-template-areas:
     "title"
-    "host"
-    "when";
+    "host";
 
   p {
     font-size: 16px;
@@ -195,10 +196,10 @@ h2 {
   flex-direction: column;
   justify-content: center;
   margin-top: 25px;
-  padding: 10px;
+  padding: 30px;
 
   & h2 {
-    font-family: "Lobster";
+    font-family: "Lato";
     font-size: 30px;
     text-align: center;
   }
